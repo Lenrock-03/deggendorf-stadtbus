@@ -62,7 +62,9 @@ def main():
             continue
         if any(sub in line for sub in SKIP_NAME_SUBSTRINGS):
             continue
-        matches = [(m.start(), m.group(0)[:5]) for m in TIME_WITH_SUFFIX_RE.finditer(line)]
+        # Suffix (z.B. "AB" = nur Bedarf zum Aussteigen) wird mitgeführt, nicht mehr
+        # abgeschnitten - to_line_json.py trennt Zeit und Flag wieder sauber.
+        matches = [(m.start(), m.group(0)) for m in TIME_WITH_SUFFIX_RE.finditer(line)]
         first_time_pos = matches[0][0]
         prefix = line[:first_time_pos]
         # Marker steht direkt vor der ersten (tatsächlich vorhandenen) Zeit, ggf. mit viel

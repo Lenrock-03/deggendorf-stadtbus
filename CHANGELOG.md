@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.5.0
+
+- Dark/Light-Mode manuell umschaltbar (Button im Header, überstimmt Systemeinstellung,
+  in localStorage gemerkt)
+- Favoriten: Haltestellen per Stern merken (Suche, Abfahrtstafel, Startseite), lokal im
+  Browser gespeichert
+- Echter bayerischer Feiertags-/Schulferienkalender (berechnete bewegliche Feiertage +
+  offizielle Ferientermine): kein Verkehr an Feiertagen, Heiligabend/Silvester-
+  Sonderregel, Abfahrtstafel jetzt mit echtem Datumspicker statt nur Wochentag
+- Linie 2 fertiggestellt: die beiden Schultag-Fahrten laufen jetzt als eigener
+  "schoolday"-Service (nur an tatsächlichen Schultagen, nicht in den Ferien), Bedarfshalte
+  ("nur Aussteigen") werden korrekt markiert statt wie normale Abfahrten behandelt
+
 ## v1.4.0
 
 - Liniendetail zeigt beim Einstieg über die Linienübersicht jetzt nur den reinen

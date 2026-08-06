@@ -16993,10 +16993,11 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:10:00",
       "stopSeq": 32,
-      "headsign": "Deggendorf, Land-Au"
+      "headsign": "Deggendorf, Land-Au",
+      "dropOffOnly": true
     },
     {
       "tripId": "3-mo-fr-6",
@@ -17411,10 +17412,11 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:11:00",
       "stopSeq": 33,
-      "headsign": "Deggendorf, Land-Au"
+      "headsign": "Deggendorf, Land-Au",
+      "dropOffOnly": true
     },
     {
       "tripId": "3-mo-fr-6",
@@ -17773,10 +17775,11 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:12:00",
       "stopSeq": 34,
-      "headsign": "Deggendorf, Land-Au"
+      "headsign": "Deggendorf, Land-Au",
+      "dropOffOnly": true
     },
     {
       "tripId": "3-mo-fr-6",
@@ -18143,10 +18146,11 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:13:00",
       "stopSeq": 35,
-      "headsign": "Deggendorf, Land-Au"
+      "headsign": "Deggendorf, Land-Au",
+      "dropOffOnly": true
     },
     {
       "tripId": "3-mo-fr-6",
@@ -18489,10 +18493,11 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:14:00",
       "stopSeq": 36,
-      "headsign": "Deggendorf, Land-Au"
+      "headsign": "Deggendorf, Land-Au",
+      "dropOffOnly": true
     },
     {
       "tripId": "3-mo-fr-6",
@@ -19061,10 +19066,11 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:15:00",
       "stopSeq": 37,
-      "headsign": "Deggendorf, Land-Au"
+      "headsign": "Deggendorf, Land-Au",
+      "dropOffOnly": true
     },
     {
       "tripId": "3-mo-fr-6",
@@ -19351,10 +19357,11 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:16:00",
       "stopSeq": 38,
-      "headsign": "Deggendorf, Land-Au"
+      "headsign": "Deggendorf, Land-Au",
+      "dropOffOnly": true
     },
     {
       "tripId": "3-mo-fr-6",
@@ -19561,10 +19568,11 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:17:00",
       "stopSeq": 39,
-      "headsign": "Deggendorf, Land-Au"
+      "headsign": "Deggendorf, Land-Au",
+      "dropOffOnly": true
     },
     {
       "tripId": "2-mo-fr-10",
@@ -19715,10 +19723,11 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:18:00",
       "stopSeq": 40,
-      "headsign": "Deggendorf, Land-Au"
+      "headsign": "Deggendorf, Land-Au",
+      "dropOffOnly": true
     },
     {
       "tripId": "2-mo-fr-10",
@@ -19869,10 +19878,11 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:19:00",
       "stopSeq": 41,
-      "headsign": "Deggendorf, Land-Au"
+      "headsign": "Deggendorf, Land-Au",
+      "dropOffOnly": true
     },
     {
       "tripId": "2-mo-fr-10",
@@ -20023,10 +20033,11 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:20:00",
       "stopSeq": 42,
-      "headsign": "Deggendorf, Land-Au"
+      "headsign": "Deggendorf, Land-Au",
+      "dropOffOnly": true
     },
     {
       "tripId": "2-mo-fr-10",
@@ -20177,10 +20188,11 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:21:00",
       "stopSeq": 43,
-      "headsign": "Deggendorf, Land-Au"
+      "headsign": "Deggendorf, Land-Au",
+      "dropOffOnly": true
     },
     {
       "tripId": "2-mo-fr-10",
@@ -20331,10 +20343,11 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:22:00",
       "stopSeq": 44,
-      "headsign": "Deggendorf, Land-Au"
+      "headsign": "Deggendorf, Land-Au",
+      "dropOffOnly": true
     },
     {
       "tripId": "2-mo-fr-10",
@@ -20485,10 +20498,11 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:23:00",
       "stopSeq": 45,
-      "headsign": "Deggendorf, Land-Au"
+      "headsign": "Deggendorf, Land-Au",
+      "dropOffOnly": true
     },
     {
       "tripId": "2-mo-fr-10",
@@ -21451,10 +21465,11 @@
     {
       "tripId": "2-mo-fr-9",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:10:00",
       "stopSeq": 2,
-      "headsign": "Deggendorf, Hirzau"
+      "headsign": "Deggendorf, Hirzau",
+      "dropOffOnly": true
     },
     {
       "tripId": "2-mo-fr-7",
@@ -21669,10 +21684,11 @@
     {
       "tripId": "2-mo-fr-9",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:11:00",
       "stopSeq": 3,
-      "headsign": "Deggendorf, Hirzau"
+      "headsign": "Deggendorf, Hirzau",
+      "dropOffOnly": true
     },
     {
       "tripId": "2-mo-fr-10",
@@ -21831,10 +21847,11 @@
     {
       "tripId": "2-mo-fr-9",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:12:00",
       "stopSeq": 4,
-      "headsign": "Deggendorf, Hirzau"
+      "headsign": "Deggendorf, Hirzau",
+      "dropOffOnly": true
     },
     {
       "tripId": "2-mo-fr-10",
@@ -21993,10 +22010,11 @@
     {
       "tripId": "2-mo-fr-9",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:13:00",
       "stopSeq": 5,
-      "headsign": "Deggendorf, Hirzau"
+      "headsign": "Deggendorf, Hirzau",
+      "dropOffOnly": true
     },
     {
       "tripId": "2-mo-fr-10",
@@ -22155,10 +22173,11 @@
     {
       "tripId": "2-mo-fr-9",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:14:00",
       "stopSeq": 6,
-      "headsign": "Deggendorf, Hirzau"
+      "headsign": "Deggendorf, Hirzau",
+      "dropOffOnly": true
     },
     {
       "tripId": "2-mo-fr-10",
@@ -22317,10 +22336,11 @@
     {
       "tripId": "2-mo-fr-9",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:15:00",
       "stopSeq": 7,
-      "headsign": "Deggendorf, Hirzau"
+      "headsign": "Deggendorf, Hirzau",
+      "dropOffOnly": true
     },
     {
       "tripId": "2-mo-fr-10",
@@ -22479,10 +22499,11 @@
     {
       "tripId": "2-mo-fr-9",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:16:00",
       "stopSeq": 8,
-      "headsign": "Deggendorf, Hirzau"
+      "headsign": "Deggendorf, Hirzau",
+      "dropOffOnly": true
     },
     {
       "tripId": "2-mo-fr-10",
@@ -22819,7 +22840,7 @@
     {
       "tripId": "2-mo-fr-8",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:05:00",
       "stopSeq": 1,
       "headsign": "Deggendorf, Land-Au"
@@ -22827,7 +22848,7 @@
     {
       "tripId": "2-mo-fr-9",
       "routeId": "2",
-      "service": "weekday",
+      "service": "schoolday",
       "time": "13:05:00",
       "stopSeq": 1,
       "headsign": "Deggendorf, Hirzau"

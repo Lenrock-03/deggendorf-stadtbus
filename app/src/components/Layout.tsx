@@ -1,6 +1,7 @@
 import { Link, Outlet } from "react-router-dom";
 import { useSchedule } from "../lib/useSchedule";
 import InstallButton from "./InstallButton";
+import ThemeToggle from "./ThemeToggle";
 
 export default function Layout() {
   const schedule = useSchedule();
@@ -14,6 +15,7 @@ export default function Layout() {
         </Link>
         <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
           <Link to="/suche">Haltestelle suchen</Link>
+          <ThemeToggle />
           <InstallButton />
         </div>
       </header>

@@ -13,7 +13,8 @@ export interface StopData {
   lon?: number;
 }
 
-export type ServiceId = "weekday" | "saturday";
+/** "schoolday" = nur an Schultagen (siehe lib/holidays.ts isSchoolDay), kommt bei Linie 2 vor. */
+export type ServiceId = "weekday" | "saturday" | "schoolday";
 
 export interface DepartureData {
   tripId: string;
@@ -23,6 +24,8 @@ export interface DepartureData {
   time: string;
   stopSeq: number;
   headsign: string;
+  /** true = laut Fahrplan an dieser Haltestelle nur Bedarf zum Aussteigen, kein Einstieg */
+  dropOffOnly?: true;
 }
 
 export type DeparturesByStop = Record<string, DepartureData[]>;

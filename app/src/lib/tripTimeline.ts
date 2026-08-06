@@ -16,6 +16,8 @@ export interface TimelineStop {
   note?: "an" | "ab";
   isFirst: boolean;
   isLast: boolean;
+  /** true = an dieser Haltestelle laut Fahrplan nur Bedarf zum Aussteigen, kein Einstieg */
+  dropOffOnly?: true;
 }
 
 /** Reiner Streckenverlauf ohne Uhrzeiten (Einstieg von der Linienübersicht). */
@@ -66,7 +68,15 @@ export function timelineForTrip(
       (d) => d.tripId === tripId && d.stopSeq === stopSeq
     );
     if (dep) {
-      stops.push({ stopId: s.stopId, name: s.name, time: dep.time, note: s.note, isFirst: false, isLast: false });
+      stops.push({
+        stopId: s.stopId,
+        name: s.name,
+        time: dep.time,
+        note: s.note,
+        isFirst: false,
+        isLast: false,
+        ...(dep.dropOffOnly ? { dropOffOnly: true as const } : {}),
+      });
     }
   });
 
@@ -85,7 +95,7 @@ export function timelineDurationMin(stops: TimelineStop[]): number {
   return parseTimeToMinutes(last) - parseTimeToMinutes(first);
 }
 
-const SERVICE_LABELS: Record<ServiceId, string> = { weekday: "Mo-Fr", saturday: "Sa" };
+const SERVICE_LABELS: Record<ServiceId, string> = { weekday: "Mo-Fr", saturday: "Sa", schoolday: "Schultag" };
 
 export function tripOptionLabel(t: TripOption): string {
   return `${SERVICE_LABELS[t.service]} ${t.startTime.slice(0, 5)}`;

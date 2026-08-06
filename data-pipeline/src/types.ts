@@ -1,6 +1,8 @@
 // Gemeinsame Typen für Pipeline-Eingabe (fallback-data/lines/*.json) und -Ausgabe (app/public/data/*.json).
 
-export type ServiceId = "weekday" | "saturday";
+/** "schoolday" = nur an Schultagen (siehe app/src/lib/holidays.ts isSchoolDay) - kommt
+ * bei Linie 2 vor (im offiziellen Fahrplan mit "S" markiert). */
+export type ServiceId = "weekday" | "saturday" | "schoolday";
 
 export interface StopRef {
   seq: number;
@@ -26,6 +28,9 @@ export interface TripLiteralMode {
    * Fahrten mancher Linien vor).
    */
   times: (string | null)[];
+  /** Parallel zu times: true = an dieser Haltestelle laut Fahrplan "nur Bedarf zum
+   * Aussteigen" (kein regulärer Einstieg möglich). Nur bei Bedarf gesetzt (Linie 2). */
+  dropOffOnly?: boolean[];
 }
 
 export type TripInput = TripTemplateMode | TripLiteralMode;
@@ -82,6 +87,8 @@ export interface DepartureOut {
   stopSeq: number;
   /** letzte Haltestelle der Fahrt, als Fahrtziel-Anzeige */
   headsign: string;
+  /** true = laut Fahrplan an dieser Haltestelle nur Bedarf zum Aussteigen, kein Einstieg */
+  dropOffOnly?: true;
 }
 
 export interface CalendarOut {

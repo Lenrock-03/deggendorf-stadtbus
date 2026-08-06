@@ -20,6 +20,26 @@
   }
 }
 
+/* Manuelle Wahl (siehe lib/theme.ts) überstimmt die Systemeinstellung - Attribut-Selektor
+   ist spezifischer als :root allein, gewinnt also unabhängig von der Reihenfolge. */
+:root[data-theme="light"] {
+  --color-bg: #ffffff;
+  --color-fg: #1a1a1a;
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-accent: #1d4ed8;
+  --color-card: #f8fafc;
+}
+
+:root[data-theme="dark"] {
+  --color-bg: #0f1115;
+  --color-fg: #e5e7eb;
+  --color-muted: #9ca3af;
+  --color-border: #2a2e37;
+  --color-accent: #60a5fa;
+  --color-card: #171a21;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -233,6 +253,17 @@ button {
 
 .trip-timeline li.endpoint .tt-name {
   font-weight: 700;
+}
+
+.favorite-button {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-size: 1.3rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.2rem 0.3rem;
+  flex-shrink: 0;
 }
 
 .trip-header {

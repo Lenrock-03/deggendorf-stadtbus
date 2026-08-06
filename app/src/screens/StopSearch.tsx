@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useSchedule } from "../lib/useSchedule";
 import { ErrorBanner, LoadingBanner } from "../components/StatusBanner";
 import { distanceMeters, formatDistance } from "../lib/geo";
+import FavoriteButton from "../components/FavoriteButton";
 
 type LocationState =
   | { status: "idle" }
@@ -100,11 +101,15 @@ export default function StopSearch() {
 
       <ul className="card-list" style={{ marginTop: "1rem" }}>
         {results.map((s) => (
-          <li key={s.id} className="card">
-            <Link to={`/haltestelle/${s.id}`} style={{ display: "flex", justifyContent: "space-between", gap: "0.5rem" }}>
+          <li key={s.id} className="card" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+            <Link
+              to={`/haltestelle/${s.id}`}
+              style={{ display: "flex", justifyContent: "space-between", gap: "0.5rem", flex: 1 }}
+            >
               <span>{s.name}</span>
               {s.distanceM != null && <span className="muted">{formatDistance(s.distanceM)}</span>}
             </Link>
+            <FavoriteButton stopId={s.id} />
           </li>
         ))}
         {results.length === 0 && <p className="muted">Keine Haltestelle gefunden.</p>}

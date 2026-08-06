@@ -40,3 +40,27 @@ export function weekdayInBerlin(now: Date = new Date()): number {
   const map: Record<string, number> = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
   return map[weekdayStr] ?? now.getDay();
 }
+
+/**
+ * Kalendertag (Jahr/Monat/Tag) "heute" in Europe/Berlin als lokales Date-Objekt
+ * (Uhrzeit auf Mitternacht gesetzt) - unabhängig von der Zeitzone des Geräts. Gedacht für
+ * Datumsvergleiche (Feiertage/Ferien/Tagesarithmetik), nicht für Uhrzeit-Anzeige.
+ */
+export function dateInBerlin(now: Date = new Date()): Date {
+  const parts = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Europe/Berlin",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(now);
+  const y = Number(parts.find((p) => p.type === "year")?.value);
+  const m = Number(parts.find((p) => p.type === "month")?.value);
+  const d = Number(parts.find((p) => p.type === "day")?.value);
+  return new Date(y, m - 1, d);
+}
+
+export function addDays(d: Date, days: number): Date {
+  const copy = new Date(d);
+  copy.setDate(copy.getDate() + days);
+  return copy;
+}

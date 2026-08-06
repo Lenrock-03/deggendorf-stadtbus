@@ -14,6 +14,7 @@ export default function TripTimeline({ stops, color }: { stops: TimelineStop[]; 
             <span className="tt-name">
               {s.name}
               {s.note && <span className="muted"> ({s.note})</span>}
+              {s.dropOffOnly && <span className="muted"> · nur Aussteigen</span>}
             </span>
           </Link>
         </li>

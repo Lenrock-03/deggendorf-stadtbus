@@ -75,6 +75,9 @@ function main() {
   const calendar: CalendarOut = {
     weekday: [1, 2, 3, 4, 5],
     saturday: [6],
+    // Wochentags-Grundmuster wie "weekday" - die App filtert zusätzlich per
+    // isSchoolDay(date) (Ferien/Feiertage raus), siehe lib/calendar.ts activeServicesForDate.
+    schoolday: [1, 2, 3, 4, 5],
   };
 
   function stopIdFor(name: string): string {
@@ -149,6 +152,8 @@ function main() {
       }
       const headsign = line.stops[lastServedIdx].name;
 
+      const dropOffOnly = "times" in trip ? trip.dropOffOnly : undefined;
+
       times.forEach((time, i) => {
         if (time === null) return;
         const stopId = stopIds[i];
@@ -159,6 +164,7 @@ function main() {
           time,
           stopSeq: i + 1,
           headsign,
+          ...(dropOffOnly?.[i] ? { dropOffOnly: true as const } : {}),
         };
         const list = departuresByStop.get(stopId) ?? [];
         list.push(dep);
