@@ -1,5 +1,17 @@
 # Changelog
 
+## v1.7.0
+
+- Routenplaner (`/verbindung`): Verbindungssuche zwischen zwei beliebigen Haltestellen
+  - findet Direktverbindungen und Verbindungen mit einmal Umsteigen an echten
+    Umstiegshaltestellen (von ≥2 Linien bedient)
+  - Datum + Uhrzeit wählbar, Start/Ziel tauschbar
+  - Dedupliziert Verbindungen mit identischen Fahrten über unterschiedliche mögliche
+    Umstiegspunkte; bei gleicher Ankunftszeit wird die Verbindung mit kürzerer
+    Wartezeit bevorzugt
+  - Im Browser mit echten Daten verifiziert (Linie 1 → Linie 4 über mehrere
+    Stammstrecken-Haltestellen)
+
 ## v1.6.0
 
 - **Hotfix:** Favoriten-Store (`lib/favorites.ts`) verursachte eine Endlosschleife

@@ -256,6 +256,25 @@ button {
   font-weight: 700;
 }
 
+.journey-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.journey-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.journey-leg {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.92rem;
+}
+
 /* Leaflet-Popup an unser Farbschema anpassen (Default ist immer hell) */
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {

@@ -5,6 +5,7 @@ import LineDetail from "./screens/LineDetail";
 import StopSearch from "./screens/StopSearch";
 import StopBoard from "./screens/StopBoard";
 import MapView from "./screens/MapView";
+import RoutePlanner from "./screens/RoutePlanner";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="suche" element={<StopSearch />} />
         <Route path="haltestelle/:id" element={<StopBoard />} />
         <Route path="karte" element={<MapView />} />
+        <Route path="verbindung" element={<RoutePlanner />} />
       </Route>
     </Routes>
   );
