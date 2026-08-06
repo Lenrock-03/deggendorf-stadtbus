@@ -1,0 +1,2430 @@
+{
+  "deggendorf-oberer-stadtplatz-west": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "08:49:00",
+      "stopSeq": 1,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "08:49:00",
+      "stopSeq": 1,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:11:00",
+      "stopSeq": 17,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:11:00",
+      "stopSeq": 17,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:12:00",
+      "stopSeq": 18,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:12:00",
+      "stopSeq": 18,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:49:00",
+      "stopSeq": 49,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:49:00",
+      "stopSeq": 49,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "10:49:00",
+      "stopSeq": 1,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "10:49:00",
+      "stopSeq": 1,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:11:00",
+      "stopSeq": 17,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:11:00",
+      "stopSeq": 17,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:12:00",
+      "stopSeq": 18,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:12:00",
+      "stopSeq": 18,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:49:00",
+      "stopSeq": 49,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:49:00",
+      "stopSeq": 49,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "13:49:00",
+      "stopSeq": 1,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:11:00",
+      "stopSeq": 17,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:12:00",
+      "stopSeq": 18,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:49:00",
+      "stopSeq": 49,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "15:49:00",
+      "stopSeq": 1,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:11:00",
+      "stopSeq": 17,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:12:00",
+      "stopSeq": 18,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:49:00",
+      "stopSeq": 49,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-luitpoldplatz-west": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "08:50:00",
+      "stopSeq": 2,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "08:50:00",
+      "stopSeq": 2,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:13:00",
+      "stopSeq": 19,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:13:00",
+      "stopSeq": 19,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "10:50:00",
+      "stopSeq": 2,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "10:50:00",
+      "stopSeq": 2,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:13:00",
+      "stopSeq": 19,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:13:00",
+      "stopSeq": 19,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "13:50:00",
+      "stopSeq": 2,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:13:00",
+      "stopSeq": 19,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "15:50:00",
+      "stopSeq": 2,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:13:00",
+      "stopSeq": 19,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-untere-vorstadt": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "08:52:00",
+      "stopSeq": 3,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "08:52:00",
+      "stopSeq": 3,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:14:00",
+      "stopSeq": 20,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:14:00",
+      "stopSeq": 20,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "10:52:00",
+      "stopSeq": 3,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "10:52:00",
+      "stopSeq": 3,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:14:00",
+      "stopSeq": 20,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:14:00",
+      "stopSeq": 20,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "13:52:00",
+      "stopSeq": 3,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:14:00",
+      "stopSeq": 20,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "15:52:00",
+      "stopSeq": 3,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:14:00",
+      "stopSeq": 20,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-kirche-mariae-himmelfahrt": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "08:53:00",
+      "stopSeq": 4,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "08:53:00",
+      "stopSeq": 4,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "10:53:00",
+      "stopSeq": 4,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "10:53:00",
+      "stopSeq": 4,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "13:53:00",
+      "stopSeq": 4,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "15:53:00",
+      "stopSeq": 4,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-wallnerlaende": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "08:54:00",
+      "stopSeq": 5,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "08:54:00",
+      "stopSeq": 5,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "10:54:00",
+      "stopSeq": 5,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "10:54:00",
+      "stopSeq": 5,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "13:54:00",
+      "stopSeq": 5,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "15:54:00",
+      "stopSeq": 5,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-deggenauer-str": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "08:55:00",
+      "stopSeq": 6,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "08:55:00",
+      "stopSeq": 6,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "10:55:00",
+      "stopSeq": 6,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "10:55:00",
+      "stopSeq": 6,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "13:55:00",
+      "stopSeq": 6,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "15:55:00",
+      "stopSeq": 6,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-alfred-gorgosch-strasse": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "08:57:00",
+      "stopSeq": 7,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "08:57:00",
+      "stopSeq": 7,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "10:57:00",
+      "stopSeq": 7,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "10:57:00",
+      "stopSeq": 7,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "13:57:00",
+      "stopSeq": 7,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "15:57:00",
+      "stopSeq": 7,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-st-erasmus-str": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "08:58:00",
+      "stopSeq": 8,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "08:58:00",
+      "stopSeq": 8,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "10:58:00",
+      "stopSeq": 8,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "10:58:00",
+      "stopSeq": 8,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "13:58:00",
+      "stopSeq": 8,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "15:58:00",
+      "stopSeq": 8,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-reinprechting": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "08:59:00",
+      "stopSeq": 9,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "08:59:00",
+      "stopSeq": 9,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "10:59:00",
+      "stopSeq": 9,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "10:59:00",
+      "stopSeq": 9,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "13:59:00",
+      "stopSeq": 9,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "15:59:00",
+      "stopSeq": 9,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-sandweg": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:01:00",
+      "stopSeq": 10,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:01:00",
+      "stopSeq": 10,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:01:00",
+      "stopSeq": 10,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:01:00",
+      "stopSeq": 10,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:01:00",
+      "stopSeq": 10,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:01:00",
+      "stopSeq": 10,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-elmering": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:02:00",
+      "stopSeq": 11,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:02:00",
+      "stopSeq": 11,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:02:00",
+      "stopSeq": 11,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:02:00",
+      "stopSeq": 11,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:02:00",
+      "stopSeq": 11,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:02:00",
+      "stopSeq": 11,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-mietzing": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:04:00",
+      "stopSeq": 12,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:04:00",
+      "stopSeq": 12,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:04:00",
+      "stopSeq": 12,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:04:00",
+      "stopSeq": 12,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:04:00",
+      "stopSeq": 12,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:04:00",
+      "stopSeq": 12,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-breitenberg": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:05:00",
+      "stopSeq": 13,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:05:00",
+      "stopSeq": 13,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:05:00",
+      "stopSeq": 13,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:05:00",
+      "stopSeq": 13,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:05:00",
+      "stopSeq": 13,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:05:00",
+      "stopSeq": 13,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-waldschmidtweg": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:07:00",
+      "stopSeq": 14,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:07:00",
+      "stopSeq": 14,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:07:00",
+      "stopSeq": 14,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:07:00",
+      "stopSeq": 14,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:07:00",
+      "stopSeq": 14,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:07:00",
+      "stopSeq": 14,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-noererstr": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:08:00",
+      "stopSeq": 15,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:08:00",
+      "stopSeq": 15,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:08:00",
+      "stopSeq": 15,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:08:00",
+      "stopSeq": 15,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:08:00",
+      "stopSeq": 15,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:08:00",
+      "stopSeq": 15,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-noerdlicher-stadtgraben": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:10:00",
+      "stopSeq": 16,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:10:00",
+      "stopSeq": 16,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:38:00",
+      "stopSeq": 40,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:38:00",
+      "stopSeq": 40,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:48:00",
+      "stopSeq": 48,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:48:00",
+      "stopSeq": 48,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:10:00",
+      "stopSeq": 16,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:10:00",
+      "stopSeq": 16,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:38:00",
+      "stopSeq": 40,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:38:00",
+      "stopSeq": 40,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:48:00",
+      "stopSeq": 48,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:48:00",
+      "stopSeq": 48,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:10:00",
+      "stopSeq": 16,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:38:00",
+      "stopSeq": 40,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:48:00",
+      "stopSeq": 48,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:10:00",
+      "stopSeq": 16,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:38:00",
+      "stopSeq": 40,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:48:00",
+      "stopSeq": 48,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-werftstrasse": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:15:00",
+      "stopSeq": 21,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:15:00",
+      "stopSeq": 21,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:15:00",
+      "stopSeq": 21,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:15:00",
+      "stopSeq": 21,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:15:00",
+      "stopSeq": 21,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:15:00",
+      "stopSeq": 21,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-technische-hochschule": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:16:00",
+      "stopSeq": 22,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:16:00",
+      "stopSeq": 22,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:16:00",
+      "stopSeq": 22,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:16:00",
+      "stopSeq": 22,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:16:00",
+      "stopSeq": 22,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:16:00",
+      "stopSeq": 22,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-stadthallen": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:17:00",
+      "stopSeq": 23,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:17:00",
+      "stopSeq": 23,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:17:00",
+      "stopSeq": 23,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:17:00",
+      "stopSeq": 23,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:17:00",
+      "stopSeq": 23,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:17:00",
+      "stopSeq": 23,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-busbahnhof": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:18:00",
+      "stopSeq": 24,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:18:00",
+      "stopSeq": 24,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:18:00",
+      "stopSeq": 24,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:18:00",
+      "stopSeq": 24,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:18:00",
+      "stopSeq": 24,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:18:00",
+      "stopSeq": 24,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-schachinger-weg": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:19:00",
+      "stopSeq": 25,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:19:00",
+      "stopSeq": 25,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:19:00",
+      "stopSeq": 25,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:19:00",
+      "stopSeq": 25,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:19:00",
+      "stopSeq": 25,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:19:00",
+      "stopSeq": 25,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-hbf": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:20:00",
+      "stopSeq": 26,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:20:00",
+      "stopSeq": 26,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:21:00",
+      "stopSeq": 27,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:21:00",
+      "stopSeq": 27,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:20:00",
+      "stopSeq": 26,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:20:00",
+      "stopSeq": 26,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:21:00",
+      "stopSeq": 27,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:21:00",
+      "stopSeq": 27,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:20:00",
+      "stopSeq": 26,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:21:00",
+      "stopSeq": 27,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:20:00",
+      "stopSeq": 26,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:21:00",
+      "stopSeq": 27,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-egger-martinskirche": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:23:00",
+      "stopSeq": 28,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:23:00",
+      "stopSeq": 28,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:23:00",
+      "stopSeq": 28,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:23:00",
+      "stopSeq": 28,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:23:00",
+      "stopSeq": 28,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:23:00",
+      "stopSeq": 28,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-rusel-prellingerstr": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:25:00",
+      "stopSeq": 29,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:25:00",
+      "stopSeq": 29,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:25:00",
+      "stopSeq": 29,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:25:00",
+      "stopSeq": 29,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:25:00",
+      "stopSeq": 29,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:25:00",
+      "stopSeq": 29,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-muehlenweg": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:26:00",
+      "stopSeq": 30,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:26:00",
+      "stopSeq": 30,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:26:00",
+      "stopSeq": 30,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:26:00",
+      "stopSeq": 30,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:26:00",
+      "stopSeq": 30,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:26:00",
+      "stopSeq": 30,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-friedrich-gauss-strasse": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:27:00",
+      "stopSeq": 31,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:27:00",
+      "stopSeq": 31,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:27:00",
+      "stopSeq": 31,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:27:00",
+      "stopSeq": 31,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:27:00",
+      "stopSeq": 31,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:27:00",
+      "stopSeq": 31,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-perlasberger-str": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:29:00",
+      "stopSeq": 32,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:29:00",
+      "stopSeq": 32,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:29:00",
+      "stopSeq": 32,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:29:00",
+      "stopSeq": 32,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:29:00",
+      "stopSeq": 32,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:29:00",
+      "stopSeq": 32,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-klinikum": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:30:00",
+      "stopSeq": 33,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:30:00",
+      "stopSeq": 33,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:30:00",
+      "stopSeq": 33,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:30:00",
+      "stopSeq": 33,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:30:00",
+      "stopSeq": 33,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:30:00",
+      "stopSeq": 33,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-elisabethenheim": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:31:00",
+      "stopSeq": 34,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:31:00",
+      "stopSeq": 34,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:31:00",
+      "stopSeq": 34,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:31:00",
+      "stopSeq": 34,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:31:00",
+      "stopSeq": 34,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:31:00",
+      "stopSeq": 34,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-birkerlweg": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:32:00",
+      "stopSeq": 35,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:32:00",
+      "stopSeq": 35,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:32:00",
+      "stopSeq": 35,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:32:00",
+      "stopSeq": 35,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:32:00",
+      "stopSeq": 35,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:32:00",
+      "stopSeq": 35,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-oestlicher-stadtgraben": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:33:00",
+      "stopSeq": 36,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:33:00",
+      "stopSeq": 36,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:33:00",
+      "stopSeq": 36,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:33:00",
+      "stopSeq": 36,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:33:00",
+      "stopSeq": 36,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:33:00",
+      "stopSeq": 36,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-luitpoldplatz-ost": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:35:00",
+      "stopSeq": 37,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:35:00",
+      "stopSeq": 37,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:35:00",
+      "stopSeq": 37,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:35:00",
+      "stopSeq": 37,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:35:00",
+      "stopSeq": 37,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:35:00",
+      "stopSeq": 37,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-oberer-stadtplatz-ost": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:36:00",
+      "stopSeq": 38,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:36:00",
+      "stopSeq": 38,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:37:00",
+      "stopSeq": 39,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:37:00",
+      "stopSeq": 39,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:36:00",
+      "stopSeq": 38,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:36:00",
+      "stopSeq": 38,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:37:00",
+      "stopSeq": 39,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:37:00",
+      "stopSeq": 39,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:36:00",
+      "stopSeq": 38,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:37:00",
+      "stopSeq": 39,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:36:00",
+      "stopSeq": 38,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:37:00",
+      "stopSeq": 39,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-kolpingstrasse": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:40:00",
+      "stopSeq": 41,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:40:00",
+      "stopSeq": 41,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:46:00",
+      "stopSeq": 47,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:46:00",
+      "stopSeq": 47,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:40:00",
+      "stopSeq": 41,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:40:00",
+      "stopSeq": 41,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:46:00",
+      "stopSeq": 47,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:46:00",
+      "stopSeq": 47,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:40:00",
+      "stopSeq": 41,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:46:00",
+      "stopSeq": 47,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:40:00",
+      "stopSeq": 41,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:46:00",
+      "stopSeq": 47,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-stadt-au": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:41:00",
+      "stopSeq": 42,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:41:00",
+      "stopSeq": 42,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:45:00",
+      "stopSeq": 46,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:45:00",
+      "stopSeq": 46,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:41:00",
+      "stopSeq": 42,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:41:00",
+      "stopSeq": 42,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:45:00",
+      "stopSeq": 46,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:45:00",
+      "stopSeq": 46,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:41:00",
+      "stopSeq": 42,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:45:00",
+      "stopSeq": 46,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:41:00",
+      "stopSeq": 42,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:45:00",
+      "stopSeq": 46,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-eichenstr": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:41:00",
+      "stopSeq": 43,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:41:00",
+      "stopSeq": 43,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:41:00",
+      "stopSeq": 43,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:41:00",
+      "stopSeq": 43,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:41:00",
+      "stopSeq": 43,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:41:00",
+      "stopSeq": 43,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-buchenstrasse": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:43:00",
+      "stopSeq": 44,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:43:00",
+      "stopSeq": 44,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:43:00",
+      "stopSeq": 44,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:43:00",
+      "stopSeq": 44,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:43:00",
+      "stopSeq": 44,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:43:00",
+      "stopSeq": 44,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ],
+  "deggendorf-hussitenweg": [
+    {
+      "tripId": "4-mo-fr-1",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "09:44:00",
+      "stopSeq": 45,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-1",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "09:44:00",
+      "stopSeq": 45,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-2",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "11:44:00",
+      "stopSeq": 45,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-sa-2",
+      "routeId": "4",
+      "service": "saturday",
+      "time": "11:44:00",
+      "stopSeq": 45,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-3",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "14:44:00",
+      "stopSeq": 45,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    },
+    {
+      "tripId": "4-mo-fr-4",
+      "routeId": "4",
+      "service": "weekday",
+      "time": "16:44:00",
+      "stopSeq": 45,
+      "headsign": "Deggendorf, Oberer Stadtplatz West"
+    }
+  ]
+}
