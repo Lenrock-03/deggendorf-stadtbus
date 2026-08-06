@@ -19,8 +19,13 @@ export interface TripTemplateMode {
 export interface TripLiteralMode {
   id: string;
   service: ServiceId;
-  /** Ein HH:MM Wert pro stops-Eintrag, exakt wie im PDF-Fahrplan gedruckt */
-  times: string[];
+  /**
+   * Ein HH:MM Wert pro stops-Eintrag, exakt wie im PDF-Fahrplan gedruckt.
+   * `null` bedeutet: diese Fahrt bedient diese Haltestelle nicht (z.B. Kurzfahrt/
+   * "short working", die nicht die komplette Ringlinie fährt - kommt bei den letzten
+   * Fahrten mancher Linien vor).
+   */
+  times: (string | null)[];
 }
 
 export type TripInput = TripTemplateMode | TripLiteralMode;

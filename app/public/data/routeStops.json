@@ -1,4 +1,470 @@
 {
+  "1": [
+    {
+      "stopId": "deggendorf-dr-kollmann-str",
+      "name": "Deggendorf, Dr.-Kollmann-Str.",
+      "note": "ab"
+    },
+    {
+      "stopId": "deggendorf-fruehlingsstr",
+      "name": "Deggendorf, Frühlingsstr."
+    },
+    {
+      "stopId": "deggendorf-himmelreich-falkensteinstr",
+      "name": "Deggendorf, Himmelreich Falkensteinstr."
+    },
+    {
+      "stopId": "deggendorf-dreitannenriegel-str",
+      "name": "Deggendorf, Dreitannenriegel-Str."
+    },
+    {
+      "stopId": "deggendorf-falkensteinstr-wohnheim",
+      "name": "Deggendorf, Falkensteinstr. Wohnheim"
+    },
+    {
+      "stopId": "deggendorf-himmelreich-falkensteinstr",
+      "name": "Deggendorf, Himmelreich Falkensteinstr."
+    },
+    {
+      "stopId": "deggendorf-dreisesselweg",
+      "name": "Deggendorf, Dreisesselweg"
+    },
+    {
+      "stopId": "deggendorf-kurt-schumacher-str-hst-1",
+      "name": "Deggendorf, Kurt-Schumacher-Str. Hst. 1"
+    },
+    {
+      "stopId": "deggendorf-dr-reus-str",
+      "name": "Deggendorf, Dr.-Reus-Str."
+    },
+    {
+      "stopId": "deggendorf-egger-str-abzw-aletsberger-str",
+      "name": "Deggendorf, Egger Str. Abzw. Aletsberger Str."
+    },
+    {
+      "stopId": "deggendorf-egger-str-schulzentrum",
+      "name": "Deggendorf, Egger Str./Schulzentrum"
+    },
+    {
+      "stopId": "deggendorf-egger-str-abzw-stadtfeldstr",
+      "name": "Deggendorf, Egger Str. Abzw. Stadtfeldstr."
+    },
+    {
+      "stopId": "deggendorf-egger-str-martinskirche",
+      "name": "Deggendorf, Egger Str./Martinskirche"
+    },
+    {
+      "stopId": "deggendorf-detterstr",
+      "name": "Deggendorf, Detterstr."
+    },
+    {
+      "stopId": "deggendorf-hbf-10",
+      "name": "Deggendorf Hbf 10",
+      "note": "an"
+    },
+    {
+      "stopId": "deggendorf-hbf-10",
+      "name": "Deggendorf Hbf 10",
+      "note": "ab"
+    },
+    {
+      "stopId": "deggendorf-schachinger-weg",
+      "name": "Deggendorf, Schachinger Weg"
+    },
+    {
+      "stopId": "deggendorf-busbhf-9",
+      "name": "Deggendorf, Busbhf. 9"
+    },
+    {
+      "stopId": "deggendorf-stadthallen",
+      "name": "Deggendorf, Stadthallen"
+    },
+    {
+      "stopId": "deggendorf-technische-hochschule",
+      "name": "Deggendorf, Technische Hochschule"
+    },
+    {
+      "stopId": "deggendorf-werftstrasse",
+      "name": "Deggendorf, Werftstraße"
+    },
+    {
+      "stopId": "deggendorf-untere-vorstadt",
+      "name": "Deggendorf, Untere Vorstadt"
+    },
+    {
+      "stopId": "deggendorf-luitpoldplatz-ost",
+      "name": "Deggendorf, Luitpoldplatz Ost"
+    },
+    {
+      "stopId": "deggendorf-oberer-stadtplatz-ost",
+      "name": "Deggendorf, Oberer Stadtplatz Ost"
+    },
+    {
+      "stopId": "deggendorf-noerdlicher-stadtgraben",
+      "name": "Deggendorf, Nördlicher Stadtgraben"
+    },
+    {
+      "stopId": "deggendorf-adalbert-stifter-str",
+      "name": "Deggendorf, Adalbert-Stifter-Str."
+    },
+    {
+      "stopId": "deggendorf-waldschmidtweg",
+      "name": "Deggendorf, Waldschmidtweg"
+    },
+    {
+      "stopId": "deggendorf-sudetenstrasse",
+      "name": "Deggendorf, Sudetenstraße"
+    },
+    {
+      "stopId": "deggendorf-boehmerwaldstr",
+      "name": "Deggendorf, Böhmerwaldstr."
+    },
+    {
+      "stopId": "deggendorf-perlasberger-str",
+      "name": "Deggendorf, Perlasberger Str."
+    },
+    {
+      "stopId": "deggendorf-schleiberg",
+      "name": "Deggendorf, Schleiberg"
+    },
+    {
+      "stopId": "deggendorf-scheuering",
+      "name": "Deggendorf, Scheuering"
+    },
+    {
+      "stopId": "deggendorf-perlasberger-str",
+      "name": "Deggendorf, Perlasberger Str."
+    },
+    {
+      "stopId": "deggendorf-klinikum",
+      "name": "Deggendorf, Klinikum"
+    },
+    {
+      "stopId": "deggendorf-elisabethenheim",
+      "name": "Deggendorf, Elisabethenheim"
+    },
+    {
+      "stopId": "deggendorf-birkerlweg",
+      "name": "Deggendorf, Birkerlweg"
+    },
+    {
+      "stopId": "deggendorf-noerdlicher-stadtgraben",
+      "name": "Deggendorf, Nördlicher Stadtgraben"
+    },
+    {
+      "stopId": "deggendorf-oberer-stadtplatz-west",
+      "name": "Deggendorf, Oberer Stadtplatz West",
+      "note": "an"
+    },
+    {
+      "stopId": "deggendorf-oberer-stadtplatz-west",
+      "name": "Deggendorf, Oberer Stadtplatz West",
+      "note": "ab"
+    },
+    {
+      "stopId": "deggendorf-luitpoldplatz-west",
+      "name": "Deggendorf, Luitpoldplatz West"
+    },
+    {
+      "stopId": "deggendorf-untere-vorstadt",
+      "name": "Deggendorf, Untere Vorstadt"
+    },
+    {
+      "stopId": "deggendorf-werftstrasse",
+      "name": "Deggendorf, Werftstraße"
+    },
+    {
+      "stopId": "deggendorf-technische-hochschule",
+      "name": "Deggendorf, Technische Hochschule"
+    },
+    {
+      "stopId": "deggendorf-stadthallen",
+      "name": "Deggendorf, Stadthallen"
+    },
+    {
+      "stopId": "deggendorf-busbhf-1",
+      "name": "Deggendorf, Busbhf. 1"
+    },
+    {
+      "stopId": "deggendorf-schachinger-weg",
+      "name": "Deggendorf, Schachinger Weg"
+    },
+    {
+      "stopId": "deggendorf-hbf-10",
+      "name": "Deggendorf Hbf 10",
+      "note": "an"
+    },
+    {
+      "stopId": "deggendorf-hbf-10",
+      "name": "Deggendorf Hbf 10",
+      "note": "ab"
+    },
+    {
+      "stopId": "deggendorf-detterstr",
+      "name": "Deggendorf, Detterstr."
+    },
+    {
+      "stopId": "deggendorf-egger-str-martinskirche",
+      "name": "Deggendorf, Egger Str./Martinskirche"
+    },
+    {
+      "stopId": "deggendorf-egger-str-abzw-stadtfeldstr",
+      "name": "Deggendorf, Egger Str. Abzw. Stadtfeldstr."
+    },
+    {
+      "stopId": "deggendorf-egger-str-schulzentrum",
+      "name": "Deggendorf, Egger Str./Schulzentrum"
+    },
+    {
+      "stopId": "deggendorf-aletsberger-str",
+      "name": "Deggendorf, Aletsberger Str."
+    },
+    {
+      "stopId": "deggendorf-dr-kollmann-str",
+      "name": "Deggendorf, Dr.-Kollmann-Str.",
+      "note": "an"
+    }
+  ],
+  "3": [
+    {
+      "stopId": "deggendorf-obere-aletsberger-strasse",
+      "name": "Deggendorf, Obere Aletsberger Straße",
+      "note": "ab"
+    },
+    {
+      "stopId": "deggendorf-eichthalstr",
+      "name": "Deggendorf, Eichthalstr."
+    },
+    {
+      "stopId": "deggendorf-kurt-schumacher-str",
+      "name": "Deggendorf, Kurt-Schumacher-Str."
+    },
+    {
+      "stopId": "deggendorf-dr-reus-str",
+      "name": "Deggendorf, Dr.-Reus-Str."
+    },
+    {
+      "stopId": "deggendorf-godehardstrasse",
+      "name": "Deggendorf, Godehardstraße"
+    },
+    {
+      "stopId": "deggendorf-godehardstrasse-mitte",
+      "name": "Deggendorf, Godehardstraße-Mitte"
+    },
+    {
+      "stopId": "deggendorf-godehard-egger-str",
+      "name": "Deggendorf, Godehard/Egger Str."
+    },
+    {
+      "stopId": "deggendorf-egger-str-abzw-aletsberger-str",
+      "name": "Deggendorf, Egger Str. Abzw. Aletsberger Str."
+    },
+    {
+      "stopId": "deggendorf-egger-str-schulzentrum",
+      "name": "Deggendorf, Egger Str./Schulzentrum"
+    },
+    {
+      "stopId": "deggendorf-egger-str-abzw-stadtfeldstr",
+      "name": "Deggendorf, Egger Str. Abzw. Stadtfeldstr."
+    },
+    {
+      "stopId": "deggendorf-hbf-10",
+      "name": "Deggendorf Hbf 10",
+      "note": "an"
+    },
+    {
+      "stopId": "deggendorf-hbf-10",
+      "name": "Deggendorf Hbf 10",
+      "note": "ab"
+    },
+    {
+      "stopId": "deggendorf-schachinger-weg",
+      "name": "Deggendorf, Schachinger Weg"
+    },
+    {
+      "stopId": "deggendorf-busbhf-9",
+      "name": "Deggendorf, Busbhf. 9"
+    },
+    {
+      "stopId": "deggendorf-stadthallen",
+      "name": "Deggendorf, Stadthallen"
+    },
+    {
+      "stopId": "deggendorf-technische-hochschule",
+      "name": "Deggendorf, Technische Hochschule"
+    },
+    {
+      "stopId": "deggendorf-werftstrasse",
+      "name": "Deggendorf, Werftstraße"
+    },
+    {
+      "stopId": "deggendorf-untere-vorstadt",
+      "name": "Deggendorf, Untere Vorstadt"
+    },
+    {
+      "stopId": "deggendorf-luitpoldplatz-ost",
+      "name": "Deggendorf, Luitpoldplatz Ost"
+    },
+    {
+      "stopId": "deggendorf-oberer-stadtplatz-ost",
+      "name": "Deggendorf, Oberer Stadtplatz Ost"
+    },
+    {
+      "stopId": "deggendorf-bachstrasse",
+      "name": "Deggendorf, Bachstraße"
+    },
+    {
+      "stopId": "deggendorf-loeweckkreuzung",
+      "name": "Deggendorf, Löweckkreuzung"
+    },
+    {
+      "stopId": "deggendorf-rusel-prellingerstr",
+      "name": "Deggendorf, Rusel/Prellingerstr."
+    },
+    {
+      "stopId": "deggendorf-muehlenweg",
+      "name": "Deggendorf, Mühlenweg"
+    },
+    {
+      "stopId": "deggendorf-kieslingstrasse",
+      "name": "Deggendorf, Kieslingstraße"
+    },
+    {
+      "stopId": "deggendorf-kleinsiedlung-madererstr",
+      "name": "Deggendorf, Kleinsiedlung/Madererstr."
+    },
+    {
+      "stopId": "deggendorf-am-waffenhammer",
+      "name": "Deggendorf, Am Waffenhammer"
+    },
+    {
+      "stopId": "deggendorf-kleinwalding",
+      "name": "Deggendorf, Kleinwalding"
+    },
+    {
+      "stopId": "deggendorf-marienthal",
+      "name": "Deggendorf, Marienthal"
+    },
+    {
+      "stopId": "deggendorf-itzlinger-strasse",
+      "name": "Deggendorf, Itzlinger Straße"
+    },
+    {
+      "stopId": "deggendorf-hochsteinstrasse",
+      "name": "Deggendorf, Hochsteinstraße"
+    },
+    {
+      "stopId": "mietraching-schule",
+      "name": "Mietraching, Schule"
+    },
+    {
+      "stopId": "deggendorf-hochsteinstrasse",
+      "name": "Deggendorf, Hochsteinstraße"
+    },
+    {
+      "stopId": "deggendorf-itzlinger-strasse",
+      "name": "Deggendorf, Itzlinger Straße"
+    },
+    {
+      "stopId": "deggendorf-marienthal",
+      "name": "Deggendorf, Marienthal"
+    },
+    {
+      "stopId": "deggendorf-grosswalding",
+      "name": "Deggendorf, Großwalding"
+    },
+    {
+      "stopId": "deggendorf-theodor-eckert-strasse",
+      "name": "Deggendorf, Theodor-Eckert-Straße"
+    },
+    {
+      "stopId": "deggendorf-kleinsiedlung-madererstr",
+      "name": "Deggendorf, Kleinsiedlung/Madererstr."
+    },
+    {
+      "stopId": "deggendorf-muehlenweg",
+      "name": "Deggendorf, Mühlenweg"
+    },
+    {
+      "stopId": "deggendorf-rusel-ulrichsberger-str",
+      "name": "Deggendorf, Rusel/Ulrichsberger Str."
+    },
+    {
+      "stopId": "deggendorf-loeweckkreuzung",
+      "name": "Deggendorf, Löweckkreuzung"
+    },
+    {
+      "stopId": "deggendorf-bachstrasse",
+      "name": "Deggendorf, Bachstraße"
+    },
+    {
+      "stopId": "deggendorf-oberer-stadtplatz-west",
+      "name": "Deggendorf, Oberer Stadtplatz West",
+      "note": "an"
+    },
+    {
+      "stopId": "deggendorf-oberer-stadtplatz-west",
+      "name": "Deggendorf, Oberer Stadtplatz West",
+      "note": "ab"
+    },
+    {
+      "stopId": "deggendorf-luitpoldplatz-west",
+      "name": "Deggendorf, Luitpoldplatz West"
+    },
+    {
+      "stopId": "deggendorf-untere-vorstadt",
+      "name": "Deggendorf, Untere Vorstadt"
+    },
+    {
+      "stopId": "deggendorf-werftstrasse",
+      "name": "Deggendorf, Werftstraße"
+    },
+    {
+      "stopId": "deggendorf-technische-hochschule",
+      "name": "Deggendorf, Technische Hochschule"
+    },
+    {
+      "stopId": "deggendorf-stadthallen",
+      "name": "Deggendorf, Stadthallen"
+    },
+    {
+      "stopId": "deggendorf-busbhf-1",
+      "name": "Deggendorf, Busbhf. 1"
+    },
+    {
+      "stopId": "deggendorf-schachinger-weg",
+      "name": "Deggendorf, Schachinger Weg"
+    },
+    {
+      "stopId": "deggendorf-hbf-10",
+      "name": "Deggendorf Hbf 10"
+    },
+    {
+      "stopId": "deggendorf-egger-str-abzw-stadtfeldstr",
+      "name": "Deggendorf, Egger Str. Abzw. Stadtfeldstr."
+    },
+    {
+      "stopId": "deggendorf-egger-str-schulzentrum",
+      "name": "Deggendorf, Egger Str./Schulzentrum"
+    },
+    {
+      "stopId": "deggendorf-aletsberger-str",
+      "name": "Deggendorf, Aletsberger Str."
+    },
+    {
+      "stopId": "deggendorf-kurt-schumacher-str",
+      "name": "Deggendorf, Kurt-Schumacher-Str."
+    },
+    {
+      "stopId": "deggendorf-eichthalstr",
+      "name": "Deggendorf, Eichthalstr."
+    },
+    {
+      "stopId": "deggendorf-obere-aletsberger-strasse",
+      "name": "Deggendorf, Obere Aletsberger Straße",
+      "note": "an"
+    }
+  ],
   "4": [
     {
       "stopId": "deggendorf-oberer-stadtplatz-west",

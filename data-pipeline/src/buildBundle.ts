@@ -94,7 +94,6 @@ function main() {
     }
 
     const stopIds = line.stops.map((s) => stopIdFor(s.name));
-    const headsign = line.stops[line.stops.length - 1].name;
     routeStopSequence[line.id] = line.stops.map((s, i) => ({
       stopId: stopIds[i],
       name: s.name,
@@ -102,7 +101,7 @@ function main() {
     }));
 
     for (const trip of line.trips) {
-      let times: string[];
+      let times: (string | null)[];
 
       if ("times" in trip) {
         if (trip.times.length !== line.stops.length) {
@@ -111,7 +110,7 @@ function main() {
           );
           continue;
         }
-        times = trip.times.map(toHms);
+        times = trip.times.map((t) => (t === null ? null : toHms(t)));
       } else {
         if (!line.offsetsMin) {
           validationErrors.push(
@@ -128,7 +127,20 @@ function main() {
         times = line.offsetsMin.map((off) => addMinutes(trip.start, off));
       }
 
+      // Fahrtziel dieser konkreten Fahrt = letzte Haltestelle, die sie tatsächlich bedient
+      // (bei Kurzfahrten/"short workings" endet das ggf. vor dem Ende der Ringlinie).
+      let lastServedIdx = -1;
+      times.forEach((t, i) => {
+        if (t !== null) lastServedIdx = i;
+      });
+      if (lastServedIdx === -1) {
+        validationErrors.push(`Linie ${line.id}, Fahrt ${trip.id}: keine einzige Zeit vorhanden`);
+        continue;
+      }
+      const headsign = line.stops[lastServedIdx].name;
+
       times.forEach((time, i) => {
+        if (time === null) return;
         const stopId = stopIds[i];
         const dep: DepartureOut = {
           tripId: `${line.id}-${trip.id}`,
