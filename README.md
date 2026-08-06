@@ -21,13 +21,14 @@ in `data-pipeline/fallback-data/` (gleiches Schema wie GTFS, damit die App quell
 
 Fahrplandaten "ohne Gewähr" – im Zweifel gilt immer der offizielle Fahrplan.
 
-## Status (v1.0.0)
+## Status
 
-- ✅ Linien 1, 3, 4 vollständig (Werktags- und Samstagsfahrplan, verifiziert gegen die PDFs)
-- ⏳ Linie 2 (Hirzau – Rörerstraße) hat echte Streckenverzweigungen, Schultag-Sonderfahrten
-  (`*S`) und Bedarfshalte (`AB`), die für eine sicher korrekte automatisierte Auswertung
-  eine genauere manuelle Prüfung brauchen – bewusst zurückgestellt, siehe
-  `data-pipeline/SPIKE_FINDINGS.md`
+- ✅ Alle 4 Linien vollständig (Werktags- und Samstagsfahrplan, verifiziert gegen die PDFs)
+- Linie 2 (Hirzau – Rörerstraße) hat echte Streckenverzweigungen (Großwalding-Ast) und
+  zwei Schultag-Sonderfahrten (im Fahrplan mit „S" markiert) – diese sind ohne
+  Schultage-Filterung als normale Fahrten enthalten; ebenso werden „nur Bedarf zum
+  Aussteigen"-Halte (AB) wie normale Abfahrten angezeigt. Details siehe
+  `data-pipeline/SPIKE_FINDINGS.md`.
 - Kein Routenplaner, keine Favoriten, kein garantierter Offline-Modus, kein Live-Tracking
   (siehe Plan für die v2-Roadmap)
 

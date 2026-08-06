@@ -18,7 +18,7 @@ TIME_RE = re.compile(r"\d{2}:\d{2}")
 # für v1 ignoriert (Zeit wird trotzdem übernommen, siehe SPIKE_FINDINGS/Linie-Notes).
 TIME_WITH_SUFFIX_RE = re.compile(r"\d{2}:\d{2}(?:\*?[A-Z]{1,2})?")
 MARKER_RE = re.compile(r"\b(an|ab)\b")
-SKIP_NAME_SUBSTRINGS = ["Westl. Stadtg., GS Angermühle  ab"]  # isolierte Schultag-Sonderzeile (nur 2 "S"-Fahrten), s. Notes
+SKIP_NAME_SUBSTRINGS = []  # (frei für zeilenspezifische Ausnahmen, aktuell keine nötig)
 
 
 def cluster_columns(all_positions, gap_threshold=4):
@@ -65,9 +65,12 @@ def main():
         matches = [(m.start(), m.group(0)[:5]) for m in TIME_WITH_SUFFIX_RE.finditer(line)]
         first_time_pos = matches[0][0]
         prefix = line[:first_time_pos]
-        m = MARKER_RE.search(prefix[-6:])  # Marker steht direkt vor der ersten Zeit
+        # Marker steht direkt vor der ersten (tatsächlich vorhandenen) Zeit, ggf. mit viel
+        # Whitespace dazwischen falls Spalte 0 bei dieser Fahrt fehlt (z.B. Kurzfahrt) -
+        # daher am Ende des gesamten prefix suchen, nicht nur in den letzten paar Zeichen.
+        m = re.search(r"\b(an|ab)\s*$", prefix)
         note = m.group(1) if m else None
-        name_part = prefix[: len(prefix) - (len(prefix[-6:]) - m.start()) if m else len(prefix)] if m else prefix
+        name_part = prefix[: m.start()] if m else prefix
         name = name_part.strip()
         name = re.sub(r"^Stammstrecke\s+", "", name)
         if not name:

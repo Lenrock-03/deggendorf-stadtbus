@@ -24,20 +24,6 @@ export default function LineOverview() {
           </li>
         ))}
       </ul>
-      {!routes.some((r) => r.id === "2") && (
-        <p className="muted" style={{ marginTop: "1rem" }}>
-          Linie 2 (Hirzau – Rörerstraße) hat mehrere Verzweigungen und Schultag-Sonderfahrten und wird
-          in einer späteren Version ergänzt. Aktueller Fahrplan:{" "}
-          <a
-            href="https://www.deggendorf.de/leben/mobilitaet-verkehr/stadtbusverkehr"
-            target="_blank"
-            rel="noreferrer"
-          >
-            deggendorf.de
-          </a>
-          .
-        </p>
-      )}
     </section>
   );
 }

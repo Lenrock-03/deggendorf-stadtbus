@@ -16,9 +16,20 @@ META = {
         "color": "6a1b9a",
         "validFrom": "2025-01-01",
     },
+    "2": {
+        "shortName": "2",
+        "longName": "Hirzau - Stammstrecke - Rörerstraße und zurück",
+        "color": "2e7d32",
+        "validFrom": "2025-01-01",
+    },
 }
 
 NOTES = "Gültig an Werktagen. An Sonn- und Feiertagen kein Verkehr. An Heiligabend und Silvester Verkehr wie am Samstag, außer wenn der 24.12./31.12. auf einen Sonntag fällt (dann kein Verkehr)."
+NOTES_LINE2_SUFFIX = (
+    " Zwei Werktagsfahrten verkehren nur an Schultagen (im offiziellen Fahrplan mit \"S\" markiert)"
+    " - hier ohne Schultage-Filterung enthalten. Einzelne Haltestellen sind laut Fahrplan"
+    " \"nur Bedarf zum Aussteigen\" (AB) - wird hier wie eine normale Abfahrt angezeigt."
+)
 
 
 def main():
@@ -57,7 +68,7 @@ def main():
         "validFrom": meta["validFrom"],
         "source": "manual-pdf",
         "sourceFile": f"source-pdfs/linie-{line_id}.pdf",
-        "notes": NOTES,
+        "notes": NOTES + (NOTES_LINE2_SUFFIX if line_id == "2" else ""),
         "stops": stops_out,
         "trips": trips,
     }

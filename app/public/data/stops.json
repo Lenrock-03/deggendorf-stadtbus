@@ -148,28 +148,40 @@
     "name": "Deggendorf, Aletsberger Str."
   },
   {
-    "id": "deggendorf-obere-aletsberger-strasse",
-    "name": "Deggendorf, Obere Aletsberger Straße"
+    "id": "deggendorf-westl-stadtg-gs-angermuehle",
+    "name": "Deggendorf, Westl. Stadtg., GS Angermühle"
   },
   {
-    "id": "deggendorf-eichthalstr",
-    "name": "Deggendorf, Eichthalstr."
+    "id": "deggendorf-hopfenstrasse",
+    "name": "Deggendorf, Hopfenstraße"
   },
   {
-    "id": "deggendorf-kurt-schumacher-str",
-    "name": "Deggendorf, Kurt-Schumacher-Str."
+    "id": "deggendorf-an-der-leiten",
+    "name": "Deggendorf, An der Leiten"
   },
   {
-    "id": "deggendorf-godehardstrasse",
-    "name": "Deggendorf, Godehardstraße"
+    "id": "deggendorf-irlfeldstr",
+    "name": "Deggendorf, Irlfeldstr."
   },
   {
-    "id": "deggendorf-godehardstrasse-mitte",
-    "name": "Deggendorf, Godehardstraße-Mitte"
+    "id": "deggendorf-jaegerstr",
+    "name": "Deggendorf, Jägerstr."
   },
   {
-    "id": "deggendorf-godehard-egger-str",
-    "name": "Deggendorf, Godehard/Egger Str."
+    "id": "deggendorf-georg-bauer-str",
+    "name": "Deggendorf, Georg-Bauer-Str."
+  },
+  {
+    "id": "deggendorf-auf-der-windschnur",
+    "name": "Deggendorf, Auf der Windschnur"
+  },
+  {
+    "id": "deggendorf-hirzau",
+    "name": "Deggendorf, Hirzau"
+  },
+  {
+    "id": "deggendorf-mettener-unterfuehrung",
+    "name": "Deggendorf, Mettener/Unterführung"
   },
   {
     "id": "deggendorf-bachstrasse",
@@ -204,6 +216,90 @@
     "name": "Deggendorf, Kleinwalding"
   },
   {
+    "id": "deggendorf-grosswalding",
+    "name": "Deggendorf, Großwalding"
+  },
+  {
+    "id": "deggendorf-theodor-eckert-strasse",
+    "name": "Deggendorf, Theodor-Eckert-Straße"
+  },
+  {
+    "id": "deggendorf-pater-fink-strasse",
+    "name": "Deggendorf, Pater-Fink-Straße"
+  },
+  {
+    "id": "deggendorf-maderer-str",
+    "name": "Deggendorf, Maderer Str."
+  },
+  {
+    "id": "deggendorf-roererstr",
+    "name": "Deggendorf, Rörerstr."
+  },
+  {
+    "id": "deggendorf-danziger-strasse",
+    "name": "Deggendorf, Danziger Straße"
+  },
+  {
+    "id": "deggendorf-dr-grashey-strasse",
+    "name": "Deggendorf, Dr.-Grashey-Straße"
+  },
+  {
+    "id": "deggendorf-stettiner-strasse",
+    "name": "Deggendorf, Stettiner Straße"
+  },
+  {
+    "id": "deggendorf-land-au",
+    "name": "Deggendorf, Land-Au"
+  },
+  {
+    "id": "deggendorf-graflinger-str-abzw-land-au",
+    "name": "Deggendorf, Graflinger Str. Abzw. Land-Au"
+  },
+  {
+    "id": "deggendorf-graflinger-str-kreisverkehr",
+    "name": "Deggendorf, Graflinger Str. Kreisverkehr"
+  },
+  {
+    "id": "deggendorf-graflinger-str-radiologenze",
+    "name": "Deggendorf, Graflinger Str. Radiologenze"
+  },
+  {
+    "id": "deggendorf-graflinger-str-abzw-trat",
+    "name": "Deggendorf, Graflinger Str. Abzw. Trat"
+  },
+  {
+    "id": "deggendorf-stadtpark-ri-kon-adenauer",
+    "name": "Deggendorf, Stadtpark, Ri Kon.-Adenauer"
+  },
+  {
+    "id": "deggendorf-angermuehle-schule",
+    "name": "Deggendorf, Angermühle Schule"
+  },
+  {
+    "id": "deggendorf-obere-aletsberger-strasse",
+    "name": "Deggendorf, Obere Aletsberger Straße"
+  },
+  {
+    "id": "deggendorf-eichthalstr",
+    "name": "Deggendorf, Eichthalstr."
+  },
+  {
+    "id": "deggendorf-kurt-schumacher-str",
+    "name": "Deggendorf, Kurt-Schumacher-Str."
+  },
+  {
+    "id": "deggendorf-godehardstrasse",
+    "name": "Deggendorf, Godehardstraße"
+  },
+  {
+    "id": "deggendorf-godehardstrasse-mitte",
+    "name": "Deggendorf, Godehardstraße-Mitte"
+  },
+  {
+    "id": "deggendorf-godehard-egger-str",
+    "name": "Deggendorf, Godehard/Egger Str."
+  },
+  {
     "id": "deggendorf-marienthal",
     "name": "Deggendorf, Marienthal"
   },
@@ -218,14 +314,6 @@
   {
     "id": "mietraching-schule",
     "name": "Mietraching, Schule"
-  },
-  {
-    "id": "deggendorf-grosswalding",
-    "name": "Deggendorf, Großwalding"
-  },
-  {
-    "id": "deggendorf-theodor-eckert-strasse",
-    "name": "Deggendorf, Theodor-Eckert-Straße"
   },
   {
     "id": "deggendorf-rusel-ulrichsberger-str",
