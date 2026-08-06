@@ -146,6 +146,102 @@ button {
   min-width: 3.2rem;
 }
 
+/* Liniendetail: Fahrtverlauf als Zeitleiste (Startziel-Grafik im Nahverkehr-Stil) */
+.trip-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.trip-timeline li {
+  position: relative;
+}
+
+.trip-timeline .tt-row {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  min-height: 2rem;
+  text-decoration: none;
+  color: inherit;
+  padding: 0.1rem 0;
+}
+
+.trip-timeline .tt-time {
+  width: 3rem;
+  flex-shrink: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.trip-timeline .tt-rail {
+  position: relative;
+  width: 1.1rem;
+  align-self: stretch;
+  display: flex;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.trip-timeline .tt-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-top: 0.72rem;
+  border-radius: 50%;
+  background: var(--line-color);
+  position: relative;
+  z-index: 1;
+}
+
+/* Verbindungslinie: von der Mitte dieses Punkts bis zur Mitte des nächsten (= 1 Zeilenhöhe tiefer) */
+.trip-timeline li:not(:last-child) .tt-rail::after {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: var(--line-color);
+  transform: translateX(-50%);
+}
+
+.trip-timeline .tt-name {
+  font-size: 0.92rem;
+}
+
+.trip-timeline li.endpoint .tt-dot {
+  width: 0.85rem;
+  height: 0.85rem;
+  margin-top: 0.575rem;
+  background: var(--color-bg);
+  border: 2.5px solid var(--line-color);
+}
+
+.trip-timeline li.endpoint .tt-time {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: inherit;
+}
+
+.trip-timeline li.endpoint .tt-name {
+  font-weight: 700;
+}
+
+.trip-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.2rem;
+}
+
+.trip-header-sub {
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  margin: 0 0 1rem 0;
+}
+
 footer.attribution {
   margin-top: 2rem;
   padding-top: 1rem;

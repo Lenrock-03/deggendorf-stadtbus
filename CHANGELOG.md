@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.3.0
+
+- Liniendetail komplett neu als Fahrtverlauf-Zeitleiste (Nahverkehr-Kartenstil: farbige
+  Linie mit Punkten, Start/Ziel groß/fett hervorgehoben, Uhrzeit pro Halt)
+- Abfahrt wählbar (Dropdown aller Fahrten der Linie), Standardauswahl = nächste heute
+  noch aktive Fahrt
+- Kurzfahrten ("short workings", z.B. Linie 1 letzte Fahrt) zeigen korrekt nur die
+  tatsächlich bediente Teilstrecke statt der vollen Ringlinie
+
 ## v1.2.0
 
 - "Standort verwenden" in der Haltestellensuche: sortiert Haltestellen per Browser-
