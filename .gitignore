@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+
+# GTFS-Rohdaten sind zu groß fürs Repo und werden bei Bedarf neu geladen
+data-pipeline/raw/
+data-pipeline/*.zip
