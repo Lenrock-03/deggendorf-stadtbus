@@ -20,3 +20,28 @@ CC-BY 4.0, kostenlos, unbegrenzt). Falls Artmeier/Deggendorf dort nicht abgedeck
 in `data-pipeline/fallback-data/` (gleiches Schema wie GTFS, damit die App quellen-unabhängig bleibt).
 
 Fahrplandaten "ohne Gewähr" – im Zweifel gilt immer der offizielle Fahrplan.
+
+## Status (v1.0.0)
+
+- ✅ Linien 1, 3, 4 vollständig (Werktags- und Samstagsfahrplan, verifiziert gegen die PDFs)
+- ⏳ Linie 2 (Hirzau – Rörerstraße) hat echte Streckenverzweigungen, Schultag-Sonderfahrten
+  (`*S`) und Bedarfshalte (`AB`), die für eine sicher korrekte automatisierte Auswertung
+  eine genauere manuelle Prüfung brauchen – bewusst zurückgestellt, siehe
+  `data-pipeline/SPIKE_FINDINGS.md`
+- Kein Routenplaner, keine Favoriten, kein garantierter Offline-Modus, kein Live-Tracking
+  (siehe Plan für die v2-Roadmap)
+
+## Entwicklung
+
+```bash
+cd data-pipeline && npm install && npm run build   # erzeugt app/public/data/*.json
+cd ../app && npm install && npm run dev             # http://localhost:5173
+npm test                                             # Vitest (Kalenderlogik)
+npm run build && npm run preview                     # Produktions-Build lokal prüfen
+```
+
+## Deployment
+
+GitHub Actions (`.github/workflows/deploy.yml`, `data-refresh.yml`) bauen und deployen
+automatisch auf GitHub Pages, sobald das Repo auf GitHub liegt und Pages (Settings → Pages →
+Source: GitHub Actions) aktiviert ist.

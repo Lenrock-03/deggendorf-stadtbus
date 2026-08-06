@@ -24,6 +24,7 @@ export default function StopSearch() {
       <input
         className="stop-search-input"
         type="search"
+        aria-label="Haltestelle suchen"
         placeholder="z.B. Klinikum, Busbahnhof, Luitpoldplatz …"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
