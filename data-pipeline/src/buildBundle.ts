@@ -53,9 +53,18 @@ function loadLines(): LineInput[] {
     .sort((a, b) => a.id.localeCompare(b.id, "de", { numeric: true }));
 }
 
+function loadStopCoords(): Record<string, { lat: number; lon: number }> {
+  try {
+    return JSON.parse(readFileSync(join(FALLBACK_DIR, "stop-coords.json"), "utf-8"));
+  } catch {
+    return {};
+  }
+}
+
 function main() {
   const agency = loadAgency();
   const lines = loadLines();
+  const stopCoords = loadStopCoords();
 
   const routes: RouteOut[] = [];
   const stopIdByName = new Map<string, string>();
@@ -73,7 +82,8 @@ function main() {
     if (!id) {
       id = slugify(name);
       stopIdByName.set(name, id);
-      stops.push({ id, name });
+      const coords = stopCoords[name];
+      stops.push({ id, name, ...(coords ? { lat: coords.lat, lon: coords.lon } : {}) });
     }
     return id;
   }
@@ -174,7 +184,7 @@ function main() {
     source: "manual-pdf",
     disclaimer:
       "Fahrplandaten manuell aus den offiziellen PDF-Fahrplänen der Artmeier Bus GmbH & Co. KG übertragen. Ohne Gewähr – im Zweifel gilt der offizielle Aushangfahrplan.",
-    attribution: `Datenquelle: ${agency.name} (${agency.url})`,
+    attribution: `Fahrplandaten: ${agency.name} (${agency.url}). Haltestellen-Standorte: © OpenStreetMap-Mitwirkende, ODbL (openstreetmap.org/copyright).`,
     lineCount: lines.length,
   };
 

@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "build": "tsx src/buildBundle.ts",
-    "validate": "tsx src/validate.ts"
+    "validate": "tsx src/validate.ts",
+    "fetch-coords": "tsx src/fetchStopCoords.ts"
   },
   "devDependencies": {
     "tsx": "^4.19.0",

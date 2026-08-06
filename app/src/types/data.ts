@@ -8,6 +8,9 @@ export interface RouteData {
 export interface StopData {
   id: string;
   name: string;
+  /** Aus OpenStreetMap, fehlt bei ~7% der Haltestellen */
+  lat?: number;
+  lon?: number;
 }
 
 export type ServiceId = "weekday" | "saturday";

@@ -1,15 +1,21 @@
 [
   {
     "id": "deggendorf-dr-kollmann-str",
-    "name": "Deggendorf, Dr.-Kollmann-Str."
+    "name": "Deggendorf, Dr.-Kollmann-Str.",
+    "lat": 48.8443269,
+    "lon": 12.9503647
   },
   {
     "id": "deggendorf-fruehlingsstr",
-    "name": "Deggendorf, Frühlingsstr."
+    "name": "Deggendorf, Frühlingsstr.",
+    "lat": 48.8426307,
+    "lon": 12.946746
   },
   {
     "id": "deggendorf-himmelreich-falkensteinstr",
-    "name": "Deggendorf, Himmelreich Falkensteinstr."
+    "name": "Deggendorf, Himmelreich Falkensteinstr.",
+    "lat": 48.84394865,
+    "lon": 12.944640549999999
   },
   {
     "id": "deggendorf-dreitannenriegel-str",
@@ -17,111 +23,165 @@
   },
   {
     "id": "deggendorf-falkensteinstr-wohnheim",
-    "name": "Deggendorf, Falkensteinstr. Wohnheim"
+    "name": "Deggendorf, Falkensteinstr. Wohnheim",
+    "lat": 48.8422764,
+    "lon": 12.9429165
   },
   {
     "id": "deggendorf-dreisesselweg",
-    "name": "Deggendorf, Dreisesselweg"
+    "name": "Deggendorf, Dreisesselweg",
+    "lat": 48.8438914,
+    "lon": 12.9468712
   },
   {
     "id": "deggendorf-kurt-schumacher-str-hst-1",
-    "name": "Deggendorf, Kurt-Schumacher-Str. Hst. 1"
+    "name": "Deggendorf, Kurt-Schumacher-Str. Hst. 1",
+    "lat": 48.8455597,
+    "lon": 12.9483634
   },
   {
     "id": "deggendorf-dr-reus-str",
-    "name": "Deggendorf, Dr.-Reus-Str."
+    "name": "Deggendorf, Dr.-Reus-Str.",
+    "lat": 48.8473888,
+    "lon": 12.9473661
   },
   {
     "id": "deggendorf-egger-str-abzw-aletsberger-str",
-    "name": "Deggendorf, Egger Str. Abzw. Aletsberger Str."
+    "name": "Deggendorf, Egger Str. Abzw. Aletsberger Str.",
+    "lat": 48.84588855,
+    "lon": 12.950410900000001
   },
   {
     "id": "deggendorf-egger-str-schulzentrum",
-    "name": "Deggendorf, Egger Str./Schulzentrum"
+    "name": "Deggendorf, Egger Str./Schulzentrum",
+    "lat": 48.84501582,
+    "lon": 12.954129939999998
   },
   {
     "id": "deggendorf-egger-str-abzw-stadtfeldstr",
-    "name": "Deggendorf, Egger Str. Abzw. Stadtfeldstr."
+    "name": "Deggendorf, Egger Str. Abzw. Stadtfeldstr.",
+    "lat": 48.8440654,
+    "lon": 12.955089399999999
   },
   {
     "id": "deggendorf-egger-str-martinskirche",
-    "name": "Deggendorf, Egger Str./Martinskirche"
+    "name": "Deggendorf, Egger Str./Martinskirche",
+    "lat": 48.842234950000005,
+    "lon": 12.9565521
   },
   {
     "id": "deggendorf-detterstr",
-    "name": "Deggendorf, Detterstr."
+    "name": "Deggendorf, Detterstr.",
+    "lat": 48.84008115,
+    "lon": 12.95390135
   },
   {
     "id": "deggendorf-hbf-10",
-    "name": "Deggendorf Hbf 10"
+    "name": "Deggendorf Hbf 10",
+    "lat": 48.83850599,
+    "lon": 12.949746330000002
   },
   {
     "id": "deggendorf-schachinger-weg",
-    "name": "Deggendorf, Schachinger Weg"
+    "name": "Deggendorf, Schachinger Weg",
+    "lat": 48.83658005,
+    "lon": 12.9538294
   },
   {
     "id": "deggendorf-busbhf-9",
-    "name": "Deggendorf, Busbhf. 9"
+    "name": "Deggendorf, Busbhf. 9",
+    "lat": 48.8326606375,
+    "lon": 12.957407112499999
   },
   {
     "id": "deggendorf-stadthallen",
-    "name": "Deggendorf, Stadthallen"
+    "name": "Deggendorf, Stadthallen",
+    "lat": 48.8308949,
+    "lon": 12.9576069
   },
   {
     "id": "deggendorf-technische-hochschule",
-    "name": "Deggendorf, Technische Hochschule"
+    "name": "Deggendorf, Technische Hochschule",
+    "lat": 48.82927015,
+    "lon": 12.95658435
   },
   {
     "id": "deggendorf-werftstrasse",
-    "name": "Deggendorf, Werftstraße"
+    "name": "Deggendorf, Werftstraße",
+    "lat": 48.82866595,
+    "lon": 12.9604675
   },
   {
     "id": "deggendorf-untere-vorstadt",
-    "name": "Deggendorf, Untere Vorstadt"
+    "name": "Deggendorf, Untere Vorstadt",
+    "lat": 48.829243500000004,
+    "lon": 12.963369400000001
   },
   {
     "id": "deggendorf-luitpoldplatz-ost",
-    "name": "Deggendorf, Luitpoldplatz Ost"
+    "name": "Deggendorf, Luitpoldplatz Ost",
+    "lat": 48.8319779,
+    "lon": 12.9621828
   },
   {
     "id": "deggendorf-oberer-stadtplatz-ost",
-    "name": "Deggendorf, Oberer Stadtplatz Ost"
+    "name": "Deggendorf, Oberer Stadtplatz Ost",
+    "lat": 48.834549550000006,
+    "lon": 12.962124549999999
   },
   {
     "id": "deggendorf-noerdlicher-stadtgraben",
-    "name": "Deggendorf, Nördlicher Stadtgraben"
+    "name": "Deggendorf, Nördlicher Stadtgraben",
+    "lat": 48.8343021,
+    "lon": 12.9646565
   },
   {
     "id": "deggendorf-adalbert-stifter-str",
-    "name": "Deggendorf, Adalbert-Stifter-Str."
+    "name": "Deggendorf, Adalbert-Stifter-Str.",
+    "lat": 48.8356248,
+    "lon": 12.97118
   },
   {
     "id": "deggendorf-waldschmidtweg",
-    "name": "Deggendorf, Waldschmidtweg"
+    "name": "Deggendorf, Waldschmidtweg",
+    "lat": 48.83572555,
+    "lon": 12.975828799999999
   },
   {
     "id": "deggendorf-sudetenstrasse",
-    "name": "Deggendorf, Sudetenstraße"
+    "name": "Deggendorf, Sudetenstraße",
+    "lat": 48.83701069999999,
+    "lon": 12.976190500000001
   },
   {
     "id": "deggendorf-boehmerwaldstr",
-    "name": "Deggendorf, Böhmerwaldstr."
+    "name": "Deggendorf, Böhmerwaldstr.",
+    "lat": 48.8385143,
+    "lon": 12.9756486
   },
   {
     "id": "deggendorf-perlasberger-str",
-    "name": "Deggendorf, Perlasberger Str."
+    "name": "Deggendorf, Perlasberger Str.",
+    "lat": 48.84029545,
+    "lon": 12.975307950000001
   },
   {
     "id": "deggendorf-schleiberg",
-    "name": "Deggendorf, Schleiberg"
+    "name": "Deggendorf, Schleiberg",
+    "lat": 48.8403452,
+    "lon": 12.9830016
   },
   {
     "id": "deggendorf-scheuering",
-    "name": "Deggendorf, Scheuering"
+    "name": "Deggendorf, Scheuering",
+    "lat": 48.8419919,
+    "lon": 12.9879273
   },
   {
     "id": "deggendorf-klinikum",
-    "name": "Deggendorf, Klinikum"
+    "name": "Deggendorf, Klinikum",
+    "lat": 48.83927665,
+    "lon": 12.972597100000002
   },
   {
     "id": "deggendorf-elisabethenheim",
@@ -129,55 +189,81 @@
   },
   {
     "id": "deggendorf-birkerlweg",
-    "name": "Deggendorf, Birkerlweg"
+    "name": "Deggendorf, Birkerlweg",
+    "lat": 48.837026,
+    "lon": 12.9713294
   },
   {
     "id": "deggendorf-oberer-stadtplatz-west",
-    "name": "Deggendorf, Oberer Stadtplatz West"
+    "name": "Deggendorf, Oberer Stadtplatz West",
+    "lat": 48.834549550000006,
+    "lon": 12.962124549999999
   },
   {
     "id": "deggendorf-luitpoldplatz-west",
-    "name": "Deggendorf, Luitpoldplatz West"
+    "name": "Deggendorf, Luitpoldplatz West",
+    "lat": 48.8320486,
+    "lon": 12.9619405
   },
   {
     "id": "deggendorf-busbhf-1",
-    "name": "Deggendorf, Busbhf. 1"
+    "name": "Deggendorf, Busbhf. 1",
+    "lat": 48.8326606375,
+    "lon": 12.957407112499999
   },
   {
     "id": "deggendorf-aletsberger-str",
-    "name": "Deggendorf, Aletsberger Str."
+    "name": "Deggendorf, Aletsberger Str.",
+    "lat": 48.84588855,
+    "lon": 12.950410900000001
   },
   {
     "id": "deggendorf-westl-stadtg-gs-angermuehle",
-    "name": "Deggendorf, Westl. Stadtg., GS Angermühle"
+    "name": "Deggendorf, Westl. Stadtg., GS Angermühle",
+    "lat": 48.8354994,
+    "lon": 12.9589508
   },
   {
     "id": "deggendorf-hopfenstrasse",
-    "name": "Deggendorf, Hopfenstraße"
+    "name": "Deggendorf, Hopfenstraße",
+    "lat": 48.8363743,
+    "lon": 12.9417864
   },
   {
     "id": "deggendorf-an-der-leiten",
-    "name": "Deggendorf, An der Leiten"
+    "name": "Deggendorf, An der Leiten",
+    "lat": 48.8372803,
+    "lon": 12.9376661
   },
   {
     "id": "deggendorf-irlfeldstr",
-    "name": "Deggendorf, Irlfeldstr."
+    "name": "Deggendorf, Irlfeldstr.",
+    "lat": 48.8393977,
+    "lon": 12.9407558
   },
   {
     "id": "deggendorf-jaegerstr",
-    "name": "Deggendorf, Jägerstr."
+    "name": "Deggendorf, Jägerstr.",
+    "lat": 48.8389002,
+    "lon": 12.9448432
   },
   {
     "id": "deggendorf-georg-bauer-str",
-    "name": "Deggendorf, Georg-Bauer-Str."
+    "name": "Deggendorf, Georg-Bauer-Str.",
+    "lat": 48.8388504,
+    "lon": 12.9467983
   },
   {
     "id": "deggendorf-auf-der-windschnur",
-    "name": "Deggendorf, Auf der Windschnur"
+    "name": "Deggendorf, Auf der Windschnur",
+    "lat": 48.8371295,
+    "lon": 12.946921
   },
   {
     "id": "deggendorf-hirzau",
-    "name": "Deggendorf, Hirzau"
+    "name": "Deggendorf, Hirzau",
+    "lat": 48.8362578,
+    "lon": 12.9441145
   },
   {
     "id": "deggendorf-mettener-unterfuehrung",
@@ -185,47 +271,69 @@
   },
   {
     "id": "deggendorf-bachstrasse",
-    "name": "Deggendorf, Bachstraße"
+    "name": "Deggendorf, Bachstraße",
+    "lat": 48.838413149999994,
+    "lon": 12.96075185
   },
   {
     "id": "deggendorf-loeweckkreuzung",
-    "name": "Deggendorf, Löweckkreuzung"
+    "name": "Deggendorf, Löweckkreuzung",
+    "lat": 48.841404600000004,
+    "lon": 12.9595773
   },
   {
     "id": "deggendorf-rusel-prellingerstr",
-    "name": "Deggendorf, Rusel/Prellingerstr."
+    "name": "Deggendorf, Rusel/Prellingerstr.",
+    "lat": 48.8436388,
+    "lon": 12.9644304
   },
   {
     "id": "deggendorf-muehlenweg",
-    "name": "Deggendorf, Mühlenweg"
+    "name": "Deggendorf, Mühlenweg",
+    "lat": 48.844302850000005,
+    "lon": 12.9670164
   },
   {
     "id": "deggendorf-kieslingstrasse",
-    "name": "Deggendorf, Kieslingstraße"
+    "name": "Deggendorf, Kieslingstraße",
+    "lat": 48.8448734,
+    "lon": 12.9704731
   },
   {
     "id": "deggendorf-kleinsiedlung-madererstr",
-    "name": "Deggendorf, Kleinsiedlung/Madererstr."
+    "name": "Deggendorf, Kleinsiedlung/Madererstr.",
+    "lat": 48.84578025,
+    "lon": 12.973474150000001
   },
   {
     "id": "deggendorf-am-waffenhammer",
-    "name": "Deggendorf, Am Waffenhammer"
+    "name": "Deggendorf, Am Waffenhammer",
+    "lat": 48.847697,
+    "lon": 12.9792841
   },
   {
     "id": "deggendorf-kleinwalding",
-    "name": "Deggendorf, Kleinwalding"
+    "name": "Deggendorf, Kleinwalding",
+    "lat": 48.8500843,
+    "lon": 12.9863526
   },
   {
     "id": "deggendorf-grosswalding",
-    "name": "Deggendorf, Großwalding"
+    "name": "Deggendorf, Großwalding",
+    "lat": 48.8493528,
+    "lon": 12.9831775
   },
   {
     "id": "deggendorf-theodor-eckert-strasse",
-    "name": "Deggendorf, Theodor-Eckert-Straße"
+    "name": "Deggendorf, Theodor-Eckert-Straße",
+    "lat": 48.8478283,
+    "lon": 12.9791367
   },
   {
     "id": "deggendorf-pater-fink-strasse",
-    "name": "Deggendorf, Pater-Fink-Straße"
+    "name": "Deggendorf, Pater-Fink-Straße",
+    "lat": 48.845963,
+    "lon": 12.9734548
   },
   {
     "id": "deggendorf-maderer-str",
@@ -233,35 +341,51 @@
   },
   {
     "id": "deggendorf-roererstr",
-    "name": "Deggendorf, Rörerstr."
+    "name": "Deggendorf, Rörerstr.",
+    "lat": 48.8491235,
+    "lon": 12.9732048
   },
   {
     "id": "deggendorf-danziger-strasse",
-    "name": "Deggendorf, Danziger Straße"
+    "name": "Deggendorf, Danziger Straße",
+    "lat": 48.849166,
+    "lon": 12.9721032
   },
   {
     "id": "deggendorf-dr-grashey-strasse",
-    "name": "Deggendorf, Dr.-Grashey-Straße"
+    "name": "Deggendorf, Dr.-Grashey-Straße",
+    "lat": 48.8483127,
+    "lon": 12.9680836
   },
   {
     "id": "deggendorf-stettiner-strasse",
-    "name": "Deggendorf, Stettiner Straße"
+    "name": "Deggendorf, Stettiner Straße",
+    "lat": 48.8501334,
+    "lon": 12.9671284
   },
   {
     "id": "deggendorf-land-au",
-    "name": "Deggendorf, Land-Au"
+    "name": "Deggendorf, Land-Au",
+    "lat": 48.8491579,
+    "lon": 12.9641417
   },
   {
     "id": "deggendorf-graflinger-str-abzw-land-au",
-    "name": "Deggendorf, Graflinger Str. Abzw. Land-Au"
+    "name": "Deggendorf, Graflinger Str. Abzw. Land-Au",
+    "lat": 48.8491579,
+    "lon": 12.9641417
   },
   {
     "id": "deggendorf-graflinger-str-kreisverkehr",
-    "name": "Deggendorf, Graflinger Str. Kreisverkehr"
+    "name": "Deggendorf, Graflinger Str. Kreisverkehr",
+    "lat": 48.852907,
+    "lon": 12.96102
   },
   {
     "id": "deggendorf-graflinger-str-radiologenze",
-    "name": "Deggendorf, Graflinger Str. Radiologenze"
+    "name": "Deggendorf, Graflinger Str. Radiologenze",
+    "lat": 48.8513257,
+    "lon": 12.9599457
   },
   {
     "id": "deggendorf-graflinger-str-abzw-trat",
@@ -269,31 +393,45 @@
   },
   {
     "id": "deggendorf-stadtpark-ri-kon-adenauer",
-    "name": "Deggendorf, Stadtpark, Ri Kon.-Adenauer"
+    "name": "Deggendorf, Stadtpark, Ri Kon.-Adenauer",
+    "lat": 48.8445495,
+    "lon": 12.9593964
   },
   {
     "id": "deggendorf-angermuehle-schule",
-    "name": "Deggendorf, Angermühle Schule"
+    "name": "Deggendorf, Angermühle Schule",
+    "lat": 48.8354994,
+    "lon": 12.9589508
   },
   {
     "id": "deggendorf-obere-aletsberger-strasse",
-    "name": "Deggendorf, Obere Aletsberger Straße"
+    "name": "Deggendorf, Obere Aletsberger Straße",
+    "lat": 48.84588855,
+    "lon": 12.950410900000001
   },
   {
     "id": "deggendorf-eichthalstr",
-    "name": "Deggendorf, Eichthalstr."
+    "name": "Deggendorf, Eichthalstr.",
+    "lat": 48.8460015,
+    "lon": 12.9448278
   },
   {
     "id": "deggendorf-kurt-schumacher-str",
-    "name": "Deggendorf, Kurt-Schumacher-Str."
+    "name": "Deggendorf, Kurt-Schumacher-Str.",
+    "lat": 48.8455597,
+    "lon": 12.9483634
   },
   {
     "id": "deggendorf-godehardstrasse",
-    "name": "Deggendorf, Godehardstraße"
+    "name": "Deggendorf, Godehardstraße",
+    "lat": 48.8489928,
+    "lon": 12.9449386
   },
   {
     "id": "deggendorf-godehardstrasse-mitte",
-    "name": "Deggendorf, Godehardstraße-Mitte"
+    "name": "Deggendorf, Godehardstraße-Mitte",
+    "lat": 48.8489928,
+    "lon": 12.9449386
   },
   {
     "id": "deggendorf-godehard-egger-str",
@@ -301,23 +439,33 @@
   },
   {
     "id": "deggendorf-marienthal",
-    "name": "Deggendorf, Marienthal"
+    "name": "Deggendorf, Marienthal",
+    "lat": 48.85215585,
+    "lon": 12.99016415
   },
   {
     "id": "deggendorf-itzlinger-strasse",
-    "name": "Deggendorf, Itzlinger Straße"
+    "name": "Deggendorf, Itzlinger Straße",
+    "lat": 48.8542611,
+    "lon": 12.9937865
   },
   {
     "id": "deggendorf-hochsteinstrasse",
-    "name": "Deggendorf, Hochsteinstraße"
+    "name": "Deggendorf, Hochsteinstraße",
+    "lat": 48.8589315,
+    "lon": 12.9944211
   },
   {
     "id": "mietraching-schule",
-    "name": "Mietraching, Schule"
+    "name": "Mietraching, Schule",
+    "lat": 48.8568697,
+    "lon": 12.9974035
   },
   {
     "id": "deggendorf-rusel-ulrichsberger-str",
-    "name": "Deggendorf, Rusel/Ulrichsberger Str."
+    "name": "Deggendorf, Rusel/Ulrichsberger Str.",
+    "lat": 48.87251995,
+    "lon": 12.983295
   },
   {
     "id": "deggendorf-kirche-mariae-himmelfahrt",
@@ -325,82 +473,122 @@
   },
   {
     "id": "deggendorf-wallnerlaende",
-    "name": "Deggendorf, Wallnerlände"
+    "name": "Deggendorf, Wallnerlände",
+    "lat": 48.8189817,
+    "lon": 12.9700293
   },
   {
     "id": "deggendorf-deggenauer-str",
-    "name": "Deggendorf, Deggenauer Str."
+    "name": "Deggendorf, Deggenauer Str.",
+    "lat": 48.817355,
+    "lon": 12.9742038
   },
   {
     "id": "deggendorf-alfred-gorgosch-strasse",
-    "name": "Deggendorf, Alfred-Gorgosch-Straße"
+    "name": "Deggendorf, Alfred-Gorgosch-Straße",
+    "lat": 48.8143998,
+    "lon": 12.97778
   },
   {
     "id": "deggendorf-st-erasmus-str",
-    "name": "Deggendorf, St. Erasmus-Str."
+    "name": "Deggendorf, St. Erasmus-Str.",
+    "lat": 48.8167778,
+    "lon": 12.9860532
   },
   {
     "id": "deggendorf-reinprechting",
-    "name": "Deggendorf, Reinprechting"
+    "name": "Deggendorf, Reinprechting",
+    "lat": 48.8163796,
+    "lon": 12.993224
   },
   {
     "id": "deggendorf-sandweg",
-    "name": "Deggendorf, Sandweg"
+    "name": "Deggendorf, Sandweg",
+    "lat": 48.820847,
+    "lon": 12.99337025
   },
   {
     "id": "deggendorf-elmering",
-    "name": "Deggendorf, Elmering"
+    "name": "Deggendorf, Elmering",
+    "lat": 48.8249068,
+    "lon": 12.990118
   },
   {
     "id": "deggendorf-mietzing",
-    "name": "Deggendorf, Mietzing"
+    "name": "Deggendorf, Mietzing",
+    "lat": 48.8319356,
+    "lon": 12.9939946
   },
   {
     "id": "deggendorf-breitenberg",
-    "name": "Deggendorf, Breitenberg"
+    "name": "Deggendorf, Breitenberg",
+    "lat": 48.834488,
+    "lon": 12.98993465
   },
   {
     "id": "deggendorf-noererstr",
-    "name": "Deggendorf, Nörerstr"
+    "name": "Deggendorf, Nörerstr",
+    "lat": 48.8341008,
+    "lon": 12.9712541
   },
   {
     "id": "deggendorf-busbahnhof",
-    "name": "Deggendorf, Busbahnhof"
+    "name": "Deggendorf, Busbahnhof",
+    "lat": 48.8326606375,
+    "lon": 12.957407112499999
   },
   {
     "id": "deggendorf-hbf",
-    "name": "Deggendorf Hbf"
+    "name": "Deggendorf Hbf",
+    "lat": 48.83850599,
+    "lon": 12.949746330000002
   },
   {
     "id": "deggendorf-egger-martinskirche",
-    "name": "Deggendorf, Egger/Martinskirche"
+    "name": "Deggendorf, Egger/Martinskirche",
+    "lat": 48.842234950000005,
+    "lon": 12.9565521
   },
   {
     "id": "deggendorf-friedrich-gauss-strasse",
-    "name": "Deggendorf, Friedrich-Gauss-Straße"
+    "name": "Deggendorf, Friedrich-Gauss-Straße",
+    "lat": 48.845496,
+    "lon": 12.9696855
   },
   {
     "id": "deggendorf-oestlicher-stadtgraben",
-    "name": "Deggendorf, Östlicher Stadtgraben"
+    "name": "Deggendorf, Östlicher Stadtgraben",
+    "lat": 48.8319218,
+    "lon": 12.964189300000001
   },
   {
     "id": "deggendorf-kolpingstrasse",
-    "name": "Deggendorf, Kolpingstraße"
+    "name": "Deggendorf, Kolpingstraße",
+    "lat": 48.83262245,
+    "lon": 12.97002795
   },
   {
     "id": "deggendorf-stadt-au",
-    "name": "Deggendorf, Stadt Au"
+    "name": "Deggendorf, Stadt Au",
+    "lat": 48.832455100000004,
+    "lon": 12.973193949999999
   },
   {
     "id": "deggendorf-eichenstr",
-    "name": "Deggendorf, Eichenstr."
+    "name": "Deggendorf, Eichenstr.",
+    "lat": 48.8334717,
+    "lon": 12.9777055
   },
   {
     "id": "deggendorf-buchenstrasse",
-    "name": "Deggendorf, Buchenstraße"
+    "name": "Deggendorf, Buchenstraße",
+    "lat": 48.834107,
+    "lon": 12.976896
   },
   {
     "id": "deggendorf-hussitenweg",
-    "name": "Deggendorf, Hussitenweg"
+    "name": "Deggendorf, Hussitenweg",
+    "lat": 48.8325921,
+    "lon": 12.9759814
   }
 ]

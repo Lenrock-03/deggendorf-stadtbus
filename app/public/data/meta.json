@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-08-06T17:33:02.844Z",
+  "generatedAt": "2026-08-06T19:30:51.340Z",
   "source": "manual-pdf",
   "disclaimer": "Fahrplandaten manuell aus den offiziellen PDF-Fahrplänen der Artmeier Bus GmbH & Co. KG übertragen. Ohne Gewähr – im Zweifel gilt der offizielle Aushangfahrplan.",
-  "attribution": "Datenquelle: Artmeier Bus GmbH & Co. KG (https://www.artmeier-bus.de)",
+  "attribution": "Fahrplandaten: Artmeier Bus GmbH & Co. KG (https://www.artmeier-bus.de). Haltestellen-Standorte: © OpenStreetMap-Mitwirkende, ODbL (openstreetmap.org/copyright).",
   "lineCount": 4
 }

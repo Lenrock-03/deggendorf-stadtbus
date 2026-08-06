@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.2.0
+
+- "Standort verwenden" in der Haltestellensuche: sortiert Haltestellen per Browser-
+  Geolocation-API nach Entfernung, zeigt die Distanz an
+- Haltestellen-Koordinaten (94 von 101, ~93%) aus OpenStreetMap ergänzt (einmaliger
+  Build-Zeit-Abgleich per Namen, `data-pipeline/src/fetchStopCoords.ts`, Ergebnis in
+  `fallback-data/stop-coords.json` committet - kein Live-API-Call zur Laufzeit)
+- OSM-Attribution (ODbL) in der App ergänzt
+
 ## v1.1.0
 
 - Linie 2 (Hirzau – Stammstrecke – Rörerstraße) ergänzt. Musste neu analysiert werden:

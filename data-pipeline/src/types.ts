@@ -66,6 +66,9 @@ export interface RouteOut {
 export interface StopOut {
   id: string;
   name: string;
+  /** Aus OpenStreetMap (siehe fetchStopCoords.ts) - fehlt bei ~7% der Haltestellen */
+  lat?: number;
+  lon?: number;
 }
 
 /** Eine Abfahrt an einer konkreten Haltestelle, im Linienverlauf. */
