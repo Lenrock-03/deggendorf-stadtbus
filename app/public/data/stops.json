@@ -76,8 +76,8 @@
     "lon": 12.95390135
   },
   {
-    "id": "deggendorf-hbf-10",
-    "name": "Deggendorf Hbf 10",
+    "id": "deggendorf-hbf",
+    "name": "Deggendorf Hbf",
     "lat": 48.83850599,
     "lon": 12.949746330000002
   },
@@ -536,12 +536,6 @@
     "name": "Deggendorf, Busbahnhof",
     "lat": 48.8326606375,
     "lon": 12.957407112499999
-  },
-  {
-    "id": "deggendorf-hbf",
-    "name": "Deggendorf Hbf",
-    "lat": 48.83850599,
-    "lon": 12.949746330000002
   },
   {
     "id": "deggendorf-egger-martinskirche",

@@ -27,7 +27,6 @@ const MANUAL_ALIASES: Record<string, string> = {
   "busbhf 9": "busbahnhof",
   "busbhf 1": "busbahnhof",
   "hbf": "hauptbahnhof",
-  "hbf 10": "hauptbahnhof",
 };
 
 interface OverpassElement {

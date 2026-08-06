@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.9.2
+
+- "Deggendorf Hbf" und "Deggendorf Hbf 10" waren dieselbe Haltestelle (die "10" ist die
+  Bussteignummer), wurden aber als zwei getrennte Haltestellen geführt, weil Linie 4s PDF
+  sie ohne und Linien 1/2/3s PDFs sie mit Nummer benennen. Jetzt zusammengeführt - "Deggendorf
+  Hbf" zeigt Abfahrten aller 4 Linien an einer Haltestelle. Parser normalisiert das für
+  künftige Neuverarbeitungen automatisch (`Deggendorf Hbf <Nummer>` → `Deggendorf Hbf`).
+
 ## v1.9.1
 
 - Haltestellensuche findet "Technische Hochschule" jetzt auch über die gängigen

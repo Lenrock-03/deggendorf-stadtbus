@@ -58,13 +58,13 @@
       "name": "Deggendorf, Detterstr."
     },
     {
-      "stopId": "deggendorf-hbf-10",
-      "name": "Deggendorf Hbf 10",
+      "stopId": "deggendorf-hbf",
+      "name": "Deggendorf Hbf",
       "note": "an"
     },
     {
-      "stopId": "deggendorf-hbf-10",
-      "name": "Deggendorf Hbf 10",
+      "stopId": "deggendorf-hbf",
+      "name": "Deggendorf Hbf",
       "note": "ab"
     },
     {
@@ -190,13 +190,13 @@
       "name": "Deggendorf, Schachinger Weg"
     },
     {
-      "stopId": "deggendorf-hbf-10",
-      "name": "Deggendorf Hbf 10",
+      "stopId": "deggendorf-hbf",
+      "name": "Deggendorf Hbf",
       "note": "an"
     },
     {
-      "stopId": "deggendorf-hbf-10",
-      "name": "Deggendorf Hbf 10",
+      "stopId": "deggendorf-hbf",
+      "name": "Deggendorf Hbf",
       "note": "ab"
     },
     {
@@ -264,13 +264,13 @@
       "name": "Deggendorf, Mettener/Unterführung"
     },
     {
-      "stopId": "deggendorf-hbf-10",
-      "name": "Deggendorf Hbf 10",
+      "stopId": "deggendorf-hbf",
+      "name": "Deggendorf Hbf",
       "note": "an"
     },
     {
-      "stopId": "deggendorf-hbf-10",
-      "name": "Deggendorf Hbf 10",
+      "stopId": "deggendorf-hbf",
+      "name": "Deggendorf Hbf",
       "note": "ab"
     },
     {
@@ -474,13 +474,13 @@
       "name": "Deggendorf, Schachinger Weg"
     },
     {
-      "stopId": "deggendorf-hbf-10",
-      "name": "Deggendorf Hbf 10",
+      "stopId": "deggendorf-hbf",
+      "name": "Deggendorf Hbf",
       "note": "an"
     },
     {
-      "stopId": "deggendorf-hbf-10",
-      "name": "Deggendorf Hbf 10",
+      "stopId": "deggendorf-hbf",
+      "name": "Deggendorf Hbf",
       "note": "ab"
     },
     {
@@ -536,13 +536,13 @@
       "name": "Deggendorf, Egger Str. Abzw. Stadtfeldstr."
     },
     {
-      "stopId": "deggendorf-hbf-10",
-      "name": "Deggendorf Hbf 10",
+      "stopId": "deggendorf-hbf",
+      "name": "Deggendorf Hbf",
       "note": "an"
     },
     {
-      "stopId": "deggendorf-hbf-10",
-      "name": "Deggendorf Hbf 10",
+      "stopId": "deggendorf-hbf",
+      "name": "Deggendorf Hbf",
       "note": "ab"
     },
     {
@@ -704,8 +704,8 @@
       "name": "Deggendorf, Schachinger Weg"
     },
     {
-      "stopId": "deggendorf-hbf-10",
-      "name": "Deggendorf Hbf 10"
+      "stopId": "deggendorf-hbf",
+      "name": "Deggendorf Hbf"
     },
     {
       "stopId": "deggendorf-egger-str-abzw-stadtfeldstr",

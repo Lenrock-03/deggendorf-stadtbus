@@ -37,6 +37,16 @@ NOTES_LINE2_SUFFIX = (
 
 CELL_RE = re.compile(r"^(\d{2}:\d{2})(\*S|AB)?$")
 
+# Manche Linien-PDFs hängen die Bussteignummer an "Deggendorf Hbf" an (z.B. "... Hbf 10"),
+# andere nicht - physisch ist es dieselbe Haltestelle (Hauptbahnhof), daher hier auf einen
+# einheitlichen Namen normalisiert, damit die Pipeline sie zu einer Haltestelle zusammenführt.
+HBF_PLATFORM_RE = re.compile(r"^(Deggendorf Hbf) \d+$")
+
+
+def normalize_stop_name(name):
+    m = HBF_PLATFORM_RE.match(name)
+    return m.group(1) if m else name
+
 
 def split_cell(raw):
     """('13:10AB', ...) -> ('13:10', True); ('07:29', ...) -> ('07:29', False)."""
@@ -63,7 +73,8 @@ def main():
     stops_out = []
     for s in stops:
         note = s["note"]
-        stops_out.append({"seq": len(stops_out) + 1, "name": s["name"], **({"note": note} if note else {})})
+        name = normalize_stop_name(s["name"])
+        stops_out.append({"seq": len(stops_out) + 1, "name": name, **({"note": note} if note else {})})
 
     trips = []
     for i, raw_start in enumerate(parsed["weekdayStartTimes"]):
