@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.8.0
+
+- Verbindungsergebnisse neu gestaltet: proportionale Balkenanzeige je Fahrtabschnitt
+  (Linienfarbe, gestrichelt für Umstiegs-Wartezeit) im Stil klassischer Bahn-
+  Verbindungsauskünfte, statt reiner Textliste. Dauer/Umstiegszahl oben, Start-/
+  Zielhaltestelle unten links/rechts ausgerichtet.
+
 ## v1.7.2
 
 - Karte füllt jetzt die volle Fensterbreite statt der sonst auf 640px begrenzten
