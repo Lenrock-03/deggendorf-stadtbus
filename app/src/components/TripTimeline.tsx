@@ -7,7 +7,7 @@ export default function TripTimeline({ stops, color }: { stops: TimelineStop[]; 
       {stops.map((s) => (
         <li key={s.stopId} className={s.isFirst || s.isLast ? "endpoint" : undefined}>
           <Link to={`/haltestelle/${s.stopId}`} className="tt-row">
-            <span className="tt-time">{s.time.slice(0, 5)}</span>
+            <span className="tt-time">{s.time ? s.time.slice(0, 5) : ""}</span>
             <span className="tt-rail">
               <span className="tt-dot" />
             </span>

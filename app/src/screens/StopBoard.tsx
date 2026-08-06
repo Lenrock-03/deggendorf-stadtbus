@@ -70,11 +70,15 @@ export default function StopBoard() {
         {shown.map((d, i) => {
           const route = routeById.get(d.routeId);
           return (
-            <div className="departure-row" key={`${d.tripId}-${i}`}>
+            <Link
+              className="departure-row"
+              to={`/linie/${d.routeId}?trip=${encodeURIComponent(d.tripId)}`}
+              key={`${d.tripId}-${i}`}
+            >
               <span className="departure-time">{d.time.slice(0, 5)}</span>
               {route && <LineBadge route={route} />}
               <span>{d.headsign}</span>
-            </div>
+            </Link>
           );
         })}
       </div>

@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.4.0
+
+- Liniendetail zeigt beim Einstieg über die Linienübersicht jetzt nur den reinen
+  Streckenverlauf ohne Uhrzeit (wie zuvor) - Uhrzeiten werden erst angezeigt, wenn eine
+  konkrete Abfahrt gewählt wurde (Dropdown, oder Klick auf eine Abfahrt in der
+  Abfahrtstafel einer Haltestelle, die jetzt direkt zur passenden Zeitleiste verlinkt,
+  URL-Parameter `?trip=...`)
+
 ## v1.3.0
 
 - Liniendetail komplett neu als Fahrtverlauf-Zeitleiste (Nahverkehr-Kartenstil: farbige

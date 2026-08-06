@@ -1,32 +1,17 @@
-import { useMemo, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useMemo } from "react";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 import { useSchedule } from "../lib/useSchedule";
 import LineBadge from "../components/LineBadge";
 import TripTimeline from "../components/TripTimeline";
 import { ErrorBanner, LoadingBanner } from "../components/StatusBanner";
-import { timelineDurationMin, timelineForTrip, tripOptionLabel, tripsForRoute } from "../lib/tripTimeline";
-import { nowMinutesInBerlin, parseTimeToMinutes, weekdayInBerlin } from "../lib/time";
-import { activeServicesForWeekday } from "../lib/calendar";
+import { routeOutline, timelineDurationMin, timelineForTrip, tripOptionLabel, tripsForRoute } from "../lib/tripTimeline";
 
 export default function LineDetail() {
   const { id } = useParams<{ id: string }>();
+  const [searchParams, setSearchParams] = useSearchParams();
   const schedule = useSchedule();
-  const [selectedTripId, setSelectedTripId] = useState<string | null>(null);
 
   const trips = useMemo(() => (schedule.status === "ready" && id ? tripsForRoute(schedule.data, id) : []), [schedule, id]);
-
-  // Standardauswahl: nächste heute noch aktive Fahrt, sonst die erste Fahrt des Tages.
-  const defaultTripId = useMemo(() => {
-    if (schedule.status !== "ready" || trips.length === 0) return null;
-    const active = new Set(activeServicesForWeekday(schedule.data.calendar, weekdayInBerlin()));
-    const nowMin = nowMinutesInBerlin();
-    const todaysUpcoming = trips
-      .filter((t) => active.has(t.service) && parseTimeToMinutes(t.startTime) >= nowMin)
-      .sort((a, b) => parseTimeToMinutes(a.startTime) - parseTimeToMinutes(b.startTime));
-    return (todaysUpcoming[0] ?? trips[0]).tripId;
-  }, [schedule, trips]);
-
-  const tripId = selectedTripId ?? defaultTripId;
 
   if (schedule.status === "loading") return <LoadingBanner />;
   if (schedule.status === "error") return <ErrorBanner message={schedule.error} />;
@@ -38,9 +23,14 @@ export default function LineDetail() {
     return <ErrorBanner message={`Linie ${id} wurde nicht gefunden.`} />;
   }
 
-  const timeline = tripId ? timelineForTrip(schedule.data, id, tripId) : [];
-  const duration = timelineDurationMin(timeline);
-  const destination = timeline[timeline.length - 1]?.name;
+  // Nur eine Abfahrt anzeigen, wenn sie explizit gewählt wurde (Link von der Abfahrtstafel
+  // einer Haltestelle, oder manuell im Dropdown) - beim Einstieg über die Linienübersicht
+  // gibt es noch keine Uhrzeit, nur den reinen Streckenverlauf.
+  const urlTripId = searchParams.get("trip");
+  const tripId = urlTripId && trips.some((t) => t.tripId === urlTripId) ? urlTripId : null;
+
+  const timeline = tripId ? timelineForTrip(schedule.data, id, tripId) : routeOutline(schedule.data, id);
+  const duration = tripId ? timelineDurationMin(timeline) : null;
 
   return (
     <section>
@@ -50,19 +40,26 @@ export default function LineDetail() {
 
       <div className="trip-header">
         <LineBadge route={route} />
-        <span>▶</span>
-        <strong>{destination ?? route.longName}</strong>
+        <strong>{route.longName}</strong>
       </div>
-      {timeline.length > 0 && (
+      {duration != null && timeline.length > 0 && (
         <p className="trip-header-sub">
           {duration} Min ({timeline.length - 1} Haltestellen)
         </p>
       )}
 
-      {trips.length > 1 && (
+      {trips.length > 0 && (
         <label style={{ display: "block", marginBottom: "1rem" }}>
-          Abfahrt:{" "}
-          <select value={tripId ?? ""} onChange={(e) => setSelectedTripId(e.target.value)}>
+          Abfahrt anzeigen:{" "}
+          <select
+            value={tripId ?? ""}
+            onChange={(e) => {
+              const v = e.target.value;
+              if (v) setSearchParams({ trip: v });
+              else setSearchParams({});
+            }}
+          >
+            <option value="">— Streckenverlauf ohne Uhrzeit —</option>
             {trips.map((t) => (
               <option key={t.tripId} value={t.tripId}>
                 {tripOptionLabel(t)}
@@ -73,7 +70,7 @@ export default function LineDetail() {
       )}
 
       {timeline.length === 0 ? (
-        <p className="muted">Für diese Linie sind keine Fahrten hinterlegt.</p>
+        <p className="muted">Für diese Linie sind keine Haltestellen hinterlegt.</p>
       ) : (
         <TripTimeline stops={timeline} color={route.color} />
       )}

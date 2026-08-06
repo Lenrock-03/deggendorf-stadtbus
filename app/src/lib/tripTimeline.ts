@@ -11,10 +11,24 @@ export interface TripOption {
 export interface TimelineStop {
   stopId: string;
   name: string;
-  time: string;
+  /** Fehlt in der zeitlosen Übersicht (Einstieg über die Linienübersicht ohne gewählte Abfahrt) */
+  time?: string;
   note?: "an" | "ab";
   isFirst: boolean;
   isLast: boolean;
+}
+
+/** Reiner Streckenverlauf ohne Uhrzeiten (Einstieg von der Linienübersicht). */
+export function routeOutline(bundle: ScheduleBundle, routeId: string): TimelineStop[] {
+  const seq = bundle.routeStops[routeId];
+  if (!seq || seq.length === 0) return [];
+  return seq.map((s, i) => ({
+    stopId: s.stopId,
+    name: s.name,
+    note: s.note,
+    isFirst: i === 0,
+    isLast: i === seq.length - 1,
+  }));
 }
 
 /**
@@ -65,8 +79,10 @@ export function timelineForTrip(
 
 /** Fahrtdauer in Minuten zwischen erster und letzter Haltestelle der Timeline. */
 export function timelineDurationMin(stops: TimelineStop[]): number {
-  if (stops.length < 2) return 0;
-  return parseTimeToMinutes(stops[stops.length - 1].time) - parseTimeToMinutes(stops[0].time);
+  const first = stops[0]?.time;
+  const last = stops[stops.length - 1]?.time;
+  if (stops.length < 2 || !first || !last) return 0;
+  return parseTimeToMinutes(last) - parseTimeToMinutes(first);
 }
 
 const SERVICE_LABELS: Record<ServiceId, string> = { weekday: "Mo-Fr", saturday: "Sa" };
