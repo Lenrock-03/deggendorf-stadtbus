@@ -1,5 +1,24 @@
 # Changelog
 
+## v1.9.4
+
+- **Datenfehler behoben:** Linie 2 zeigte doppelte Abfahrten (z.B. "07:04 Deggendorf Hbf"
+  zweimal direkt hintereinander), wodurch an manchen Haltestellen in der "Nächste
+  Abfahrten"-Liste (feste Länge) andere Linien verdrängt wurden und fälschlich zu fehlen
+  schienen. Ursache: das x-Positions-Spaltenclustering im PDF-Parser hatte bei Linie 2s
+  breiter Tabelle 2 Phantom-Spalten erzeugt, die exakt eine bereits erkannte Fahrt noch
+  einmal duplizierten (24 statt echter 22 Fahrten). `to_line_json.py` erkennt und
+  bereinigt solche Nahezu-Duplikate jetzt automatisch (Abgleich der nicht-leeren
+  Haltestellenzeiten zwischen allen Fahrten desselben Verkehrstags, >85% Übereinstimmung
+  → zusammengeführt statt doppelt geführt).
+- Linienfarben durch die tatsächlichen Farben aus den offiziellen Fahrplan-PDFs ersetzt
+  (dort ist jede Linie durchgehend zeilenweise farblich hervorgehoben: Linie 1 grün,
+  Linie 2 gelb, Linie 3 lachs/rot, Linie 4 blau - per Pixelanalyse der Original-PDFs
+  bestimmt, vorher frei erfundene Hex-Werte). Da die rohen Tabellenfarben (v.a. das
+  blasse Gelb) mit weißer Schrift auf Linenbadges kaum lesbar wären, wird die Textfarbe
+  jetzt dynamisch nach Kontrast gewählt (`lib/color.ts`, WCAG-Luminanzformel) statt fix
+  weiß.
+
 ## v1.9.3
 
 - Service-Worker-Cache für Fahrplandaten von StaleWhileRevalidate auf NetworkFirst

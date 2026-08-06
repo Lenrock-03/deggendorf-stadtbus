@@ -5,6 +5,7 @@ import { parseTimeToMinutes } from "../lib/time";
 import { timelineSegment } from "../lib/tripTimeline";
 import type { ScheduleBundle } from "../types/data";
 import TripTimeline from "./TripTimeline";
+import { readableTextColor } from "../lib/color";
 
 type Segment =
   | { type: "leg"; boardTime: string; alightTime: string; routeShortName: string; routeColor: string; widthPct: number }
@@ -66,7 +67,11 @@ export default function JourneyCard({ journey, bundle }: { journey: Journey; bun
             <div
               key={i}
               className="journey-bar-leg"
-              style={{ flex: `${seg.widthPct} 0 0`, backgroundColor: `#${seg.routeColor}` }}
+              style={{
+                flex: `${seg.widthPct} 0 0`,
+                backgroundColor: `#${seg.routeColor}`,
+                color: readableTextColor(seg.routeColor),
+              }}
               title={`${seg.boardTime.slice(0, 5)}–${seg.alightTime.slice(0, 5)}`}
             >
               {seg.routeShortName}
@@ -91,7 +96,10 @@ export default function JourneyCard({ journey, bundle }: { journey: Journey; bun
           {journey.legs.map((leg, i) => (
             <div key={i}>
               <div className="journey-details-leg-header">
-                <span className="line-badge" style={{ backgroundColor: `#${leg.routeColor}` }}>
+                <span
+                  className="line-badge"
+                  style={{ backgroundColor: `#${leg.routeColor}`, color: readableTextColor(leg.routeColor) }}
+                >
                   {leg.routeShortName}
                 </span>
                 <span>nach {leg.headsign}</span>

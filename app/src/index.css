@@ -131,7 +131,7 @@ button {
   height: 2rem;
   padding: 0 0.5rem;
   border-radius: 0.5rem;
-  color: white;
+  /* color: schwarz/weiß wird inline per Linienfarbe gesetzt (siehe readableTextColor) */
   font-weight: 700;
   font-size: 0.95rem;
   flex-shrink: 0;
@@ -406,7 +406,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  /* color: schwarz/weiß wird inline per Linienfarbe gesetzt (siehe readableTextColor) */
   font-weight: 700;
   font-size: 0.8rem;
   min-width: 1.75rem;

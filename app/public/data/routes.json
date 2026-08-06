@@ -3,24 +3,24 @@
     "id": "1",
     "shortName": "1",
     "longName": "Himmelreich - Stammstrecke - Scheuering und zurück",
-    "color": "0057a3"
+    "color": "66c610"
   },
   {
     "id": "2",
     "shortName": "2",
     "longName": "Hirzau - Stammstrecke - Rörerstraße und zurück",
-    "color": "2e7d32"
+    "color": "fafa2e"
   },
   {
     "id": "3",
     "shortName": "3",
     "longName": "Aletsberg - Stammstrecke - Mietraching und zurück",
-    "color": "6a1b9a"
+    "color": "e61919"
   },
   {
     "id": "4",
     "shortName": "4",
     "longName": "Zentrum - Deggenau - Stammstrecke - Klinikum - Zentrum - Stadt-Au - Zentrum",
-    "color": "e2001a"
+    "color": "1275d9"
   }
 ]
