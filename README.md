@@ -52,13 +52,13 @@ Lokal bauen & starten:
 docker compose up -d --build
 ```
 
-**Automatisches Deployment** (`.github/workflows/deploy.yml` bei Push auf `main`,
-`data-refresh.yml` wöchentlich): GitHub Actions SSHt auf den VPS, macht dort `git pull` und
-`docker compose up -d --build`. Dafür im Repo unter *Settings → Secrets and variables →
-Actions* einmalig hinterlegen:
+**Deployment ist manuell per SSH** (keine GitHub-Actions-Automatisierung, bewusste
+Entscheidung - wie beim Rest des DriveTrack-Ökosystems):
 
-- Secrets: `VPS_HOST`, `VPS_USER`, `VPS_SSH_KEY` (privater Deploy-Key), optional `VPS_PORT`
-- Variables: `VPS_DEPLOY_PATH` (Ordner auf dem VPS, in dem dieses Repo geklont liegt/werden soll)
+```bash
+ssh VPS-Kornel "cd /root/deggendorf-stadtbus && git pull && docker compose up -d --build"
+```
 
-Der Deploy-Key braucht auf dem VPS nur Zugriff auf das Verzeichnis unter `VPS_DEPLOY_PATH`
-und Rechte, dort `docker compose` auszuführen - kein Zugriff auf GitHub nötig.
+Läuft auf dem VPS unter `127.0.0.1:8091`, dahinter ein system-nginx als Reverse Proxy mit
+Let's-Encrypt-TLS für `deggendorf-stadtbus.kornel-riedl.de` (Konfiguration nicht Teil dieses
+Repos, liegt in `/etc/nginx/sites-enabled/` auf dem VPS, analog zu drivetrack-api).
