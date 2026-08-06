@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSchedule } from "../lib/useSchedule";
 import { ErrorBanner, LoadingBanner } from "../components/StatusBanner";
+import StopPicker from "../components/StopPicker";
 import { findJourneys, type Journey } from "../lib/routePlanner";
 import { dateInBerlin, nowMinutesInBerlin } from "../lib/time";
 
@@ -22,7 +23,7 @@ function JourneyCard({ journey }: { journey: Journey }) {
         <strong>
           {journey.departureTime.slice(0, 5)} → {journey.arrivalTime.slice(0, 5)}
         </strong>
-        <span className="muted">{journey.legs.length === 1 ? "direkt" : "1x umsteigen"}</span>
+        <span className="muted">{journey.legs.length === 1 ? "direkt" : "1× umsteigen"}</span>
       </div>
       {journey.legs.map((leg, i) => (
         <div key={i} className="journey-leg">
@@ -30,13 +31,16 @@ function JourneyCard({ journey }: { journey: Journey }) {
             {leg.routeShortName}
           </span>
           <span>
-            <Link to={`/haltestelle/${leg.boardStopId}`}>{leg.boardStopName}</Link> ({leg.boardTime.slice(0, 5)}) →{" "}
-            <Link to={`/haltestelle/${leg.alightStopId}`}>{leg.alightStopName}</Link> ({leg.alightTime.slice(0, 5)})
+            <Link to={`/haltestelle/${leg.boardStopId}`}>{leg.boardStopName}</Link>{" "}
+            <span className="muted">({leg.boardTime.slice(0, 5)})</span>
+            {" → "}
+            <Link to={`/haltestelle/${leg.alightStopId}`}>{leg.alightStopName}</Link>{" "}
+            <span className="muted">({leg.alightTime.slice(0, 5)})</span>
           </span>
         </div>
       ))}
       {journey.transferWaitMin != null && (
-        <p className="muted" style={{ margin: "0.3rem 0 0" }}>
+        <p className="muted" style={{ margin: "0.2rem 0 0" }}>
           Umstiegszeit: {journey.transferWaitMin} Min.
         </p>
       )}
@@ -62,27 +66,24 @@ export default function RoutePlanner() {
   if (schedule.status === "loading") return <LoadingBanner />;
   if (schedule.status === "error") return <ErrorBanner message={schedule.error} />;
 
-  const sortedStops = schedule.data.stops.slice().sort((a, b) => a.name.localeCompare(b.name, "de"));
+  const sameStop = !!originId && !!destId && originId === destId;
 
   return (
     <section>
       <h2>Verbindung suchen</h2>
 
-      <label style={{ display: "block", marginBottom: "0.6rem" }}>
-        Von:{" "}
-        <select value={originId} onChange={(e) => { setOriginId(e.target.value); setSearched(false); }}>
-          <option value="">— Starthaltestelle wählen —</option>
-          {sortedStops.map((s) => (
-            <option key={s.id} value={s.id}>
-              {s.name}
-            </option>
-          ))}
-        </select>
-      </label>
+      <div className="card route-planner-form">
+        <StopPicker
+          label="Von"
+          placeholder="Starthaltestelle …"
+          stops={schedule.data.stops}
+          value={originId}
+          onChange={(id) => { setOriginId(id); setSearched(false); }}
+        />
 
-      <div style={{ margin: "0.4rem 0" }}>
         <button
           type="button"
+          className="swap-button"
           aria-label="Start und Ziel tauschen"
           onClick={() => {
             setOriginId(destId);
@@ -90,41 +91,36 @@ export default function RoutePlanner() {
             setSearched(false);
           }}
         >
-          ⇅ Tauschen
+          ⇅
         </button>
-      </div>
 
-      <label style={{ display: "block", marginBottom: "0.6rem" }}>
-        Nach:{" "}
-        <select value={destId} onChange={(e) => { setDestId(e.target.value); setSearched(false); }}>
-          <option value="">— Zielhaltestelle wählen —</option>
-          {sortedStops.map((s) => (
-            <option key={s.id} value={s.id}>
-              {s.name}
-            </option>
-          ))}
-        </select>
-      </label>
+        <StopPicker
+          label="Nach"
+          placeholder="Zielhaltestelle …"
+          stops={schedule.data.stops}
+          value={destId}
+          onChange={(id) => { setDestId(id); setSearched(false); }}
+        />
 
-      <label style={{ marginRight: "1rem" }}>
-        Datum: <input type="date" value={date} onChange={(e) => { setDate(e.target.value); setSearched(false); }} />
-      </label>
-      <label>
-        Ab Uhrzeit: <input type="time" value={time} onChange={(e) => { setTime(e.target.value); setSearched(false); }} />
-      </label>
+        <div className="route-planner-datetime">
+          <label>
+            Datum
+            <input type="date" value={date} onChange={(e) => { setDate(e.target.value); setSearched(false); }} />
+          </label>
+          <label>
+            Ab Uhrzeit
+            <input type="time" value={time} onChange={(e) => { setTime(e.target.value); setSearched(false); }} />
+          </label>
+        </div>
 
-      <div style={{ marginTop: "1rem" }}>
         <button
+          className="primary-button"
           onClick={() => setSearched(true)}
-          disabled={!originId || !destId || originId === destId}
+          disabled={!originId || !destId || sameStop}
         >
           Verbindungen suchen
         </button>
-        {originId && destId && originId === destId && (
-          <p className="muted" style={{ marginTop: "0.4rem" }}>
-            Start und Ziel dürfen nicht gleich sein.
-          </p>
-        )}
+        {sameStop && <p className="muted" style={{ marginTop: "0.4rem" }}>Start und Ziel dürfen nicht gleich sein.</p>}
       </div>
 
       {searched && (

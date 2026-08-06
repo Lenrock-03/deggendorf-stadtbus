@@ -1,5 +1,12 @@
 # Changelog
 
+## v1.7.1
+
+- Routenplaner überarbeitet: durchsuchbare Eingabefelder (Autocomplete, wie bei der
+  Haltestellensuche) statt langer unsortierter Auswahllisten für Start/Ziel
+- Formular in Card-Layout mit Tauschen-Button und hervorgehobenem Suchen-Button
+  neu gestaltet
+
 ## v1.7.0
 
 - Routenplaner (`/verbindung`): Verbindungssuche zwischen zwei beliebigen Haltestellen
