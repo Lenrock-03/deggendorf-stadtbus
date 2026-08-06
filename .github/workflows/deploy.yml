@@ -1,55 +1,26 @@
-name: Deploy
+name: Deploy to VPS
+
+# Erfordert folgende Secrets/Variablen im Repo (Settings -> Secrets and variables -> Actions):
+#   Secrets:   VPS_HOST, VPS_USER, VPS_SSH_KEY (privater Deploy-Key), optional VPS_PORT
+#   Variables: VPS_DEPLOY_PATH (Ordner auf dem VPS, in dem dieses Repo geklont liegt)
 
 on:
   push:
     branches: [main]
   workflow_dispatch: {}
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
-
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      - name: Datenpipeline bauen
-        working-directory: data-pipeline
-        run: |
-          npm ci
-          npm run build
-
-      - name: App bauen
-        working-directory: app
-        env:
-          VITE_BASE_PATH: /${{ github.event.repository.name }}/
-        run: |
-          npm ci
-          npm run build
-
-      - uses: actions/configure-pages@v5
-
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: app/dist
-
   deploy:
-    needs: build
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+      - uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT || 22 }}
+          script: |
+            set -e
+            cd "${{ vars.VPS_DEPLOY_PATH }}"
+            git pull --ff-only
+            docker compose up -d --build

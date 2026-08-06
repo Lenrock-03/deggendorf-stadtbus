@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        # Falls die App nicht an der Domain-Wurzel läuft, hier z.B. "/bus/" setzen
+        # (und in Reverse-Proxy/Compose-Override entsprechend anpassen).
+        VITE_BASE_PATH: ${VITE_BASE_PATH:-/}
+    image: deggendorf-stadtbus:latest
+    restart: unless-stopped
+    ports:
+      # Nur lokal binden - Zugriff von außen läuft über den vorhandenen Reverse Proxy
+      # auf dem VPS (z.B. nginx/Traefik), der auf diesen Port weiterleitet.
+      - "127.0.0.1:${APP_PORT:-8091}:80"

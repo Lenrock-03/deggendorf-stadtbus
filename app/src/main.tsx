@@ -1,16 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
 
-// HashRouter (URLs wie /#/linie/4) statt BrowserRouter: GitHub Pages kann keine
-// Server-Rewrites für clientseitiges Routing, ein Reload auf einer Unterseite würde
-// mit BrowserRouter sonst 404 liefern. Kein SPA-Fallback-Trick nötig.
+// BrowserRouter (saubere URLs wie /linie/4): läuft hinter eigenem nginx (siehe
+// nginx.conf, SPA-Fallback auf index.html), daher kein HashRouter-Workaround nötig.
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <HashRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <App />
-    </HashRouter>
+    </BrowserRouter>
   </React.StrictMode>
 );

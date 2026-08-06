@@ -40,8 +40,25 @@ npm test                                             # Vitest (Kalenderlogik)
 npm run build && npm run preview                     # Produktions-Build lokal prüfen
 ```
 
-## Deployment
+## Deployment (eigener VPS via Docker)
 
-GitHub Actions (`.github/workflows/deploy.yml`, `data-refresh.yml`) bauen und deployen
-automatisch auf GitHub Pages, sobald das Repo auf GitHub liegt und Pages (Settings → Pages →
-Source: GitHub Actions) aktiviert ist.
+`Dockerfile` baut Pipeline+App und serviert das Ergebnis über nginx (`nginx.conf`, inkl.
+SPA-Fallback für React Router). `docker-compose.yml` bindet den Container nur auf
+`127.0.0.1:${APP_PORT:-8091}` - Zugriff von außen läuft über den vorhandenen Reverse Proxy
+auf dem VPS.
+
+Lokal bauen & starten:
+```bash
+docker compose up -d --build
+```
+
+**Automatisches Deployment** (`.github/workflows/deploy.yml` bei Push auf `main`,
+`data-refresh.yml` wöchentlich): GitHub Actions SSHt auf den VPS, macht dort `git pull` und
+`docker compose up -d --build`. Dafür im Repo unter *Settings → Secrets and variables →
+Actions* einmalig hinterlegen:
+
+- Secrets: `VPS_HOST`, `VPS_USER`, `VPS_SSH_KEY` (privater Deploy-Key), optional `VPS_PORT`
+- Variables: `VPS_DEPLOY_PATH` (Ordner auf dem VPS, in dem dieses Repo geklont liegt/werden soll)
+
+Der Deploy-Key braucht auf dem VPS nur Zugriff auf das Verzeichnis unter `VPS_DEPLOY_PATH`
+und Rechte, dort `docker compose` auszuführen - kein Zugriff auf GitHub nötig.

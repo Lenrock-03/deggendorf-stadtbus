@@ -1,9 +1,8 @@
 name: Data Refresh
 
-# Läuft wöchentlich (Montag früh) und regeneriert die Fahrplan-Bundles aus
-# data-pipeline/fallback-data (bzw. künftig gtfs.de, sobald angebunden). Committet
-# Änderungen und deployed direkt selbst, da GITHUB_TOKEN-Commits keinen weiteren
-# on:push-Workflow (deploy.yml) auslösen.
+# Läuft wöchentlich, regeneriert die Fahrplan-Bundles aus data-pipeline/fallback-data
+# (künftig ggf. gtfs.de) und deployed bei Änderungen direkt neu auf den VPS - siehe
+# deploy.yml für die benötigten Secrets/Variablen.
 on:
   schedule:
     - cron: "17 4 * * 1"
@@ -11,12 +10,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: false
 
 jobs:
   refresh-and-deploy:
@@ -34,7 +27,8 @@ jobs:
           npm ci
           npm run build
 
-      - name: Änderungen committen (falls vorhanden)
+      - name: Änderungen committen und pushen (falls vorhanden)
+        id: commit
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -42,23 +36,21 @@ jobs:
             git add app/public/data
             git commit -m "data: Fahrplan-Bundles aktualisiert ($(date -u +%Y-%m-%d))"
             git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
           else
             echo "Keine Änderungen an den Fahrplandaten."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: App bauen
-        working-directory: app
-        env:
-          VITE_BASE_PATH: /${{ github.event.repository.name }}/
-        run: |
-          npm ci
-          npm run build
-
-      - uses: actions/configure-pages@v5
-
-      - uses: actions/upload-pages-artifact@v3
+      - uses: appleboy/ssh-action@v1
+        if: steps.commit.outputs.changed == 'true'
         with:
-          path: app/dist
-
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          port: ${{ secrets.VPS_PORT || 22 }}
+          script: |
+            set -e
+            cd "${{ vars.VPS_DEPLOY_PATH }}"
+            git pull --ff-only
+            docker compose up -d --build
