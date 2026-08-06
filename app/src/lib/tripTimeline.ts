@@ -87,6 +87,34 @@ export function timelineForTrip(
   return stops;
 }
 
+/**
+ * Schneidet aus dem vollständigen Verlauf einer Fahrt nur den Abschnitt zwischen einer
+ * Ein- und einer Ausstiegs-Haltestelle heraus (für den Reiseplan einer Etappe im
+ * Routenplaner) - mit neu gesetztem isFirst/isLast relativ zu diesem Ausschnitt. Zeit
+ * UND Haltestelle müssen übereinstimmen, da Ringlinien dieselbe Haltestelle mehrfach
+ * anfahren können.
+ */
+export function timelineSegment(
+  bundle: ScheduleBundle,
+  routeId: string,
+  tripId: string,
+  fromStopId: string,
+  fromTime: string,
+  toStopId: string,
+  toTime: string
+): TimelineStop[] {
+  const full = timelineForTrip(bundle, routeId, tripId);
+  const startIdx = full.findIndex((s) => s.stopId === fromStopId && s.time === fromTime);
+  if (startIdx === -1) return [];
+  const endIdx = full.findIndex((s, i) => i >= startIdx && s.stopId === toStopId && s.time === toTime);
+  if (endIdx === -1) return [];
+
+  const segment = full.slice(startIdx, endIdx + 1).map((s) => ({ ...s, isFirst: false, isLast: false }));
+  segment[0].isFirst = true;
+  segment[segment.length - 1].isLast = true;
+  return segment;
+}
+
 /** Fahrtdauer in Minuten zwischen erster und letzter Haltestelle der Timeline. */
 export function timelineDurationMin(stops: TimelineStop[]): number {
   const first = stops[0]?.time;

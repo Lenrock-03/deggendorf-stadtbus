@@ -100,7 +100,7 @@ export default function RoutePlanner() {
             </p>
           )}
           {journeys.map((j, i) => (
-            <JourneyCard key={i} journey={j} />
+            <JourneyCard key={i} journey={j} bundle={schedule.data} />
           ))}
         </ul>
       )}

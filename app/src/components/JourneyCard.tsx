@@ -1,6 +1,10 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import type { Journey } from "../lib/routePlanner";
 import { parseTimeToMinutes } from "../lib/time";
+import { timelineSegment } from "../lib/tripTimeline";
+import type { ScheduleBundle } from "../types/data";
+import TripTimeline from "./TripTimeline";
 
 type Segment =
   | { type: "leg"; boardTime: string; alightTime: string; routeShortName: string; routeColor: string; widthPct: number }
@@ -36,7 +40,8 @@ function formatDuration(min: number): string {
   return h > 0 ? `${h}h ${m}min` : `${m}min`;
 }
 
-export default function JourneyCard({ journey }: { journey: Journey }) {
+export default function JourneyCard({ journey, bundle }: { journey: Journey; bundle: ScheduleBundle }) {
+  const [open, setOpen] = useState(false);
   const segments = buildSegments(journey);
   const durationMin = parseTimeToMinutes(journey.arrivalTime) - parseTimeToMinutes(journey.departureTime);
   const first = journey.legs[0];
@@ -77,11 +82,33 @@ export default function JourneyCard({ journey }: { journey: Journey }) {
         <Link to={`/haltestelle/${last.alightStopId}`}>{last.alightStopName}</Link>
       </div>
 
-      {journey.legs.length > 1 && (
-        <p className="muted journey-transfer-note">
-          Umstieg in {first.alightStopName}: {first.alightTime.slice(0, 5)} → {journey.legs[1].boardTime.slice(0, 5)}{" "}
-          ({journey.transferWaitMin} Min.)
-        </p>
+      <button type="button" className="journey-details-toggle" onClick={() => setOpen((o) => !o)}>
+        Details {open ? "▲" : "▼"}
+      </button>
+
+      {open && (
+        <div className="journey-details">
+          {journey.legs.map((leg, i) => (
+            <div key={i}>
+              <div className="journey-details-leg-header">
+                <span className="line-badge" style={{ backgroundColor: `#${leg.routeColor}` }}>
+                  {leg.routeShortName}
+                </span>
+                <span>nach {leg.headsign}</span>
+              </div>
+              <TripTimeline
+                stops={timelineSegment(bundle, leg.routeId, leg.tripId, leg.boardStopId, leg.boardTime, leg.alightStopId, leg.alightTime)}
+                color={leg.routeColor}
+              />
+              {i < journey.legs.length - 1 && (
+                <p className="muted journey-transfer-note">
+                  Umstieg in {leg.alightStopName}: Ankunft {leg.alightTime.slice(0, 5)} → Abfahrt{" "}
+                  {journey.legs[i + 1].boardTime.slice(0, 5)} ({journey.transferWaitMin} Min.)
+                </p>
+              )}
+            </div>
+          ))}
+        </div>
       )}
     </li>
   );

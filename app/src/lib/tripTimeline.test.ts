@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { timelineDurationMin, timelineForTrip, tripsForRoute } from "./tripTimeline";
+import { timelineDurationMin, timelineForTrip, timelineSegment, tripsForRoute } from "./tripTimeline";
 import type { ScheduleBundle } from "../types/data";
 
 function bundle(): ScheduleBundle {
@@ -51,6 +51,19 @@ describe("timelineForTrip", () => {
     expect(tl.map((s) => s.stopId)).toEqual(["a"]);
     expect(tl[0].isFirst).toBe(true);
     expect(tl[0].isLast).toBe(true);
+  });
+});
+
+describe("timelineSegment", () => {
+  it("schneidet den Abschnitt zwischen zwei Haltestellen mit neuem isFirst/isLast heraus", () => {
+    const seg = timelineSegment(bundle(), "4", "4-1", "a", "08:00:00", "b", "08:05:00");
+    expect(seg.map((s) => s.stopId)).toEqual(["a", "b"]);
+    expect(seg[0].isFirst).toBe(true);
+    expect(seg[1].isLast).toBe(true);
+  });
+
+  it("liefert [] wenn Start- oder Endpunkt nicht auf der Fahrt liegt", () => {
+    expect(timelineSegment(bundle(), "4", "4-1", "a", "08:00:00", "x", "09:00:00")).toEqual([]);
   });
 });
 

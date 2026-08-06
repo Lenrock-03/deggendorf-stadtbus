@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.9.0
+
+- Verbindungen aufklappbar ("Details ▼"): zeigt den vollständigen Reiseplan je Etappe
+  mit allen Zwischenhaltestellen (wiederverwendet die TripTimeline-Komponente aus der
+  Liniendetailseite), plus Umstiegshinweis zwischen den Etappen - ähnlich der
+  Reiseplan-Ansicht bei bahn.de
+- lib/tripTimeline.ts: neue Funktion `timelineSegment()` schneidet den Abschnitt
+  zwischen Ein- und Ausstieg aus dem vollen Fahrtverlauf heraus, mit Tests
+
 ## v1.8.0
 
 - Verbindungsergebnisse neu gestaltet: proportionale Balkenanzeige je Fahrtabschnitt

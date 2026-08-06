@@ -442,6 +442,33 @@ button {
   margin: 0;
 }
 
+.journey-details-toggle {
+  align-self: flex-start;
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-size: 0.85rem;
+  cursor: pointer;
+  padding: 0.2rem 0;
+}
+
+.journey-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 0.4rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.journey-details-leg-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
 /* Karte bricht bewusst aus dem sonst auf 640px begrenzten Content-Bereich aus und füllt
    die volle Fensterbreite (Standard-CSS-Trick: 100vw + negative Margins ausgleichen). */
 .map-fullwidth {
