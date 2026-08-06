@@ -1,5 +1,6 @@
 import { Link, Outlet } from "react-router-dom";
 import { useSchedule } from "../lib/useSchedule";
+import InstallButton from "./InstallButton";
 
 export default function Layout() {
   const schedule = useSchedule();
@@ -11,7 +12,10 @@ export default function Layout() {
           <span aria-hidden="true">🚌</span>
           <h1>Deggendorf Busfahrplan</h1>
         </Link>
-        <Link to="/suche">Haltestelle suchen</Link>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+          <Link to="/suche">Haltestelle suchen</Link>
+          <InstallButton />
+        </div>
       </header>
       <main className="app-main">
         <Outlet />
