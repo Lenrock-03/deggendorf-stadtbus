@@ -61,6 +61,8 @@ function main() {
   const stopIdByName = new Map<string, string>();
   const stops: StopOut[] = [];
   const departuresByStop = new Map<string, DepartureOut[]>();
+  /** Vollständiger Haltestellenverlauf je Linie, in Fahrtrichtung (für die Liniendetail-Ansicht). */
+  const routeStopSequence: Record<string, { stopId: string; name: string; note?: "an" | "ab" }[]> = {};
   const calendar: CalendarOut = {
     weekday: [1, 2, 3, 4, 5],
     saturday: [6],
@@ -93,6 +95,11 @@ function main() {
 
     const stopIds = line.stops.map((s) => stopIdFor(s.name));
     const headsign = line.stops[line.stops.length - 1].name;
+    routeStopSequence[line.id] = line.stops.map((s, i) => ({
+      stopId: stopIds[i],
+      name: s.name,
+      note: s.note,
+    }));
 
     for (const trip of line.trips) {
       let times: string[];
@@ -165,6 +172,7 @@ function main() {
   writeFileSync(join(OUT_DIR, "departures.json"), JSON.stringify(departures, null, 2));
   writeFileSync(join(OUT_DIR, "calendar.json"), JSON.stringify(calendar, null, 2));
   writeFileSync(join(OUT_DIR, "meta.json"), JSON.stringify(meta, null, 2));
+  writeFileSync(join(OUT_DIR, "routeStops.json"), JSON.stringify(routeStopSequence, null, 2));
 
   console.log(`OK: ${routes.length} Linien, ${stops.length} Haltestellen, ${Object.keys(departures).length} Haltestellen mit Abfahrten -> ${OUT_DIR}`);
 }
