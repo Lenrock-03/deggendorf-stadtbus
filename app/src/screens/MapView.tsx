@@ -75,7 +75,9 @@ export default function MapView() {
   return (
     <section>
       <h2>Karte</h2>
-      <div ref={mapRef} style={{ height: "70vh", borderRadius: "0.75rem", overflow: "hidden" }} />
+      <div className="map-fullwidth">
+        <div ref={mapRef} style={{ height: "calc(100vh - 12rem)", minHeight: "22rem" }} />
+      </div>
       {missingCoords > 0 && (
         <p className="muted" style={{ marginTop: "0.6rem" }}>
           {missingCoords} Haltestellen ohne bekannte Koordinaten werden nicht angezeigt.

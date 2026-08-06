@@ -54,6 +54,9 @@ body {
   margin: 0;
   background: var(--color-bg);
   color: var(--color-fg);
+  /* .map-fullwidth nutzt 100vw, was die Breite der Scrollbar-Spalte mit einrechnet und
+     sonst einen zusätzlichen horizontalen Scrollbalken erzeugt - hier unterbunden. */
+  overflow-x: hidden;
 }
 
 a {
@@ -387,6 +390,21 @@ button {
   align-items: center;
   gap: 0.6rem;
   font-size: 0.92rem;
+}
+
+/* Karte bricht bewusst aus dem sonst auf 640px begrenzten Content-Bereich aus und füllt
+   die volle Fensterbreite (Standard-CSS-Trick: 100vw + negative Margins ausgleichen). */
+.map-fullwidth {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+.map-fullwidth > div {
+  width: 100%;
 }
 
 /* Leaflet-Popup an unser Farbschema anpassen (Default ist immer hell) */

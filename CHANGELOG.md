@@ -1,5 +1,10 @@
 # Changelog
 
+## v1.7.2
+
+- Karte füllt jetzt die volle Fensterbreite statt der sonst auf 640px begrenzten
+  Content-Spalte, und ist höher (füllt die verfügbare Fensterhöhe)
+
 ## v1.7.1
 
 - Routenplaner überarbeitet: durchsuchbare Eingabefelder (Autocomplete, wie bei der
