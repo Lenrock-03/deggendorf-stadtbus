@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.9.1
+
+- Haltestellensuche findet "Technische Hochschule" jetzt auch über die gängigen
+  Abkürzungen THD, TH Deggendorf, DIT bzw. "Deggendorf Institute of Technology"
+  (lib/stopAliases.ts, leicht um weitere Haltestellen erweiterbar)
+
 ## v1.9.0
 
 - Verbindungen aufklappbar ("Details ▼"): zeigt den vollständigen Reiseplan je Etappe

@@ -4,6 +4,7 @@ import { useSchedule } from "../lib/useSchedule";
 import { ErrorBanner, LoadingBanner } from "../components/StatusBanner";
 import { distanceMeters, formatDistance } from "../lib/geo";
 import FavoriteButton from "../components/FavoriteButton";
+import { stopMatchesQuery } from "../lib/stopAliases";
 
 type LocationState =
   | { status: "idle" }
@@ -46,7 +47,7 @@ export default function StopSearch() {
     if (schedule.status !== "ready") return [];
     const q = query.trim().toLowerCase();
     const { stops } = schedule.data;
-    const filtered = q ? stops.filter((s) => s.name.toLowerCase().includes(q)) : stops;
+    const filtered = q ? stops.filter((s) => stopMatchesQuery(s.name, q)) : stops;
 
     if (location.status === "ready") {
       const { lat, lon } = location;

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { StopData } from "../types/data";
+import { stopMatchesQuery } from "../lib/stopAliases";
 
 interface StopPickerProps {
   stops: StopData[];
@@ -25,7 +26,7 @@ export default function StopPicker({ stops, value, onChange, placeholder, label 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return [];
-    return stops.filter((s) => s.name.toLowerCase().includes(q)).slice(0, 8);
+    return stops.filter((s) => stopMatchesQuery(s.name, q)).slice(0, 8);
   }, [stops, query]);
 
   useEffect(() => {
