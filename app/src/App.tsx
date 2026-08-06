@@ -4,6 +4,7 @@ import LineOverview from "./screens/LineOverview";
 import LineDetail from "./screens/LineDetail";
 import StopSearch from "./screens/StopSearch";
 import StopBoard from "./screens/StopBoard";
+import MapView from "./screens/MapView";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="linie/:id" element={<LineDetail />} />
         <Route path="suche" element={<StopSearch />} />
         <Route path="haltestelle/:id" element={<StopBoard />} />
+        <Route path="karte" element={<MapView />} />
       </Route>
     </Routes>
   );

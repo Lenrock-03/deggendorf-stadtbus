@@ -13,11 +13,13 @@ export default function Layout() {
           <span aria-hidden="true">🚌</span>
           <h1>Deggendorf Busfahrplan</h1>
         </Link>
-        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+        <nav style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
           <Link to="/suche">Haltestelle suchen</Link>
+          <Link to="/karte">Karte</Link>
+          <Link to="/verbindung">Verbindung suchen</Link>
           <ThemeToggle />
           <InstallButton />
-        </div>
+        </nav>
       </header>
       <main className="app-main">
         <Outlet />

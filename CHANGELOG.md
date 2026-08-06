@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.6.0
+
+- **Hotfix:** Favoriten-Store (`lib/favorites.ts`) verursachte eine Endlosschleife
+  (React error #185) auf jeder Seite, die Favoriten anzeigt (Startseite, Suche,
+  Abfahrtstafel) - `useSyncExternalStore`'s `getSnapshot()` gab bei jedem Aufruf ein neues
+  Array zurück statt eine stabile Referenz. Betraf bereits v1.5.0 live.
+- Kartenansicht (`/karte`, Leaflet + OSM-Tiles): alle Haltestellen mit bekannten
+  Koordinaten, Favoriten farblich hervorgehoben, Klick auf Marker führt zur Abfahrtstafel
+
 ## v1.5.0
 
 - Dark/Light-Mode manuell umschaltbar (Button im Header, überstimmt Systemeinstellung,

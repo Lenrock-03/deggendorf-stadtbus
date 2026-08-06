@@ -18,6 +18,11 @@ function load(): Set<string> {
 }
 
 let favorites = load();
+// useSyncExternalStore verlangt, dass getSnapshot() eine REFERENZSTABILE Rückgabe liefert,
+// solange sich am Store nichts geändert hat - sonst hält React das bei jedem Render für
+// eine neue Änderung und rendert endlos weiter (React error #185). Deshalb Array cachen
+// und nur bei tatsächlicher Änderung neu erzeugen, statt bei jedem getSnapshot-Aufruf.
+let favoritesSnapshot: string[] = [...favorites];
 const listeners = new Set<() => void>();
 
 function persist() {
@@ -25,6 +30,7 @@ function persist() {
 }
 
 function notify() {
+  favoritesSnapshot = [...favorites];
   for (const l of listeners) l();
 }
 
@@ -41,7 +47,7 @@ function subscribe(listener: () => void): () => void {
 }
 
 function getSnapshot(): string[] {
-  return [...favorites];
+  return favoritesSnapshot;
 }
 
 const EMPTY: string[] = [];

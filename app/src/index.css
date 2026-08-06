@@ -69,6 +69,7 @@ button {
   align-items: center;
   justify-content: space-between;
   gap: 0.75rem;
+  flex-wrap: wrap;
   padding: 0.85rem 1rem;
   border-bottom: 1px solid var(--color-border);
   position: sticky;
@@ -253,6 +254,16 @@ button {
 
 .trip-timeline li.endpoint .tt-name {
   font-weight: 700;
+}
+
+/* Leaflet-Popup an unser Farbschema anpassen (Default ist immer hell) */
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background: var(--color-card);
+  color: var(--color-fg);
+}
+.leaflet-popup-content a {
+  color: var(--color-accent);
 }
 
 .favorite-button {
