@@ -33,9 +33,14 @@ export default defineConfig({
         globPatterns: ["**/*.{js,css,html,svg,png,ico}"],
         runtimeCaching: [
           {
+            // Fahrplandaten sind sicherheitsrelevant (falsche Zeiten irritieren echte
+            // Fahrgäste) - NetworkFirst statt StaleWhileRevalidate, damit online immer
+            // die aktuelle Version geladen wird. Der Cache dient nur als Fallback, wenn
+            // gar keine Verbindung besteht (kein Bruch mit dem bewusst nicht gebauten
+            // "garantierten Offline-Modus" - reiner Nebeneffekt der Installierbarkeit).
             urlPattern: /\/data\/.*\.json$/,
-            handler: "StaleWhileRevalidate",
-            options: { cacheName: "schedule-data" },
+            handler: "NetworkFirst",
+            options: { cacheName: "schedule-data", networkTimeoutSeconds: 4 },
           },
         ],
       },

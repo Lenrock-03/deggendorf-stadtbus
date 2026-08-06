@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.9.3
+
+- Service-Worker-Cache für Fahrplandaten von StaleWhileRevalidate auf NetworkFirst
+  umgestellt: online wird immer die aktuelle Version von /data/*.json geladen (der Cache
+  dient nur noch als Fallback ohne Verbindung). Vorher konnte ein bereits installierter/
+  besuchter Nutzer nach einem Daten-Update (z.B. v1.9.2) beim ersten Öffnen noch die alte,
+  gecachte Version sehen (sichtbar u.a. bei der Hbf-Zusammenführung).
+
 ## v1.9.2
 
 - "Deggendorf Hbf" und "Deggendorf Hbf 10" waren dieselbe Haltestelle (die "10" ist die
