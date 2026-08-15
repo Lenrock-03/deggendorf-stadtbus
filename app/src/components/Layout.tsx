@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 import { useSchedule } from "../lib/useSchedule";
 import InstallButton from "./InstallButton";
 import ThemeToggle from "./ThemeToggle";
@@ -13,10 +13,16 @@ export default function Layout() {
           <span aria-hidden="true">🚌</span>
           <h1>Deggendorf Busfahrplan</h1>
         </Link>
-        <nav style={{ display: "flex", alignItems: "center", gap: "0.75rem", flexWrap: "wrap" }}>
-          <Link to="/suche">Haltestelle suchen</Link>
-          <Link to="/karte">Karte</Link>
-          <Link to="/verbindung">Verbindung suchen</Link>
+        <nav className="app-nav">
+          <NavLink to="/suche" className="nav-button">
+            Haltestelle suchen
+          </NavLink>
+          <NavLink to="/karte" className="nav-button">
+            Karte
+          </NavLink>
+          <NavLink to="/verbindung" className="nav-button">
+            Verbindung suchen
+          </NavLink>
           <ThemeToggle />
           <InstallButton />
         </nav>

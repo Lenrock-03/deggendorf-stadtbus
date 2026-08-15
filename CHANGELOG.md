@@ -1,5 +1,11 @@
 # Changelog
 
+## v1.9.5
+
+- Navigation im Header ("Haltestelle suchen", "Karte", "Verbindung suchen") von reinen
+  Textlinks zu Button-Pills umgestellt, inkl. Hervorhebung der gerade aktiven Seite
+  (`NavLink` statt `Link`, neue `.nav-button`-Klasse in index.css)
+
 ## v1.9.4
 
 - **Datenfehler behoben:** Linie 2 zeigte doppelte Abfahrten (z.B. "07:04 Deggendorf Hbf"
