@@ -3,6 +3,7 @@ import { useSchedule } from "../lib/useSchedule";
 import { ErrorBanner, LoadingBanner } from "../components/StatusBanner";
 import StopPicker from "../components/StopPicker";
 import JourneyCard from "../components/JourneyCard";
+import Icon from "../components/Icon";
 import { findJourneys } from "../lib/routePlanner";
 import { dateInBerlin, nowMinutesInBerlin } from "../lib/time";
 
@@ -59,7 +60,7 @@ export default function RoutePlanner() {
             setSearched(false);
           }}
         >
-          ⇅
+          <Icon name="swapVertical" size={18} />
         </button>
 
         <StopPicker

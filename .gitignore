@@ -2,6 +2,7 @@ node_modules/
 dist/
 .DS_Store
 *.log
+.env
 
 # GTFS-Rohdaten sind zu groß fürs Repo und werden bei Bedarf neu geladen
 data-pipeline/raw/

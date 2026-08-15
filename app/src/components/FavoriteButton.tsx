@@ -1,4 +1,5 @@
 import { toggleFavorite, useIsFavorite } from "../lib/favorites";
+import Icon from "./Icon";
 
 export default function FavoriteButton({ stopId }: { stopId: string }) {
   const isFav = useIsFavorite(stopId);
@@ -13,7 +14,7 @@ export default function FavoriteButton({ stopId }: { stopId: string }) {
       aria-pressed={isFav}
       className="favorite-button"
     >
-      {isFav ? "★" : "☆"}
+      <Icon name={isFav ? "starFilled" : "starOutline"} size={20} />
     </button>
   );
 }

@@ -12,3 +12,18 @@ services:
       # Nur lokal binden - Zugriff von außen läuft über den vorhandenen Reverse Proxy
       # auf dem VPS (z.B. nginx/Traefik), der auf diesen Port weiterleitet.
       - "127.0.0.1:${APP_PORT:-8091}:80"
+
+  db-proxy:
+    build:
+      context: ./db-proxy
+    image: deggendorf-db-proxy:latest
+    restart: unless-stopped
+    environment:
+      # Aus einer Root-.env (siehe .env.example) oder der Shell-Umgebung - bewusst NICHT
+      # env_file: eine fehlende Datei würde dort den kompletten "docker compose up"
+      # scheitern lassen (auch für den app-Service!). Leer per Default: db-proxy antwortet
+      # dann sauber mit 502 (siehe db-proxy/src/dbClient.ts), statt den ganzen Stack zu blockieren.
+      DB_CLIENT_ID: ${DB_CLIENT_ID:-}
+      DB_API_KEY: ${DB_API_KEY:-}
+    ports:
+      - "127.0.0.1:${DB_PROXY_PORT:-8092}:3000"

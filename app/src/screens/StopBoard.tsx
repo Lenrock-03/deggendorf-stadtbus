@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useSchedule } from "../lib/useSchedule";
 import { ErrorBanner, LoadingBanner } from "../components/StatusBanner";
@@ -6,6 +6,66 @@ import LineBadge from "../components/LineBadge";
 import FavoriteButton from "../components/FavoriteButton";
 import { departuresForDate, nextDepartures } from "../lib/calendar";
 import { dateInBerlin } from "../lib/time";
+import { fetchTrainDepartures, type TrainDeparture } from "../lib/dbDepartures";
+
+// Einzige Haltestelle, für die der db-proxy-Service Zugdaten liefert (offizielle
+// DB-Timetables-API, siehe db-proxy/README bzw. Plan) - kein beliebiger Bahnhof.
+const DEGGENDORF_HBF_STOP_ID = "deggendorf-hbf";
+
+type TrainState =
+  | { status: "idle" }
+  | { status: "loading" }
+  | { status: "ready"; data: TrainDeparture[] }
+  | { status: "error" };
+
+function formatTrainTime(d: TrainDeparture): string {
+  const hhmm = new Date(d.actualTime).toLocaleTimeString("de-DE", { hour: "2-digit", minute: "2-digit" });
+  return d.delayMin > 0 ? `${hhmm} (+${d.delayMin})` : hhmm;
+}
+
+/** Zeigt Zugabfahrten unterhalb der Busabfahrten (nur an Deggendorf Hbf). Rein additiv -
+ * schlägt der Abruf fehl, wird der Block einfach weggelassen, die Busabfahrtstafel
+ * funktioniert davon komplett unabhängig weiter (kein Error-Banner für einen optionalen
+ * Zusatz). */
+function TrainDepartures() {
+  const [state, setState] = useState<TrainState>({ status: "idle" });
+
+  useEffect(() => {
+    let cancelled = false;
+    setState({ status: "loading" });
+    fetchTrainDepartures()
+      .then((data) => {
+        if (!cancelled) setState({ status: "ready", data });
+      })
+      .catch(() => {
+        if (!cancelled) setState({ status: "error" });
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  if (state.status === "idle" || state.status === "error") return null;
+
+  return (
+    <div className="card" style={{ marginTop: "1rem" }}>
+      <h3 style={{ display: "flex", alignItems: "center", gap: "0.4rem", marginTop: 0 }}>
+        <span style={{ color: "#ec0016" }}>●</span> Zugabfahrten
+      </h3>
+      {state.status === "loading" && <p className="muted">Lädt …</p>}
+      {state.status === "ready" && state.data.length === 0 && <p className="muted">Aktuell keine Zugdaten.</p>}
+      {state.status === "ready" &&
+        state.data.map((d) => (
+          <div key={d.tripId} className="departure-row">
+            <span className="departure-time">{formatTrainTime(d)}</span>
+            <span>{d.line}</span>
+            <span>{d.destination}</span>
+            {d.cancelled && <span className="muted">Fällt aus</span>}
+          </div>
+        ))}
+    </div>
+  );
+}
 
 function toInputValue(d: Date): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -92,6 +152,8 @@ export default function StopBoard() {
         Kein Verkehr an Sonn-/Feiertagen. An Heiligabend/Silvester gilt der Samstagsfahrplan (außer wenn diese auf
         einen Sonntag fallen).
       </p>
+
+      {stop.id === DEGGENDORF_HBF_STOP_ID && <TrainDepartures />}
     </section>
   );
 }

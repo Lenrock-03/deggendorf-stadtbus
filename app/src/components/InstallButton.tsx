@@ -27,6 +27,10 @@ export default function InstallButton() {
     };
   }, []);
 
+  // Im Capacitor-Android-Build feuert beforeinstallprompt ohnehin nie (kein Browser-
+  // Install-Konzept in der nativen WebView) - deferredPrompt bliebe also sowieso immer
+  // null, hier trotzdem explizit statt nur zufällig inaktiv.
+  if (import.meta.env.VITE_CAPACITOR === "1") return null;
   if (!deferredPrompt || installed) return null;
 
   return (
