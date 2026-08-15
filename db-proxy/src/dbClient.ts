@@ -11,7 +11,11 @@ function ensureArray<T>(v: T | T[] | undefined): T[] {
 interface RawStop {
   id: string;
   tl?: { c?: string; n?: string };
-  dp?: { pt?: string; ct?: string; l?: string; pth?: string; cp?: string; cs?: string };
+  // l = Linienbezeichnung (z.B. "RB35") - das, was auf echten Anzeigern steht. fb ist der
+  // Fallback dafür (v.a. bei Fernverkehr, wo l fehlen kann). ppth trotz des Namens NICHT
+  // "vorheriger" Pfad, sondern je nach Kontext (ar vs. dp) die Bahnhöfe davor/danach -
+  // bei <dp> also die Folgebahnhöfe, deren letzter Eintrag das Fahrtziel ist.
+  dp?: { pt?: string; ct?: string; l?: string; fb?: string; ppth?: string; cp?: string; cs?: string };
 }
 
 export interface TrainDeparture {
@@ -64,7 +68,12 @@ function parseBahnTime(raw: string | undefined): string | undefined {
 
 async function fetchXml(path: string): Promise<any> {
   const res = await fetch(`${TIMETABLES_BASE_URL}${path}`, { headers: authHeaders() });
-  if (!res.ok) throw new Error(`Timetables API ${path}: HTTP ${res.status}`);
+  if (!res.ok) {
+    // Fehlertext der DB-API mitloggen (enthält keine Zugangsdaten, nur deren Fehlermeldung -
+    // hilft bei 403 zwischen "falscher Key" und "Subscription noch nicht aktiv" zu unterscheiden).
+    const body = await res.text().catch(() => "");
+    throw new Error(`Timetables API ${path}: HTTP ${res.status} - ${body.slice(0, 300)}`);
+  }
   const xml = await res.text();
   return parser.parse(xml);
 }
@@ -102,8 +111,8 @@ export async function fetchDepartures(): Promise<TrainDeparture[]> {
       if (!plannedIso) continue;
       const actualIso = parseBahnTime(change?.dp?.ct) ?? plannedIso;
       const delayMin = Math.round((new Date(actualIso).getTime() - new Date(plannedIso).getTime()) / 60000);
-      const line = s.tl?.c && s.tl?.n ? `${s.tl.c} ${s.tl.n}` : s.dp.l ?? "?";
-      const destination = (s.dp.pth ?? "").split("|").filter(Boolean).at(-1) ?? "";
+      const line = s.dp.l ?? s.dp.fb ?? (s.tl?.c && s.tl?.n ? `${s.tl.c} ${s.tl.n}` : "?");
+      const destination = (s.dp.ppth ?? "").split("|").filter(Boolean).at(-1) ?? "";
       result.push({
         tripId: s.id,
         line,
