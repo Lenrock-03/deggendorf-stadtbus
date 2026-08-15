@@ -55,9 +55,17 @@ fun MapScreen(
                         }
                         mapView.overlays.add(marker)
                     }
+                    // zoomToBoundingBox() VOR dem ersten Layout-Pass aufzurufen (Breite/Höhe
+                    // der View noch 0) kann osmdroid beim Zoomstufen-Suchen hängen lassen -
+                    // bekannte Falle, hat hier eine ANR ausgelöst. Über post() auf den
+                    // nächsten Layout-Durchlauf verschieben und Größe vorher prüfen.
                     if (points.isNotEmpty()) {
                         val bbox = org.osmdroid.util.BoundingBox.fromGeoPoints(points)
-                        mapView.zoomToBoundingBox(bbox, false, 60)
+                        mapView.post {
+                            if (mapView.width > 0 && mapView.height > 0) {
+                                mapView.zoomToBoundingBox(bbox, false, 60)
+                            }
+                        }
                     }
                     mapView.invalidate()
                 }
