@@ -13,17 +13,22 @@ services:
       # auf dem VPS (z.B. nginx/Traefik), der auf diesen Port weiterleitet.
       - "127.0.0.1:${APP_PORT:-8091}:80"
 
-  db-proxy:
+  api:
     build:
-      context: ./db-proxy
-    image: deggendorf-db-proxy:latest
+      # Repo-Root als Context (nicht api/ selbst), damit der Dockerfile-Builder-Schritt
+      # zusätzlich data-pipeline/ mit reinnehmen kann (eigener, aktueller Datenstand statt
+      # Abhängigkeit vom app-Image).
+      context: .
+      dockerfile: api/Dockerfile
+    image: deggendorf-stadtbus-api:latest
     restart: unless-stopped
     environment:
       # Aus einer Root-.env (siehe .env.example) oder der Shell-Umgebung - bewusst NICHT
       # env_file: eine fehlende Datei würde dort den kompletten "docker compose up"
-      # scheitern lassen (auch für den app-Service!). Leer per Default: db-proxy antwortet
-      # dann sauber mit 502 (siehe db-proxy/src/dbClient.ts), statt den ganzen Stack zu blockieren.
+      # scheitern lassen (auch für den app-Service!). Leer per Default: der DB-Zug-Teil
+      # antwortet dann sauber mit 502 (siehe api/src/dbClient.ts), alle anderen Endpunkte
+      # (Fahrpläne, Routenplaner) funktionieren unabhängig davon normal.
       DB_CLIENT_ID: ${DB_CLIENT_ID:-}
       DB_API_KEY: ${DB_API_KEY:-}
     ports:
-      - "127.0.0.1:${DB_PROXY_PORT:-8092}:3000"
+      - "127.0.0.1:${API_PORT:-8092}:3000"

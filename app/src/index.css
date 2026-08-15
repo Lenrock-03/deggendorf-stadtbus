@@ -74,10 +74,6 @@ button {
   gap: 0.75rem;
   flex-wrap: wrap;
   padding: 0.85rem 1rem;
-  /* env(safe-area-inset-top) ist 0 im normalen Browser (harmlos), reserviert aber in der
-     Capacitor-Android-App (edge-to-edge-WebView) den nötigen Platz für Status-Bar-Uhrzeit/
-     Icons, statt dass der Header darunter verschwindet. */
-  padding-top: calc(0.85rem + env(safe-area-inset-top, 0px));
   border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
@@ -104,8 +100,6 @@ button {
   gap: 0.5rem;
 }
 
-/* Web-App: Top-Nav-Leiste (bewusst beibehalten, siehe Layout.tsx-Kommentar - nur die
-   native Capacitor-App nutzt stattdessen die BottomNav weiter unten). */
 .app-nav {
   display: flex;
   align-items: center;
@@ -134,49 +128,6 @@ button {
   background: var(--color-accent);
   border-color: var(--color-accent);
   color: #fff;
-}
-
-/* Native Capacitor-App: Material-Design-artige Bottom-Tab-Bar (siehe components/BottomNav.tsx), ersetzt die
-   frühere Nav-Pill-Leiste im Header. */
-.bottom-nav {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: space-around;
-  background: var(--color-card);
-  border-top: 1px solid var(--color-border);
-  padding: 0.4rem 0.5rem calc(0.4rem + env(safe-area-inset-bottom, 0px));
-}
-
-.bottom-nav-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.15rem;
-  padding: 0.3rem 0.9rem;
-  border-radius: 1.1rem;
-  color: var(--color-muted);
-  text-decoration: none;
-  font-size: 0.72rem;
-  min-width: 3.5rem;
-}
-
-.bottom-nav-icon {
-  font-size: 1.2rem;
-  line-height: 1;
-}
-
-.bottom-nav-item.active {
-  background: color-mix(in srgb, var(--color-accent) 18%, transparent);
-  color: var(--color-accent);
-}
-
-.app-main-with-bottom-nav {
-  /* Platz für die fixierte Bottom-Nav, damit der letzte Inhalt nicht darunter verschwindet. */
-  padding-bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
 }
 
 .app-main {
