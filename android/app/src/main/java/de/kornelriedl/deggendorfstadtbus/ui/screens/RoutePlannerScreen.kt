@@ -2,41 +2,47 @@
 
 package de.kornelriedl.deggendorfstadtbus.ui.screens
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.SwapVert
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.DatePicker
 import androidx.compose.material3.DatePickerDialog
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
-import androidx.compose.material3.ListItem
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.material3.TimePicker
 import androidx.compose.material3.rememberDatePickerState
 import androidx.compose.material3.rememberTimePickerState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import de.kornelriedl.deggendorfstadtbus.data.api.ApiOutcome
@@ -46,16 +52,21 @@ import de.kornelriedl.deggendorfstadtbus.data.model.RouteData
 import de.kornelriedl.deggendorfstadtbus.data.model.StopData
 import de.kornelriedl.deggendorfstadtbus.ui.Loadable
 import de.kornelriedl.deggendorfstadtbus.ui.components.JourneyCard
+import de.kornelriedl.deggendorfstadtbus.ui.components.StopAutocomplete
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import java.time.Instant
 import java.time.LocalDate
 import java.time.LocalTime
 import java.time.ZoneId
 import java.time.format.DateTimeFormatter
 
+/**
+ * Verbindungssuche - Kotlin-Pendant zu RoutePlanner.tsx, layout-/farblich bewusst nah an der
+ * Web-App gehalten (Karten-Formular mit Label-über-Feld-Haltestellensuche, Datum/Uhrzeit
+ * nebeneinander, Ergebnisliste mit Segment-Balken-JourneyCard) statt eines rein
+ * Material-typischen Looks.
+ */
 @Composable
 fun RoutePlannerScreen(
     modifier: Modifier = Modifier,
@@ -63,8 +74,9 @@ fun RoutePlannerScreen(
     routesById: Map<String, RouteData>
 ) {
     var originId by remember { mutableStateOf<String?>(null) }
+    var originQuery by remember { mutableStateOf("") }
     var destId by remember { mutableStateOf<String?>(null) }
-    var pickingFor by remember { mutableStateOf<PickTarget?>(null) }
+    var destQuery by remember { mutableStateOf("") }
     var results by remember { mutableStateOf<Loadable<List<Journey>>?>(null) }
     var selectedDate by remember { mutableStateOf(LocalDate.now()) }
     var selectedTime by remember { mutableStateOf(LocalTime.now().withSecond(0).withNano(0)) }
@@ -72,7 +84,6 @@ fun RoutePlannerScreen(
     var pickingTime by remember { mutableStateOf(false) }
     val scope = rememberCoroutineScope()
 
-    val stopsById = (stops as? Loadable.Ready)?.data?.associateBy { it.id } ?: emptyMap()
     val sameStop = originId != null && destId != null && originId == destId
 
     fun search() {
@@ -90,41 +101,101 @@ fun RoutePlannerScreen(
     }
 
     Column(modifier = modifier.fillMaxSize().padding(16.dp)) {
-        StopPickerField("Von", stopsById[originId]?.name) { pickingFor = PickTarget.ORIGIN }
-        Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
-            IconButton(onClick = {
-                val tmp = originId
-                originId = destId
-                destId = tmp
-            }) {
-                Icon(Icons.Filled.SwapVert, contentDescription = "Start und Ziel tauschen")
-            }
-        }
-        StopPickerField("Nach", stopsById[destId]?.name) { pickingFor = PickTarget.DEST }
-
-        Row(modifier = Modifier.padding(top = 8.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            OutlinedButton(onClick = { pickingDate = true }, modifier = Modifier.weight(1f)) {
-                Text("Datum: ${selectedDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"))}")
-            }
-            OutlinedButton(onClick = { pickingTime = true }, modifier = Modifier.weight(1f)) {
-                Text("Ab: ${selectedTime.format(DateTimeFormatter.ofPattern("HH:mm"))}")
-            }
-        }
-
-        Button(
-            onClick = { search() },
-            enabled = originId != null && destId != null && !sameStop,
-            modifier = Modifier.padding(top = 12.dp)
+        Card(
+            shape = RoundedCornerShape(12.dp),
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant),
+            border = BorderStroke(1.dp, MaterialTheme.colorScheme.outline),
+            elevation = CardDefaults.cardElevation(defaultElevation = 0.dp),
+            modifier = Modifier.fillMaxWidth()
         ) {
-            Text("Verbindung suchen")
-        }
-        if (sameStop) {
-            Text(
-                "Start und Ziel dürfen nicht gleich sein.",
-                color = MaterialTheme.colorScheme.error,
-                style = MaterialTheme.typography.bodySmall,
-                modifier = Modifier.padding(top = 4.dp)
-            )
+            Column(
+                modifier = Modifier.padding(16.dp),
+                verticalArrangement = Arrangement.spacedBy(10.dp)
+            ) {
+                StopAutocomplete(
+                    label = "Von",
+                    query = originQuery,
+                    onQueryChange = {
+                        originQuery = it
+                        originId = null
+                    },
+                    onSelect = { stop ->
+                        originId = stop.id
+                        originQuery = stop.name
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                )
+
+                Box(
+                    modifier = Modifier
+                        .align(Alignment.CenterHorizontally)
+                        .size(36.dp)
+                        .background(MaterialTheme.colorScheme.surface, CircleShape)
+                        .border(1.dp, MaterialTheme.colorScheme.outline, CircleShape)
+                        .clickable {
+                            val tmpId = originId
+                            val tmpQuery = originQuery
+                            originId = destId
+                            originQuery = destQuery
+                            destId = tmpId
+                            destQuery = tmpQuery
+                        },
+                    contentAlignment = Alignment.Center
+                ) {
+                    Icon(
+                        Icons.Filled.SwapVert,
+                        contentDescription = "Start und Ziel tauschen",
+                        tint = MaterialTheme.colorScheme.primary,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+
+                StopAutocomplete(
+                    label = "Nach",
+                    query = destQuery,
+                    onQueryChange = {
+                        destQuery = it
+                        destId = null
+                    },
+                    onSelect = { stop ->
+                        destId = stop.id
+                        destQuery = stop.name
+                    },
+                    modifier = Modifier.fillMaxWidth()
+                )
+
+                Row(horizontalArrangement = Arrangement.spacedBy(16.dp), modifier = Modifier.fillMaxWidth()) {
+                    LabeledField(
+                        label = "Datum",
+                        value = selectedDate.format(DateTimeFormatter.ofPattern("dd.MM.yyyy")),
+                        onClick = { pickingDate = true },
+                        modifier = Modifier.weight(1f)
+                    )
+                    LabeledField(
+                        label = "Ab Uhrzeit",
+                        value = selectedTime.format(DateTimeFormatter.ofPattern("HH:mm")),
+                        onClick = { pickingTime = true },
+                        modifier = Modifier.weight(1f)
+                    )
+                }
+
+                Button(
+                    onClick = { search() },
+                    enabled = originId != null && destId != null && !sameStop,
+                    shape = RoundedCornerShape(10.dp),
+                    colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.primary),
+                    modifier = Modifier.padding(top = 2.dp)
+                ) {
+                    Text("Verbindung suchen", fontWeight = androidx.compose.ui.text.font.FontWeight.SemiBold)
+                }
+                if (sameStop) {
+                    Text(
+                        "Start und Ziel dürfen nicht gleich sein.",
+                        color = MaterialTheme.colorScheme.error,
+                        style = MaterialTheme.typography.bodySmall
+                    )
+                }
+            }
         }
 
         when (val r = results) {
@@ -135,6 +206,8 @@ fun RoutePlannerScreen(
                 Text(
                     "Keine Verbindung gefunden (an diesem Tag/zu dieser Zeit kein Verkehr, oder keine " +
                         "Verbindung mit höchstens einmal Umsteigen).",
+                    color = MaterialTheme.colorScheme.onSurfaceVariant,
+                    style = MaterialTheme.typography.bodyMedium,
                     modifier = Modifier.padding(top = 16.dp)
                 )
             } else {
@@ -145,23 +218,11 @@ fun RoutePlannerScreen(
         }
     }
 
-    pickingFor?.let { target ->
-        StopPickerDialog(
-            fallbackStops = (stops as? Loadable.Ready)?.data ?: emptyList(),
-            onDismiss = { pickingFor = null },
-            onSelect = { stop ->
-                if (target == PickTarget.ORIGIN) originId = stop.id else destId = stop.id
-                pickingFor = null
-            }
-        )
-    }
-
     if (pickingDate) {
-        // Material3 DatePicker rechnet intern grundsätzlich in UTC-Millis (unabhängig von der
-        // Systemzeitzone) - mit der lokalen Zone gebaute Millis verschieben das angezeigte
-        // Datum um einen Tag (in MEZ/MESZ rückwärts). Deshalb hier bewusst UTC statt
-        // systemDefault(), das Zurücklesen unten tut das bereits richtig.
         val state = rememberDatePickerState(
+            // Material3 DatePicker rechnet intern grundsätzlich in UTC-Millis (unabhängig von
+            // der Systemzeitzone) - mit der lokalen Zone gebaute Millis verschieben das
+            // angezeigte Datum um einen Tag (in MEZ/MESZ rückwärts).
             initialSelectedDateMillis = selectedDate.atStartOfDay(ZoneId.of("UTC")).toInstant().toEpochMilli()
         )
         DatePickerDialog(
@@ -196,55 +257,18 @@ fun RoutePlannerScreen(
     }
 }
 
-private enum class PickTarget { ORIGIN, DEST }
-
 @Composable
-private fun StopPickerField(label: String, value: String?, onClick: () -> Unit) {
-    OutlinedButton(onClick = onClick, modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
-        Text("$label: ${value ?: "Haltestelle wählen …"}")
-    }
-}
-
-@Composable
-private fun StopPickerDialog(fallbackStops: List<StopData>, onDismiss: () -> Unit, onSelect: (StopData) -> Unit) {
-    var query by remember { mutableStateOf("") }
-    var searchResults by remember { mutableStateOf<List<StopData>?>(null) }
-
-    // Serverseitige, alias-bewusste Suche (siehe api/src/stopAliases.ts, gleiches Muster wie
-    // StopSearchScreen.kt) statt reinem Client-.contains() - findet z.B. "TH" -> "Technische
-    // Hochschule". Bei leerer Eingabe die schon geladene volle Liste zeigen, kein Request nötig.
-    LaunchedEffect(query) {
-        if (query.isBlank()) {
-            searchResults = null
-            return@LaunchedEffect
-        }
-        delay(300)
-        when (val r = withContext(Dispatchers.IO) { ScheduleApi.stopsSearch(query) }) {
-            is ApiOutcome.Success -> searchResults = r.data
-            is ApiOutcome.Failure -> {}
+private fun LabeledField(label: String, value: String, onClick: () -> Unit, modifier: Modifier = Modifier) {
+    Column(modifier = modifier) {
+        Text(label, style = MaterialTheme.typography.labelMedium, color = MaterialTheme.colorScheme.onSurfaceVariant)
+        Box(
+            modifier = Modifier
+                .fillMaxWidth()
+                .border(1.dp, MaterialTheme.colorScheme.outline, RoundedCornerShape(10.dp))
+                .clickable(onClick = onClick)
+                .padding(horizontal = 12.dp, vertical = 12.dp)
+        ) {
+            Text(value)
         }
     }
-
-    val shown = searchResults ?: fallbackStops
-
-    AlertDialog(
-        onDismissRequest = onDismiss,
-        confirmButton = {},
-        title = { Text("Haltestelle wählen") },
-        text = {
-            Column {
-                OutlinedTextField(value = query, onValueChange = { query = it }, modifier = Modifier.fillMaxWidth())
-                LazyColumn(modifier = Modifier.fillMaxWidth()) {
-                    items(shown) { stop ->
-                        ListItem(
-                            headlineContent = { Text(stop.name) },
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .clickable { onSelect(stop) }
-                        )
-                    }
-                }
-            }
-        }
-    )
 }
