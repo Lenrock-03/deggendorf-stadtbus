@@ -14,14 +14,26 @@ import androidx.compose.ui.unit.dp
 import de.kornelriedl.deggendorfstadtbus.data.model.Journey
 import de.kornelriedl.deggendorfstadtbus.data.model.RouteData
 
+private fun timeToMinutes(hhmmss: String): Int {
+    val parts = hhmmss.split(":")
+    return parts[0].toInt() * 60 + parts[1].toInt()
+}
+
+private fun formatDuration(min: Int): String {
+    val h = min / 60
+    val m = min % 60
+    return if (h > 0) "${h}h ${m}min" else "${m}min"
+}
+
 @Composable
 fun JourneyCard(journey: Journey, routesById: Map<String, RouteData>) {
+    val durationMin = timeToMinutes(journey.arrivalTime) - timeToMinutes(journey.departureTime)
     Card(modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp)) {
         Column(modifier = Modifier.padding(12.dp)) {
             Row(horizontalArrangement = Arrangement.SpaceBetween, modifier = Modifier.fillMaxWidth()) {
                 Text("${journey.departureTime.take(5)} → ${journey.arrivalTime.take(5)}", style = MaterialTheme.typography.titleMedium)
-                if (journey.legs.size > 1) Text("1 Umstieg", style = MaterialTheme.typography.bodySmall)
-                else Text("Direkt", style = MaterialTheme.typography.bodySmall)
+                val transferLabel = if (journey.legs.size > 1) "1 Umstieg" else "Direkt"
+                Text("${formatDuration(durationMin)} · $transferLabel", style = MaterialTheme.typography.bodySmall)
             }
             journey.legs.forEachIndexed { i, leg ->
                 Row(

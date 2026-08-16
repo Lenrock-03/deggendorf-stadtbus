@@ -54,8 +54,8 @@ object ScheduleApi {
     fun stopDepartures(stopId: String, count: Int = 8): ApiOutcome<List<DepartureData>> =
         parse(ApiClient.getStopDepartures(stopId, count)) { JSONArray(it).mapObjects(DepartureData::fromJson) }
 
-    fun journeys(from: String, to: String): ApiOutcome<List<Journey>> =
-        parse(ApiClient.getJourneys(from, to)) { JSONArray(it).mapObjects(Journey::fromJson) }
+    fun journeys(from: String, to: String, date: String, afterMin: Int, maxResults: Int = 8): ApiOutcome<List<Journey>> =
+        parse(ApiClient.getJourneys(from, to, date, afterMin, maxResults)) { JSONArray(it).mapObjects(Journey::fromJson) }
 
     fun meta(): ApiOutcome<MetaData> =
         parse(ApiClient.getMeta()) { MetaData.fromJson(org.json.JSONObject(it)) }

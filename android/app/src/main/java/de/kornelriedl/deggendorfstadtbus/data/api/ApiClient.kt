@@ -66,8 +66,8 @@ object ApiClient {
     fun getStopDepartures(stopId: String, count: Int = 8) =
         get("/stops/${enc(stopId)}/departures?mode=next&count=$count")
 
-    fun getJourneys(from: String, to: String): ApiResult =
-        get("/journeys?from=${enc(from)}&to=${enc(to)}")
+    fun getJourneys(from: String, to: String, date: String, afterMin: Int, maxResults: Int = 8): ApiResult =
+        get("/journeys?from=${enc(from)}&to=${enc(to)}&date=${enc(date)}&afterMin=$afterMin&maxResults=$maxResults")
 
     fun getMeta() = get("/meta")
     fun getTrainDepartures() = get("/db/departures")
