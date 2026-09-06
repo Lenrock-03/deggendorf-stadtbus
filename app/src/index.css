@@ -354,6 +354,31 @@ button {
   background: var(--color-card);
 }
 
+.stop-picker-group-label {
+  padding: 0.4rem 0.6rem 0.15rem;
+  font-size: 0.75rem;
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.stop-picker-suggestions li button.stop-picker-address-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stop-picker-address-option span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stop-picker-resolved-note {
+  margin: 0.3rem 0 0;
+  font-size: 0.85rem;
+}
+
 .swap-button {
   align-self: center;
   width: 2.2rem;

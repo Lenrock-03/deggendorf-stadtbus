@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.12.0
+
+- Routenplaner und Haltestellensuche akzeptieren jetzt auch beliebige Adressen in Deggendorf
+  statt nur Haltestellennamen (Adresssuche über die öffentliche Nominatim-API/OpenStreetMap,
+  siehe `app/src/lib/geocode.ts`): im Routenplaner wird eine gewählte Adresse automatisch auf
+  ihre nächstgelegene Haltestelle abgebildet, auf der Haltestellensuche sortiert sie die Liste
+  nach Entfernung (wie "Standort verwenden", nur mit eingegebener statt per GPS ermittelter
+  Position).
+
 ## v1.9.5
 
 - Navigation im Header ("Haltestelle suchen", "Karte", "Verbindung suchen") von reinen

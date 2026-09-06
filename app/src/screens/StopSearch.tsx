@@ -1,8 +1,9 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useSchedule } from "../lib/useSchedule";
 import { ErrorBanner, LoadingBanner } from "../components/StatusBanner";
 import { distanceMeters, formatDistance } from "../lib/geo";
+import { useAddressSearch } from "../lib/useAddressSearch";
 import FavoriteButton from "../components/FavoriteButton";
 import Icon from "../components/Icon";
 import { stopMatchesQuery } from "../lib/stopAliases";
@@ -10,7 +11,7 @@ import { stopMatchesQuery } from "../lib/stopAliases";
 type LocationState =
   | { status: "idle" }
   | { status: "loading" }
-  | { status: "ready"; lat: number; lon: number }
+  | { status: "ready"; lat: number; lon: number; source: "gps" | "address"; label?: string }
   | { status: "error"; message: string };
 
 function geoErrorMessage(err: GeolocationPositionError): string {
@@ -31,6 +32,21 @@ export default function StopSearch() {
   const [query, setQuery] = useState("");
   const [location, setLocation] = useState<LocationState>({ status: "idle" });
 
+  const [addressQuery, setAddressQuery] = useState("");
+  const [addressOpen, setAddressOpen] = useState(false);
+  const addressBoxRef = useRef<HTMLDivElement>(null);
+  const address = useAddressSearch(addressQuery, addressOpen);
+
+  useEffect(() => {
+    function onClickOutside(e: MouseEvent) {
+      if (addressBoxRef.current && !addressBoxRef.current.contains(e.target as Node)) {
+        setAddressOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", onClickOutside);
+    return () => document.removeEventListener("mousedown", onClickOutside);
+  }, []);
+
   function useMyLocation() {
     if (!("geolocation" in navigator)) {
       setLocation({ status: "error", message: "Dieser Browser unterstützt keine Standortermittlung." });
@@ -38,10 +54,16 @@ export default function StopSearch() {
     }
     setLocation({ status: "loading" });
     navigator.geolocation.getCurrentPosition(
-      (pos) => setLocation({ status: "ready", lat: pos.coords.latitude, lon: pos.coords.longitude }),
+      (pos) => setLocation({ status: "ready", lat: pos.coords.latitude, lon: pos.coords.longitude, source: "gps" }),
       (err) => setLocation({ status: "error", message: geoErrorMessage(err) }),
       { enableHighAccuracy: true, timeout: 10000 }
     );
+  }
+
+  function selectAddress(label: string, lat: number, lon: number) {
+    setLocation({ status: "ready", lat, lon, source: "address", label });
+    setAddressQuery(label);
+    setAddressOpen(false);
   }
 
   const results = useMemo(() => {
@@ -85,7 +107,7 @@ export default function StopSearch() {
         autoFocus
       />
 
-      <div style={{ marginTop: "0.6rem" }}>
+      <div style={{ marginTop: "0.6rem", display: "flex", alignItems: "center", gap: "0.6rem", flexWrap: "wrap" }}>
         <button
           onClick={useMyLocation}
           disabled={location.status === "loading"}
@@ -94,17 +116,53 @@ export default function StopSearch() {
           <Icon name="location" size={18} />
           {location.status === "loading" ? "Standort wird ermittelt …" : "Standort verwenden"}
         </button>
-        {location.status === "error" && (
-          <p className="muted" style={{ marginTop: "0.4rem" }}>
-            {location.message}
-          </p>
-        )}
-        {location.status === "ready" && (
-          <p className="muted" style={{ marginTop: "0.4rem" }}>
-            Sortiert nach Entfernung zu deinem Standort.
-          </p>
-        )}
+        <span className="muted">oder</span>
+        <div className="stop-picker" ref={addressBoxRef} style={{ minWidth: "16rem", flex: "1 1 16rem" }}>
+          <input
+            type="text"
+            className="stop-search-input"
+            aria-label="Adresse eingeben"
+            placeholder="Adresse eingeben, z.B. Ringstraße 5 …"
+            value={addressQuery}
+            onChange={(e) => {
+              setAddressQuery(e.target.value);
+              setAddressOpen(true);
+              if (location.status === "ready" && location.source === "address") setLocation({ status: "idle" });
+            }}
+            onFocus={() => setAddressOpen(true)}
+            autoComplete="off"
+          />
+          {addressOpen && address.results.length > 0 && (
+            <ul className="stop-picker-suggestions">
+              {address.results.map((a, i) => (
+                <li key={`${a.lat},${a.lon},${i}`}>
+                  <button type="button" onClick={() => selectAddress(a.label, a.lat, a.lon)}>
+                    {a.label}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+          {addressOpen && addressQuery.trim().length >= 3 && address.results.length === 0 && (
+            <ul className="stop-picker-suggestions">
+              <li className="muted" style={{ padding: "0.5rem 0.75rem" }}>
+                {address.loading ? "Suche Adresse …" : "Keine Adresse gefunden"}
+              </li>
+            </ul>
+          )}
+        </div>
       </div>
+
+      {location.status === "error" && (
+        <p className="muted" style={{ marginTop: "0.4rem" }}>
+          {location.message}
+        </p>
+      )}
+      {location.status === "ready" && (
+        <p className="muted" style={{ marginTop: "0.4rem" }}>
+          Sortiert nach Entfernung zu {location.source === "address" ? `„${location.label}“` : "deinem Standort"}.
+        </p>
+      )}
 
       <ul className="card-list" style={{ marginTop: "1rem" }}>
         {results.map((s) => (
