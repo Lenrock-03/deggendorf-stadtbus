@@ -1,6 +1,6 @@
 # Changelog
 
-## v1.12.0
+## v1.13.0
 
 ### Hinzugefügt
 - `GET /api/stops/near-address`: löst eine freie Adresseingabe (z.B. "Edlmairstraße 6") über
@@ -17,6 +17,15 @@
   `ExposedDropdownMenuBox`, deren Popup-/Anchor-Verwaltung mit dem InputConnection des
   Textfelds kollidierte, sobald `onValueChange` zusätzlich den `expanded`-Status setzte.
   Ersetzt durch eine einfache inline eingeblendete Vorschlagsliste ohne eigenes Popup.
+
+## v1.12.0
+
+- Routenplaner und Haltestellensuche akzeptieren jetzt auch beliebige Adressen in Deggendorf
+  statt nur Haltestellennamen (Adresssuche über die öffentliche Nominatim-API/OpenStreetMap,
+  siehe `app/src/lib/geocode.ts`): im Routenplaner wird eine gewählte Adresse automatisch auf
+  ihre nächstgelegene Haltestelle abgebildet, auf der Haltestellensuche sortiert sie die Liste
+  nach Entfernung (wie "Standort verwenden", nur mit eingegebener statt per GPS ermittelter
+  Position).
 
 ## v1.9.5
 
