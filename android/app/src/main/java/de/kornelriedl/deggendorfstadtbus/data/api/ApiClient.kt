@@ -62,6 +62,8 @@ object ApiClient {
     fun getStopsSearch(query: String) = get("/stops/search?q=${enc(query)}")
     fun getStopsNearest(lat: Double, lon: Double, count: Int = 15) =
         get("/stops/nearest?lat=$lat&lon=$lon&count=$count")
+    fun getStopsNearAddress(address: String, radius: Int = 500) =
+        get("/stops/near-address?address=${enc(address)}&radius=$radius")
 
     fun getStopDepartures(stopId: String, count: Int = 8) =
         get("/stops/${enc(stopId)}/departures?mode=next&count=$count")

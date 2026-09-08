@@ -6,6 +6,7 @@ import de.kornelriedl.deggendorfstadtbus.data.model.MetaData
 import de.kornelriedl.deggendorfstadtbus.data.model.RouteData
 import de.kornelriedl.deggendorfstadtbus.data.model.StopData
 import de.kornelriedl.deggendorfstadtbus.data.model.StopWithDistance
+import de.kornelriedl.deggendorfstadtbus.data.model.StopsNearAddressResult
 import de.kornelriedl.deggendorfstadtbus.data.model.TimelineStop
 import de.kornelriedl.deggendorfstadtbus.data.model.TrainDeparture
 import de.kornelriedl.deggendorfstadtbus.data.model.TripOption
@@ -50,6 +51,9 @@ object ScheduleApi {
 
     fun stopsNearest(lat: Double, lon: Double, count: Int = 15): ApiOutcome<List<StopWithDistance>> =
         parse(ApiClient.getStopsNearest(lat, lon, count)) { JSONArray(it).mapObjects(StopWithDistance::fromJson) }
+
+    fun stopsNearAddress(address: String, radius: Int = 500): ApiOutcome<StopsNearAddressResult> =
+        parse(ApiClient.getStopsNearAddress(address, radius)) { StopsNearAddressResult.fromJson(org.json.JSONObject(it)) }
 
     fun stopDepartures(stopId: String, count: Int = 8): ApiOutcome<List<DepartureData>> =
         parse(ApiClient.getStopDepartures(stopId, count)) { JSONArray(it).mapObjects(DepartureData::fromJson) }

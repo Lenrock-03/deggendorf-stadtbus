@@ -1,5 +1,23 @@
 # Changelog
 
+## v1.12.0
+
+### Hinzugefügt
+- `GET /api/stops/near-address`: löst eine freie Adresseingabe (z.B. "Edlmairstraße 6") über
+  Nominatim (OpenStreetMap) zu Koordinaten auf und liefert alle Haltestellen im Umkreis
+  (Default 500m), sortiert nach Entfernung – neuer `stopsWithinRadius()` in `api/src/geo.ts`,
+  ergänzt das bestehende `nearestStops()` (feste Anzahl statt echtem Umkreis-Cutoff).
+  Genutzt von der Android-Verbindungssuche: wenn die Eingabe in "Von"/"Nach" keiner
+  Haltestelle im Namen entspricht, wird sie jetzt zusätzlich als Adresse versucht, statt nur
+  "keine Haltestelle gefunden" zu zeigen.
+
+### Behoben
+- Android: `StopAutocomplete` (Verbindungssuche) brauchte zwei Rücktasten-Drücke pro Zeichen
+  und Haltestellen mussten quasi 1:1 exakt eingegeben werden – Ursache war Material3s
+  `ExposedDropdownMenuBox`, deren Popup-/Anchor-Verwaltung mit dem InputConnection des
+  Textfelds kollidierte, sobald `onValueChange` zusätzlich den `expanded`-Status setzte.
+  Ersetzt durch eine einfache inline eingeblendete Vorschlagsliste ohne eigenes Popup.
+
 ## v1.9.5
 
 - Navigation im Header ("Haltestelle suchen", "Karte", "Verbindung suchen") von reinen

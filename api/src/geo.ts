@@ -34,6 +34,25 @@ export function nearestStops(
     .slice(0, count);
 }
 
+/**
+ * Haltestellen mit bekannten Koordinaten innerhalb eines Radius um (lat, lon), sortiert nach
+ * Entfernung - anders als nearestStops() kein Cutoff nach Anzahl, sondern nach Distanz (z.B.
+ * für die Adresssuche in der Verbindungssuche: alle Haltestellen im Umkreis der gefundenen
+ * Adresse, nicht nur eine feste Anzahl "der nächsten").
+ */
+export function stopsWithinRadius(
+  stops: StopData[],
+  lat: number,
+  lon: number,
+  radiusM: number
+): StopWithDistance[] {
+  return stops
+    .filter((s): s is StopData & { lat: number; lon: number } => s.lat != null && s.lon != null)
+    .map((s) => ({ ...s, distanceM: distanceMeters(lat, lon, s.lat, s.lon) }))
+    .filter((s) => s.distanceM <= radiusM)
+    .sort((a, b) => a.distanceM - b.distanceM);
+}
+
 export function formatDistance(m: number): string {
   if (m < 1000) return `${Math.round(m / 10) * 10} m`;
   return `${(m / 1000).toFixed(1)} km`;

@@ -69,6 +69,19 @@ jährlich von Hand um das nächste Schuljahr ergänzt werden (Quelle: km.bayern.
   Capacitor-Android aus einer Codebase), wurde mit der Umstellung auf die native
   Kotlin-App wieder vollständig entfernt – falls das in altem Verlauf/Diffs auftaucht: ist
   bewusst rückgebaut, nicht versehentlich verloren gegangen.
+- **Adress-Geocoding (`api/src/geocode.ts`)**: nutzt den öffentlichen Nominatim-Dienst
+  (OpenStreetMap) für die Adresssuche in der Android-Verbindungssuche (`getStopsNearAddress`,
+  `/api/stops/near-address`) – kostenlos, kein API-Key, aber Nutzungsrichtlinien beachten
+  (max. 1 Anfrage/Sekunde, aussagekräftiger `User-Agent`, kein Bulk-Geocoding). Bei spürbar
+  mehr Traffic ggf. auf einen selbst gehosteten Nominatim-Server oder einen anderen Anbieter
+  wechseln – der In-Memory-Cache in `geocode.ts` mildert Wiederholungen während des Tippens,
+  ersetzt aber keine Rate-Begrenzung bei vielen gleichzeitigen Nutzern.
+- **Material3 `ExposedDropdownMenuBox` + `OutlinedTextField`**: wenn `onValueChange` im selben
+  Zug `expanded` mitsetzt, kollidiert das Popup-/Anchor-Handling dieser Komponente mit dem
+  InputConnection des Textfelds (Symptom: zwei Rücktasten-Drücke nötig, um ein Zeichen zu
+  löschen; getippter Text „verschluckt" Zwischenzustände). `StopAutocomplete.kt` nutzt deshalb
+  bewusst kein `ExposedDropdownMenuBox`, sondern eine simple inline unter dem Feld
+  eingeblendete Vorschlagsliste ohne eigenes Popup.
 
 ## Deployment
 

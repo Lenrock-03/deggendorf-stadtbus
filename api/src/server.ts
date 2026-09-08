@@ -12,6 +12,7 @@ import {
   getRouteTrips,
   getStopDepartures,
   getStops,
+  getStopsNearAddress,
   getStopsNearest,
   getStopsSearch,
 } from "./routes.js";
@@ -48,6 +49,11 @@ const routes: { method: string; pattern: RegExp; handler: Handler }[] = [
   { method: "GET", pattern: /^\/api\/stops$/, handler: () => getStops(bundle) },
   { method: "GET", pattern: /^\/api\/stops\/search$/, handler: (_p, url) => getStopsSearch(bundle, url) },
   { method: "GET", pattern: /^\/api\/stops\/nearest$/, handler: (_p, url) => getStopsNearest(bundle, url) },
+  {
+    method: "GET",
+    pattern: /^\/api\/stops\/near-address$/,
+    handler: (_p, url) => getStopsNearAddress(bundle, url),
+  },
   {
     method: "GET",
     pattern: /^\/api\/stops\/([^/]+)\/departures$/,

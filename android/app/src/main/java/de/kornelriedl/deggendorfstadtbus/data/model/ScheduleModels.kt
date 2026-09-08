@@ -30,6 +30,19 @@ data class StopWithDistance(val stop: StopData, val distanceM: Double) {
     }
 }
 
+/** Ergebnis von GET /api/stops/near-address - Adresse per Nominatim aufgelöst (siehe
+ * api/src/geocode.ts), dazu alle Haltestellen im angefragten Radius um diese Koordinaten. */
+data class StopsNearAddressResult(val resolved: String, val lat: Double, val lon: Double, val stops: List<StopWithDistance>) {
+    companion object {
+        fun fromJson(o: JSONObject) = StopsNearAddressResult(
+            o.getString("resolved"),
+            o.getDouble("lat"),
+            o.getDouble("lon"),
+            o.getJSONArray("stops").mapObjects(StopWithDistance::fromJson)
+        )
+    }
+}
+
 data class DepartureData(
     val tripId: String,
     val routeId: String,

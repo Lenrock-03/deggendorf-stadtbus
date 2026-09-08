@@ -4,10 +4,11 @@
 import type { ScheduleBundle } from "./types.js";
 import { departuresForDate, nextDepartures } from "./calendar.js";
 import { routeOutline, timelineForTrip, tripsForRoute } from "./tripTimeline.js";
-import { nearestStops } from "./geo.js";
+import { nearestStops, stopsWithinRadius } from "./geo.js";
 import { stopMatchesQuery } from "./stopAliases.js";
 import { findJourneys } from "./routePlanner.js";
 import { parseTimeToMinutes } from "./time.js";
+import { geocodeAddress } from "./geocode.js";
 
 export class ApiError extends Error {
   constructor(
@@ -63,6 +64,24 @@ export function getStopsNearest(bundle: ScheduleBundle, url: URL) {
   if (Number.isNaN(lat) || Number.isNaN(lon)) throw new ApiError(400, "lat/lon müssen Zahlen sein");
   const count = Number(url.searchParams.get("count") ?? "15");
   return nearestStops(bundle.stops, lat, lon, count);
+}
+
+// Für die Verbindungssuche: statt Haltestellennamen eine freie Adresse eingeben, z.B. "Further
+// Straße 12" - wird über Nominatim zu Koordinaten aufgelöst, danach alle Haltestellen im
+// angegebenen Radius (Default 500m Fußweg) zurückgegeben, sortiert nach Entfernung. Anders als
+// getStopsNearest() (feste Anzahl "nächste") hier ein echter Umkreis-Cutoff, damit z.B. in
+// dünn besiedelten Gegenden nicht mit weit entfernten Haltestellen aufgefüllt wird.
+export async function getStopsNearAddress(bundle: ScheduleBundle, url: URL) {
+  const address = requireQuery(url, "address");
+  const radius = Number(url.searchParams.get("radius") ?? "500");
+  const geocoded = await geocodeAddress(address);
+  if (!geocoded) throw new ApiError(404, `Adresse '${address}' nicht gefunden`);
+  return {
+    resolved: geocoded.displayName,
+    lat: geocoded.lat,
+    lon: geocoded.lon,
+    stops: stopsWithinRadius(bundle.stops, geocoded.lat, geocoded.lon, radius),
+  };
 }
 
 export function getStopDepartures(bundle: ScheduleBundle, stopId: string, url: URL) {
