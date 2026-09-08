@@ -2,8 +2,12 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { StopData } from "../types/data";
 import { stopMatchesQuery } from "../lib/stopAliases";
 import { useAddressSearch } from "../lib/useAddressSearch";
-import { nearestStops } from "../lib/geo";
+import { stopsWithinRadius, formatDistance, type StopWithDistance } from "../lib/geo";
 import Icon from "./Icon";
+
+/** Fußweg-Radius für "Haltestellen in der Nähe einer Adresse" - deckt die meisten Fälle ab,
+ * ohne bei einer zentral gelegenen Adresse gleich ein Dutzend Haltestellen aufzulisten. */
+const ADDRESS_STOP_RADIUS_M = 500;
 
 interface StopPickerProps {
   stops: StopData[];
@@ -14,13 +18,17 @@ interface StopPickerProps {
 }
 
 /** Durchsuchbares Eingabefeld für eine Haltestelle ODER eine beliebige Adresse in Deggendorf
- * (Autocomplete). Eine ausgewählte Adresse wird serverseitig geocodiert (siehe geocode.ts)
- * und auf ihre nächstgelegene Haltestelle mit Koordinaten abgebildet - der Routenplaner
- * selbst kennt weiterhin nur Haltestellen-IDs, `onChange` liefert also immer eine solche. */
+ * (Autocomplete). Eine ausgewählte Adresse wird geocodiert (siehe geocode.ts) und zeigt
+ * anschließend alle Haltestellen im Fußweg-Radius (ADDRESS_STOP_RADIUS_M) zur Auswahl - der
+ * Routenplaner selbst kennt weiterhin nur Haltestellen-IDs, `onChange` liefert also immer
+ * eine solche, nie eine Adresse direkt. */
 export default function StopPicker({ stops, value, onChange, placeholder, label }: StopPickerProps) {
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const [resolvedNote, setResolvedNote] = useState<string | null>(null);
+  // Nach Auswahl einer Adresse: alle Haltestellen in deren Umkreis, aus denen noch gewählt
+  // werden muss - ersetzt bis zur Auswahl die normale Haltestellen-/Adress-Vorschlagsliste.
+  const [nearbyStops, setNearbyStops] = useState<{ addressLabel: string; stops: StopWithDistance[] } | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   // Hält fest, welchen `value` wir selbst zuletzt über onChange gesetzt haben - so weiß der
   // Sync-Effekt unten, ob eine `value`-Änderung von außen kam (z.B. Tauschen-Button, dann
@@ -34,6 +42,7 @@ export default function StopPicker({ stops, value, onChange, placeholder, label 
     const stop = stops.find((s) => s.id === value);
     setQuery(stop ? stop.name : "");
     setResolvedNote(null);
+    setNearbyStops(null);
     lastAppliedValue.current = value;
   }, [value, stops]);
 
@@ -44,8 +53,9 @@ export default function StopPicker({ stops, value, onChange, placeholder, label 
   }, [stops, query]);
 
   // Adresssuche nur, wenn die Eingabe (noch) keine bereits ausgewählte Haltestelle/Adresse
-  // ist - vermeidet einen unnötigen Nachschlag direkt nach einer Auswahl.
-  const address = useAddressSearch(query, open);
+  // ist - vermeidet einen unnötigen Nachschlag direkt nach einer Auswahl bzw. während schon
+  // die Haltestellen-im-Umkreis-Liste einer gewählten Adresse angezeigt wird.
+  const address = useAddressSearch(query, open && !nearbyStops);
 
   useEffect(() => {
     function onClickOutside(e: MouseEvent) {
@@ -62,19 +72,32 @@ export default function StopPicker({ stops, value, onChange, placeholder, label 
     onChange(s.id);
     setQuery(s.name);
     setResolvedNote(null);
+    setNearbyStops(null);
     setOpen(false);
   }
 
+  // Adresse gewählt -> noch keine Haltestelle festlegen, sondern erst alle im Umkreis zur
+  // Auswahl anbieten (siehe selectNearbyStop) statt stillschweigend nur die eine
+  // nächstgelegene zu übernehmen.
   function selectAddress(addressLabel: string, lat: number, lon: number) {
-    const [nearest] = nearestStops(stops, lat, lon, 1);
-    if (!nearest) {
-      setResolvedNote("Keine Haltestelle mit bekannter Position in der Nähe gefunden.");
+    const nearby = stopsWithinRadius(stops, lat, lon, ADDRESS_STOP_RADIUS_M);
+    if (nearby.length === 0) {
+      setResolvedNote(
+        `Keine Haltestelle im Umkreis von ${formatDistance(ADDRESS_STOP_RADIUS_M)} um "${addressLabel}" gefunden.`
+      );
       return;
     }
-    lastAppliedValue.current = nearest.id;
-    onChange(nearest.id);
     setQuery(addressLabel);
-    setResolvedNote(`→ nächste Haltestelle: ${nearest.name}`);
+    setResolvedNote(null);
+    setNearbyStops({ addressLabel, stops: nearby });
+  }
+
+  function selectNearbyStop(s: StopWithDistance) {
+    lastAppliedValue.current = s.id;
+    onChange(s.id);
+    setQuery(s.name);
+    setResolvedNote(`→ Adresse: ${nearbyStops?.addressLabel}`);
+    setNearbyStops(null);
     setOpen(false);
   }
 
@@ -92,6 +115,7 @@ export default function StopPicker({ stops, value, onChange, placeholder, label 
           onChange={(e) => {
             setQuery(e.target.value);
             setResolvedNote(null);
+            setNearbyStops(null);
             setOpen(true);
             if (value) onChange(""); // getippt, ohne dass schon wieder etwas ausgewählt ist
           }}
@@ -99,7 +123,20 @@ export default function StopPicker({ stops, value, onChange, placeholder, label 
           autoComplete="off"
         />
       </label>
-      {open && (stopResults.length > 0 || address.results.length > 0) && (
+      {open && nearbyStops && (
+        <ul className="stop-picker-suggestions">
+          <li className="stop-picker-group-label">Haltestellen nahe "{nearbyStops.addressLabel}"</li>
+          {nearbyStops.stops.map((s) => (
+            <li key={s.id}>
+              <button type="button" className="stop-picker-nearby-option" onClick={() => selectNearbyStop(s)}>
+                <span>{s.name}</span>
+                <span className="muted">{formatDistance(s.distanceM)}</span>
+              </button>
+            </li>
+          ))}
+        </ul>
+      )}
+      {open && !nearbyStops && (stopResults.length > 0 || address.results.length > 0) && (
         <ul className="stop-picker-suggestions">
           {stopResults.map((s) => (
             <li key={s.id}>
@@ -127,7 +164,7 @@ export default function StopPicker({ stops, value, onChange, placeholder, label 
           )}
         </ul>
       )}
-      {open && showNoStopMatches && address.results.length === 0 && (
+      {open && !nearbyStops && showNoStopMatches && address.results.length === 0 && (
         <ul className="stop-picker-suggestions">
           <li className="muted" style={{ padding: "0.5rem 0.75rem" }}>
             {address.loading ? "Suche Adresse …" : "Keine Haltestelle oder Adresse gefunden"}

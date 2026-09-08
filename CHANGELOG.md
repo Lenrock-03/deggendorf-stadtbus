@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.14.0
+
+### Geändert
+- Routenplaner (`StopPicker`): eine gewählte Adresse wird nicht mehr automatisch auf ihre
+  eine nächstgelegene Haltestelle abgebildet, sondern zeigt jetzt alle Haltestellen im
+  500m-Umkreis (neues `stopsWithinRadius()` in `app/src/lib/geo.ts`, analog zu v1.13.0s
+  API-Pendant) zur Auswahl an - vorher konnte man sich nicht für eine andere, ebenfalls nahe
+  gelegene Haltestelle entscheiden.
+
 ## v1.13.0
 
 ### Hinzugefügt

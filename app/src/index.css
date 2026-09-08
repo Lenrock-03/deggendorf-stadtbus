@@ -379,6 +379,13 @@ button {
   font-size: 0.85rem;
 }
 
+.stop-picker-suggestions li button.stop-picker-nearby-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
 .swap-button {
   align-self: center;
   width: 2.2rem;

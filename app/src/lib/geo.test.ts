@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { distanceMeters, nearestStops, formatDistance } from "./geo";
+import { distanceMeters, nearestStops, stopsWithinRadius, formatDistance } from "./geo";
 
 describe("distanceMeters", () => {
   it("liefert 0 für identische Koordinaten", () => {
@@ -29,6 +29,29 @@ describe("nearestStops", () => {
 
   it("begrenzt auf die angegebene Anzahl", () => {
     expect(nearestStops(stops, 48.83, 12.95, 2)).toHaveLength(2);
+  });
+});
+
+describe("stopsWithinRadius", () => {
+  const stops = [
+    { id: "a", name: "A", lat: 48.83, lon: 12.95 }, // 0m
+    { id: "b", name: "B", lat: 48.84, lon: 12.96 }, // ~1.3km
+    { id: "c", name: "C" }, // keine Koordinaten -> muss übersprungen werden
+    { id: "d", name: "D", lat: 48.831, lon: 12.951 }, // ~130m
+  ];
+
+  it("liefert alle Haltestellen innerhalb des Radius, sortiert nach Entfernung", () => {
+    const result = stopsWithinRadius(stops, 48.83, 12.95, 500);
+    expect(result.map((s) => s.id)).toEqual(["a", "d"]);
+  });
+
+  it("liefert eine leere Liste, wenn nichts im Radius liegt", () => {
+    expect(stopsWithinRadius(stops, 49.5, 13.5, 500)).toEqual([]);
+  });
+
+  it("ist nicht durch eine feste Anzahl begrenzt, nur durch den Radius", () => {
+    const result = stopsWithinRadius(stops, 48.83, 12.95, 5000);
+    expect(result.map((s) => s.id)).toEqual(["a", "d", "b"]);
   });
 });
 
