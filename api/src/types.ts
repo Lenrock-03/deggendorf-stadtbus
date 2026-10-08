@@ -60,3 +60,28 @@ export interface ScheduleBundle {
   meta: MetaData;
   routeStops: RouteStops;
 }
+
+// Verschoben hierher aus dem inzwischen entfernten routePlanner.ts (jetzt durch einen
+// Motis-Proxy ersetzt, siehe motisClient.ts/motisTranslate.ts) - dieser Antwort-Vertrag
+// bleibt für Android/den Web-App-Fallback unverändert bestehen.
+export interface JourneyLeg {
+  routeId: string;
+  routeShortName: string;
+  routeColor: string;
+  tripId: string;
+  boardStopId: string;
+  boardStopName: string;
+  boardTime: string;
+  alightStopId: string;
+  alightStopName: string;
+  alightTime: string;
+  headsign: string;
+}
+
+export interface Journey {
+  legs: JourneyLeg[];
+  departureTime: string;
+  arrivalTime: string;
+  /** Wartezeit am Umstiegshalt in Minuten, nur bei 2 Etappen */
+  transferWaitMin?: number;
+}

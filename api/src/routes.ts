@@ -1,12 +1,14 @@
 // Handler-Funktionen für die Fahrplan-/Routenplaner-Endpunkte. Reine Wrapper um die
-// portierten Module (calendar.ts, tripTimeline.ts, geo.ts, stopAliases.ts, routePlanner.ts)
-// - die eigentliche Logik liegt dort, hier nur Query-Parameter-Validierung + Aufruf.
+// portierten Module (calendar.ts, tripTimeline.ts, geo.ts, stopAliases.ts) bzw. - für
+// getJourneys - um den Motis-Proxy (motisClient.ts/motisTranslate.ts) - die eigentliche
+// Logik liegt dort, hier nur Query-Parameter-Validierung + Aufruf.
 import type { ScheduleBundle } from "./types.js";
 import { departuresForDate, nextDepartures } from "./calendar.js";
 import { routeOutline, timelineForTrip, tripsForRoute } from "./tripTimeline.js";
 import { nearestStops, stopsWithinRadius } from "./geo.js";
 import { stopMatchesQuery } from "./stopAliases.js";
-import { findJourneys } from "./routePlanner.js";
+import { MotisError, planJourneys } from "./motisClient.js";
+import { toJourneys } from "./motisTranslate.js";
 import { parseTimeToMinutes } from "./time.js";
 import { geocodeAddress } from "./geocode.js";
 
@@ -95,7 +97,7 @@ export function getStopDepartures(bundle: ScheduleBundle, stopId: string, url: U
   return nextDepartures(stopDepartures, bundle.calendar, new Date(), count);
 }
 
-export function getJourneys(bundle: ScheduleBundle, url: URL) {
+export async function getJourneys(bundle: ScheduleBundle, url: URL) {
   const from = requireQuery(url, "from");
   const to = requireQuery(url, "to");
   const date = url.searchParams.has("date") ? parseDateQuery(url, "date") : new Date();
@@ -105,9 +107,17 @@ export function getJourneys(bundle: ScheduleBundle, url: URL) {
         `${String(date.getHours()).padStart(2, "0")}:${String(date.getMinutes()).padStart(2, "0")}:00`
       );
   const maxResults = Number(url.searchParams.get("maxResults") ?? "8");
+  // Günstiger, klarer 404 vor dem Motis-Request statt eines für den Client schwer
+  // unterscheidbaren Motis-Fehlers bei unbekannter Haltestellen-ID.
   if (!bundle.stops.some((s) => s.id === from)) throw new ApiError(404, `Haltestelle '${from}' nicht gefunden`);
   if (!bundle.stops.some((s) => s.id === to)) throw new ApiError(404, `Haltestelle '${to}' nicht gefunden`);
-  return findJourneys(bundle, from, to, date, afterMin, maxResults);
+  try {
+    const plan = await planJourneys(from, to, date, afterMin, maxResults);
+    return toJourneys(plan, maxResults);
+  } catch (err) {
+    if (err instanceof MotisError) throw new ApiError(502, err.message);
+    throw err;
+  }
 }
 
 export function getMeta(bundle: ScheduleBundle) {
