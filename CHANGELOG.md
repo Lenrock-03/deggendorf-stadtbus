@@ -1,5 +1,33 @@
 # Changelog
 
+## v1.16.0
+
+### Geändert
+- **Verbindungssuche läuft jetzt über [Motis](https://github.com/motis-project/motis)**,
+  eine selbst gehostete Open-Source-Routing-Engine, statt der eigenen `findJourneys()`-
+  Heuristik: findet jetzt echte optimale Verbindungen (nicht mehr auf max. 1 Umstieg
+  begrenzt) und ist durch eine ausgereifte Engine nicht mehr anfällig für die Art von Bug,
+  die in v1.15.0 gefixt wurde. `data-pipeline/` erzeugt dafür zusätzlich zum bisherigen
+  JSON-Bundle echtes GTFS (`gtfsExport.ts`); ein committeter OSM-Ausschnitt
+  (`motis/osm/deggendorf.osm.pbf`) liefert das Straßen-/Fußweg-Netz. Läuft als dritter,
+  rein interner Docker-Service - nur `api/` spricht mit ihm.
+- Web-App: die Verbindungssuche versucht zuerst Motis (über `api/`), fällt bei Fehlschlag/
+  Timeout automatisch auf die bisherige, weiterhin vorhandene lokale Berechnung zurück
+  (sichtbarer "Offline-Ergebnisse"-Hinweis) - bleibt dadurch auch ohne erreichbares Backend
+  nutzbar.
+- Android: keine Änderung nötig - `GET /api/journeys` liefert unverändert dasselbe Format.
+
+## v1.15.0
+
+### Behoben
+- Routenplaner: eine Rundstrecken-Haltestelle (jede der 4 Linien bedient zentrale
+  Haltestellen zweimal pro Umlauf) konnte fälschlich eine "Umstiegsverbindung" anbieten, die
+  erst ein Stück in die falsche Richtung fährt, nur um an einem gemeinsamen Umstiegshalt auf
+  eine spätere Fahrt **derselben Linie** zu wechseln - kommt nie früher an als einfaches
+  Warten auf dieselbe spätere Fahrt an der Starthaltestelle selbst (mathematisch nachgewiesen
+  und per Sweep über alle echten Haltestellen-Paare bestätigt: 3485 betroffene Fälle vorher,
+  0 danach).
+
 ## v1.14.0
 
 ### Geändert
