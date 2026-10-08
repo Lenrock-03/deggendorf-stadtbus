@@ -7,3 +7,4 @@ dist/
 # GTFS-Rohdaten sind zu groß fürs Repo und werden bei Bedarf neu geladen
 data-pipeline/raw/
 data-pipeline/*.zip
+data-pipeline/gtfs-out/
