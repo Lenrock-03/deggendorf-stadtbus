@@ -25,6 +25,8 @@ export interface MotisLeg {
   routeShortName?: string;
   routeLongName?: string;
   tripId?: string;
+  /** Nur bei Nicht-Transit-Etappen (WALK etc.) gesetzt - Strecke in Metern. */
+  distance?: number;
 }
 
 export interface MotisItinerary {
@@ -70,10 +72,18 @@ export function toRfc3339Berlin(date: Date, afterMin: number): string {
 
 export class MotisError extends Error {}
 
+// Der Datensatz-Key aus config.yml (data-pipeline/gtfsExport.ts erzeugt "gtfs.zip", Motis
+// leitet daraus beim `motis config`-Schritt den Key "gtfs" ab) - Motis hängt ihn als Präfix
+// an jede Haltestellen-/Linien-/Trip-ID (z.B. Haltestelle "deggendorf-klinikum" ->
+// "gtfs_deggendorf-klinikum"). Per Live-Test gegen eine echte Motis-Instanz bestätigt, nicht
+// nur aus der Doku angenommen. motisTranslate.ts entfernt dasselbe Präfix wieder aus der
+// Antwort - beide Seiten teilen sich diese Konstante, damit sie nicht auseinanderlaufen.
+export const FEED_ID = "gtfs";
+
 /** Fragt Motis nach Verbindungen von `fromStopId` nach `toStopId` ab `date`+`afterMin`.
- * `fromPlace`/`toPlace` akzeptieren Haltestellen-IDs direkt (siehe openapi.yaml) - unsere
- * Haltestellen-IDs sind 1:1 die GTFS stop_id aus dem Export (data-pipeline/gtfsExport.ts),
- * also kein Koordinaten-Lookup nötig. */
+ * `fromPlace`/`toPlace` akzeptieren Haltestellen-IDs direkt (siehe openapi.yaml), aber mit
+ * dem Datensatz-Präfix (siehe FEED_ID) - unsere Haltestellen-IDs sind sonst 1:1 die GTFS
+ * stop_id aus dem Export (data-pipeline/gtfsExport.ts), also kein Koordinaten-Lookup nötig. */
 export async function planJourneys(
   fromStopId: string,
   toStopId: string,
@@ -82,8 +92,8 @@ export async function planJourneys(
   maxResults: number
 ): Promise<MotisPlanResponse> {
   const url = new URL("/api/v6/plan", MOTIS_URL);
-  url.searchParams.set("fromPlace", fromStopId);
-  url.searchParams.set("toPlace", toStopId);
+  url.searchParams.set("fromPlace", `${FEED_ID}_${fromStopId}`);
+  url.searchParams.set("toPlace", `${FEED_ID}_${toStopId}`);
   url.searchParams.set("time", toRfc3339Berlin(date, afterMin));
   url.searchParams.set("arriveBy", "false");
   url.searchParams.set("numItineraries", String(maxResults));

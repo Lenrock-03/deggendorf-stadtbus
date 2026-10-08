@@ -30,5 +30,20 @@ services:
       # (Fahrpläne, Routenplaner) funktionieren unabhängig davon normal.
       DB_CLIENT_ID: ${DB_CLIENT_ID:-}
       DB_API_KEY: ${DB_API_KEY:-}
+      # Compose-interner DNS-Name des motis-Service (unten) - nicht über den Host-Port.
+      MOTIS_URL: ${MOTIS_URL:-http://motis:8080}
     ports:
       - "127.0.0.1:${API_PORT:-8092}:3000"
+    depends_on:
+      - motis
+
+  motis:
+    build:
+      context: .
+      dockerfile: motis/Dockerfile
+    image: deggendorf-stadtbus-motis:latest
+    restart: unless-stopped
+    ports:
+      # Nur für manuelles Debugging per SSH-Tunnel - api erreicht motis über das interne
+      # Compose-Netz (Service-Name "motis"), nicht über diesen Host-Port. Nicht öffentlich.
+      - "127.0.0.1:${MOTIS_PORT:-8093}:8080"
