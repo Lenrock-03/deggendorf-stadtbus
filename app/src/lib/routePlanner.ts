@@ -148,13 +148,22 @@ export function findJourneys(
 
     for (const stop of rest) {
       if (!interchangeStops.has(stop.stopId)) continue;
+      // Nie auf die eigene Linie zurück-"umsteigen": jede Linie hier fährt eine fixe
+      // Rundstrecke (routeStops[routeId] gilt für alle ihre Fahrten), die jede Haltestelle
+      // der Linie genau einmal pro Umlauf bedient. Eine spätere Fahrt derselben Linie kommt
+      // an jeder ihrer Haltestellen - auch der ursprünglichen Einstiegshaltestelle - zur
+      // exakt gleichen Zeit vorbei wie an diesem Umstiegshalt. "Umsteigen" bringt also nie
+      // einen früheren oder zusätzlichen Zielankunft, nur einen unnötigen Umweg über die
+      // eigentliche Zielrichtung hinaus, während direktes Warten auf dieselbe Fahrt an der
+      // Starthaltestelle (wird weiter oben als eigene Direktverbindung gefunden) exakt
+      // gleich schnell ankommt, ohne den Umweg.
       const transferDeps = departuresAtStop(
         bundle,
         stop.stopId,
         activeServices,
         parseTimeToMinutes(stop.time) + MIN_TRANSFER_MIN
       )
-        .filter((d2) => d2.routeId !== dep.routeId || d2.tripId !== dep.tripId)
+        .filter((d2) => d2.routeId !== dep.routeId)
         .slice(0, MAX_TRANSFER_CANDIDATES);
 
       for (const dep2 of transferDeps) {
