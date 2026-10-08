@@ -1,11 +1,14 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { useSchedule } from "../lib/useSchedule";
 import { ErrorBanner, LoadingBanner } from "../components/StatusBanner";
 import StopPicker from "../components/StopPicker";
 import JourneyCard from "../components/JourneyCard";
 import Icon from "../components/Icon";
-import { findJourneys } from "../lib/routePlanner";
+import { findJourneys, type Journey } from "../lib/routePlanner";
+import { fetchJourneysOnline } from "../lib/journeysClient";
 import { dateInBerlin, nowMinutesInBerlin } from "../lib/time";
+
+type ResultsSource = "online" | "offline-fallback";
 
 function toDateInputValue(d: Date): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
@@ -24,13 +27,31 @@ export default function RoutePlanner() {
   const [date, setDate] = useState(() => toDateInputValue(dateInBerlin()));
   const [time, setTime] = useState(() => toTimeInputValue(nowMinutesInBerlin()));
   const [searched, setSearched] = useState(false);
+  const [searching, setSearching] = useState(false);
+  const [journeys, setJourneys] = useState<Journey[]>([]);
+  const [resultsSource, setResultsSource] = useState<ResultsSource | null>(null);
 
-  const journeys = useMemo(() => {
-    if (schedule.status !== "ready" || !originId || !destId || !searched) return [];
+  async function search() {
+    if (schedule.status !== "ready") return;
+    setSearched(true);
+    setSearching(true);
     const [h, m] = time.split(":").map(Number);
-    const [y, mo, d] = date.split("-").map(Number);
-    return findJourneys(schedule.data, originId, destId, new Date(y, mo - 1, d), h * 60 + m);
-  }, [schedule, originId, destId, date, time, searched]);
+    const afterMin = h * 60 + m;
+    try {
+      const online = await fetchJourneysOnline(originId, destId, date, afterMin);
+      setJourneys(online);
+      setResultsSource("online");
+    } catch {
+      // Motis/api/ nicht erreichbar (oder zu langsam) - auf die lokale Berechnung
+      // zurückfallen, die direkt auf den bereits geladenen Fahrplandaten arbeitet.
+      const [y, mo, d] = date.split("-").map(Number);
+      const offline = findJourneys(schedule.data, originId, destId, new Date(y, mo - 1, d), afterMin);
+      setJourneys(offline);
+      setResultsSource("offline-fallback");
+    } finally {
+      setSearching(false);
+    }
+  }
 
   if (schedule.status === "loading") return <LoadingBanner />;
   if (schedule.status === "error") return <ErrorBanner message={schedule.error} />;
@@ -84,26 +105,32 @@ export default function RoutePlanner() {
 
         <button
           className="primary-button"
-          onClick={() => setSearched(true)}
-          disabled={!originId || !destId || sameStop}
+          onClick={() => void search()}
+          disabled={!originId || !destId || sameStop || searching}
         >
-          Verbindungen suchen
+          {searching ? "Suche …" : "Verbindungen suchen"}
         </button>
         {sameStop && <p className="muted" style={{ marginTop: "0.4rem" }}>Start und Ziel dürfen nicht gleich sein.</p>}
       </div>
 
-      {searched && (
-        <ul className="card-list" style={{ marginTop: "1.25rem" }}>
-          {journeys.length === 0 && (
-            <p className="muted">
-              Keine Verbindung gefunden (an diesem Tag/zu dieser Zeit kein Verkehr, oder keine Verbindung mit
-              höchstens einmal Umsteigen).
+      {searched && !searching && (
+        <>
+          {resultsSource === "offline-fallback" && (
+            <p className="muted" style={{ marginTop: "1.25rem" }}>
+              Offline-Ergebnisse (eigene Berechnung) – evtl. abweichend vom Live-Fahrplan.
             </p>
           )}
-          {journeys.map((j, i) => (
-            <JourneyCard key={i} journey={j} bundle={schedule.data} />
-          ))}
-        </ul>
+          <ul className="card-list" style={{ marginTop: "1.25rem" }}>
+            {journeys.length === 0 && (
+              <p className="muted">
+                Keine Verbindung gefunden (an diesem Tag/zu dieser Zeit kein Verkehr, oder keine Verbindung).
+              </p>
+            )}
+            {journeys.map((j, i) => (
+              <JourneyCard key={i} journey={j} bundle={schedule.data} />
+            ))}
+          </ul>
+        </>
       )}
 
       <p className="muted" style={{ marginTop: "1.5rem" }}>
